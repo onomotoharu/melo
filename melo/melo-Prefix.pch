@@ -1,0 +1,32 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+
+    #define AppName @"melo"
+
+    #ifdef DEBUG
+        #define NNLog(fmt, ...) NSLog((@"%s [Line %d] " fmt),__PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+        #define NNLogPoint(p)   NSLog(@"x:%f, y%f", p.x, p.y);
+        #define NNLogSize(p)    NSLog(@"w:%f, h:%f", p.width, p.height);
+        #define NNLogRect(p)    NSLog(@"x:%f, y:%f, w:%f, h:%f", p.origin.x, p.origin.y, p.size.width, p.size.height);
+    #else
+        #define NNLog(fmt, ...) ;
+        #define NNLogPoint(p) ;
+        #define NNLogSize(p) ;
+        #define NNLogRect(p) ;
+    #endif
+
+#endif
