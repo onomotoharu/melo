@@ -14,7 +14,7 @@
 
 + (MLConnector *)sharedConnector;
 
-- (void)get:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure;
+- (void)get:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters;
 - (void)post:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters;
 - (void)delete:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters;
 @end

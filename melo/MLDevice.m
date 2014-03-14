@@ -35,11 +35,12 @@ NSInteger const IPHONE_4_WIDTH = 80;
     return NO;
 }
 
-+ (CGFloat)topMargin {
-    if ([self isIos7]) {
++ (CGFloat)topMargin:(UIViewController *)viewController {
+    if (!viewController || viewController.navigationController.navigationBarHidden) {
         return 20;
+    } else {
+        return 64;
     }
-    return 0;
 }
 
 @end

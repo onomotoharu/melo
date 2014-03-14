@@ -29,8 +29,8 @@ NSString const *BaseUrl = @"http://192.168.1.5:3000/api/";
 
 #pragma mark - HTTP Method
 
-- (void)get:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
-    [[self createManager] GET:[NSString stringWithFormat:@"%@%@", BaseUrl, _urlString] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+- (void)get:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters {
+    [[self createManager] GET:[NSString stringWithFormat:@"%@%@", BaseUrl, _urlString] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self successCallBack:success operation:operation responseObject:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self failureCallBack:failure operation:operation erorr:error];

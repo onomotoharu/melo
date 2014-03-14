@@ -58,11 +58,11 @@ static MLConnector *_sharedConnector = nil;
 
 #pragma mark - HTTP Method
 
-- (void)get:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+- (void)get:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters {
     __weak MLConnector *weakSelf = self;
     MLHttpRequest *request = [[MLHttpRequest alloc] initWithUrlString:urlString delegate:weakSelf];
     if ([self startRequest:request]) {
-        [request get:success failure:failure];
+        [request get:success failure:failure parameters:parameters];
     }
 }
 

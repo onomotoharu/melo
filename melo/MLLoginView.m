@@ -42,7 +42,7 @@ NSInteger const MLLoginViewButtonY = 350;
     NSString *title = @"ダウンロードありがとうございます！";
     UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue-Italic" size:16];
     UIColor *titleColor = [UIColor colorWithDecRed:154 green:153 blue:154 alpha:1];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin], NNViewWidth(self), MLLoginViewTitleHeight)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin:nil], NNViewWidth(self), MLLoginViewTitleHeight)];
     [titleLabel setText:title];
     [titleLabel setTextColor:titleColor];
     [titleLabel setFont:titleFont];

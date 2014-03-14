@@ -44,6 +44,13 @@
 		32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5A18D2B7A400AFA3F0 /* MLUserDefaults.m */; };
 		32E15E5E18D2BB5C00AFA3F0 /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5D18D2BB5C00AFA3F0 /* MLViewController.m */; };
 		32E15E6218D2BD0E00AFA3F0 /* MLTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E6118D2BD0E00AFA3F0 /* MLTabViewController.m */; };
+		32E15E6718D2C5FD00AFA3F0 /* MLHomeTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E6618D2C5FD00AFA3F0 /* MLHomeTabView.m */; };
+		32E15E6D18D2CF0400AFA3F0 /* MLProductCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E6C18D2CF0400AFA3F0 /* MLProductCollectionView.m */; };
+		32E15E7018D2D08E00AFA3F0 /* MLProductCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E6F18D2D08E00AFA3F0 /* MLProductCollectionLayout.m */; };
+		32E15E7418D2E1C300AFA3F0 /* MLUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E7318D2E1C300AFA3F0 /* MLUserViewController.m */; };
+		32E15E7818D2E26000AFA3F0 /* MLProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E7718D2E26000AFA3F0 /* MLProductController.m */; };
+		32E15E7B18D2E6B200AFA3F0 /* MLProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E7A18D2E6B200AFA3F0 /* MLProductManager.m */; };
+		32E15E7E18D2EC4000AFA3F0 /* MLProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E7D18D2EC4000AFA3F0 /* MLProductCell.m */; };
 		32E2B06218D1FE6300C0F888 /* MLUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2B06118D1FE6300C0F888 /* MLUserController.m */; };
 		32E3D4E718D24093004CEAE0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E3D4E618D24093004CEAE0 /* ImageIO.framework */; };
 		32E3D4E918D240E7004CEAE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E3D4E818D240E7004CEAE0 /* MapKit.framework */; };
@@ -136,6 +143,20 @@
 		32E15E5D18D2BB5C00AFA3F0 /* MLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLViewController.m; sourceTree = "<group>"; };
 		32E15E6018D2BD0E00AFA3F0 /* MLTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabViewController.h; sourceTree = "<group>"; };
 		32E15E6118D2BD0E00AFA3F0 /* MLTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabViewController.m; sourceTree = "<group>"; };
+		32E15E6518D2C5FD00AFA3F0 /* MLHomeTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHomeTabView.h; sourceTree = "<group>"; };
+		32E15E6618D2C5FD00AFA3F0 /* MLHomeTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHomeTabView.m; sourceTree = "<group>"; };
+		32E15E6B18D2CF0400AFA3F0 /* MLProductCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductCollectionView.h; sourceTree = "<group>"; };
+		32E15E6C18D2CF0400AFA3F0 /* MLProductCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductCollectionView.m; sourceTree = "<group>"; };
+		32E15E6E18D2D08E00AFA3F0 /* MLProductCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductCollectionLayout.h; sourceTree = "<group>"; };
+		32E15E6F18D2D08E00AFA3F0 /* MLProductCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductCollectionLayout.m; sourceTree = "<group>"; };
+		32E15E7218D2E1C300AFA3F0 /* MLUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserViewController.h; sourceTree = "<group>"; };
+		32E15E7318D2E1C300AFA3F0 /* MLUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUserViewController.m; sourceTree = "<group>"; };
+		32E15E7618D2E26000AFA3F0 /* MLProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductController.h; sourceTree = "<group>"; };
+		32E15E7718D2E26000AFA3F0 /* MLProductController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductController.m; sourceTree = "<group>"; };
+		32E15E7918D2E6B200AFA3F0 /* MLProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductManager.h; sourceTree = "<group>"; };
+		32E15E7A18D2E6B200AFA3F0 /* MLProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductManager.m; sourceTree = "<group>"; };
+		32E15E7C18D2EC4000AFA3F0 /* MLProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductCell.h; sourceTree = "<group>"; };
+		32E15E7D18D2EC4000AFA3F0 /* MLProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductCell.m; sourceTree = "<group>"; };
 		32E2B06018D1FE6300C0F888 /* MLUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserController.h; sourceTree = "<group>"; };
 		32E2B06118D1FE6300C0F888 /* MLUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUserController.m; sourceTree = "<group>"; };
 		32E3D4E618D24093004CEAE0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -331,6 +352,12 @@
 		329FAA9618D1AEF200FBC7F6 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				32E15E6B18D2CF0400AFA3F0 /* MLProductCollectionView.h */,
+				32E15E6C18D2CF0400AFA3F0 /* MLProductCollectionView.m */,
+				32E15E6E18D2D08E00AFA3F0 /* MLProductCollectionLayout.h */,
+				32E15E6F18D2D08E00AFA3F0 /* MLProductCollectionLayout.m */,
+				32E15E7C18D2EC4000AFA3F0 /* MLProductCell.h */,
+				32E15E7D18D2EC4000AFA3F0 /* MLProductCell.m */,
 				329FAA9318D1AEEE00FBC7F6 /* MLProductView.h */,
 				329FAA9418D1AEEE00FBC7F6 /* MLProductView.m */,
 			);
@@ -351,6 +378,8 @@
 			children = (
 				329FAA9B18D1B0DE00FBC7F6 /* MLProduct.h */,
 				329FAA9C18D1B0DE00FBC7F6 /* MLProduct.m */,
+				32E15E7918D2E6B200AFA3F0 /* MLProductManager.h */,
+				32E15E7A18D2E6B200AFA3F0 /* MLProductManager.m */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -384,6 +413,7 @@
 				32D3D1BF18D08DF1004D7E38 /* Login */,
 				329FAA8418D19C9C00FBC7F6 /* StartFollow */,
 				329FAA8818D1A77500FBC7F6 /* Home */,
+				32E15E7118D2E16A00AFA3F0 /* User */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -393,6 +423,7 @@
 			children = (
 				32D3D1CA18D09538004D7E38 /* Login */,
 				329FAA8C18D1A95500FBC7F6 /* StartFollow */,
+				32E15E6418D2C5A100AFA3F0 /* Home */,
 				329FAA9618D1AEF200FBC7F6 /* Product */,
 			);
 			name = View;
@@ -415,6 +446,7 @@
 			children = (
 				32E15E5F18D2BB6200AFA3F0 /* View */,
 				32E2B06318D1FE6900C0F888 /* User */,
+				32E15E7518D2E23D00AFA3F0 /* Product */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -515,6 +547,33 @@
 				32E15E6118D2BD0E00AFA3F0 /* MLTabViewController.m */,
 			);
 			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		32E15E6418D2C5A100AFA3F0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				32E15E6518D2C5FD00AFA3F0 /* MLHomeTabView.h */,
+				32E15E6618D2C5FD00AFA3F0 /* MLHomeTabView.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		32E15E7118D2E16A00AFA3F0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				32E15E7218D2E1C300AFA3F0 /* MLUserViewController.h */,
+				32E15E7318D2E1C300AFA3F0 /* MLUserViewController.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		32E15E7518D2E23D00AFA3F0 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				32E15E7618D2E26000AFA3F0 /* MLProductController.h */,
+				32E15E7718D2E26000AFA3F0 /* MLProductController.m */,
+			);
+			name = Product;
 			sourceTree = "<group>";
 		};
 		32E2B06318D1FE6900C0F888 /* User */ = {
@@ -708,21 +767,25 @@
 				32749DE618D085AF00337C06 /* melo.xcdatamodeld in Sources */,
 				32D3D1D318D17713004D7E38 /* UIColor+Addition.m in Sources */,
 				32749DDF18D085AF00337C06 /* main.m in Sources */,
+				32E15E7E18D2EC4000AFA3F0 /* MLProductCell.m in Sources */,
 				32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */,
 				32E3D50C18D24230004CEAE0 /* SDWebImageManager.m in Sources */,
 				32E3D50918D24230004CEAE0 /* SDWebImageDecoder.m in Sources */,
 				32E2B06218D1FE6300C0F888 /* MLUserController.m in Sources */,
+				32E15E7018D2D08E00AFA3F0 /* MLProductCollectionLayout.m in Sources */,
 				32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */,
 				32E3D50D18D24230004CEAE0 /* SDWebImagePrefetcher.m in Sources */,
 				32E3D51518D242B2004CEAE0 /* NSData+ImageContentType.m in Sources */,
 				32E3D51218D24230004CEAE0 /* UIImageView+WebCache.m in Sources */,
 				329FAA8B18D1A79700FBC7F6 /* MLHomeViewController.m in Sources */,
+				32E15E6D18D2CF0400AFA3F0 /* MLProductCollectionView.m in Sources */,
 				329FAA9218D1AE5700FBC7F6 /* MLFollowUserBlockView.m in Sources */,
 				329FAAA518D1DB1400FBC7F6 /* MLHttpRequest.m in Sources */,
 				32E3D51918D243C6004CEAE0 /* MLNotification.m in Sources */,
 				32E3D50F18D24230004CEAE0 /* UIImage+GIF.m in Sources */,
 				32E3D51118D24230004CEAE0 /* UIImage+WebP.m in Sources */,
 				32749DE318D085AF00337C06 /* MLAppDelegate.m in Sources */,
+				32E15E7818D2E26000AFA3F0 /* MLProductController.m in Sources */,
 				32E15E5E18D2BB5C00AFA3F0 /* MLViewController.m in Sources */,
 				32E3D50818D24230004CEAE0 /* SDWebImageCompat.m in Sources */,
 				32529F5D18D23CA700ADA8EE /* MLImageManager.m in Sources */,
@@ -735,12 +798,15 @@
 				32E3D50E18D24230004CEAE0 /* UIButton+WebCache.m in Sources */,
 				329FAA9518D1AEEE00FBC7F6 /* MLProductView.m in Sources */,
 				329FAAA218D1D25200FBC7F6 /* MLConnector.m in Sources */,
+				32E15E6718D2C5FD00AFA3F0 /* MLHomeTabView.m in Sources */,
 				32E15E6218D2BD0E00AFA3F0 /* MLTabViewController.m in Sources */,
 				32E3D50B18D24230004CEAE0 /* SDWebImageDownloaderOperation.m in Sources */,
+				32E15E7418D2E1C300AFA3F0 /* MLUserViewController.m in Sources */,
 				32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */,
 				32E15E5718D2B25100AFA3F0 /* MLDevice.m in Sources */,
 				329FAA9A18D1B0BF00FBC7F6 /* MLUser.m in Sources */,
 				32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */,
+				32E15E7B18D2E6B200AFA3F0 /* MLProductManager.m in Sources */,
 				329FAA8F18D1A96C00FBC7F6 /* MLStartFollowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,8 +10,9 @@
 
 #import "MLTabViewController.h"
 #import "MLNavigationViewController.h"
-#import "MLHomeViewController.h"
 #import "MLLoginViewController.h"
+#import "MLHomeViewController.h"
+#import "MLUserViewController.h"
 
 @implementation MLViewController
 
@@ -40,7 +41,8 @@
     UIViewController *viewController = [UIViewController new];
     MLNavigationViewController *navigationController2 = [[MLNavigationViewController alloc] initWithRootViewController:viewController];
     
-     MLNavigationViewController *navigationController3 = [[MLNavigationViewController alloc] initWithRootViewController:viewController];
+    MLUserViewController *userViewController = [MLUserViewController new];
+    MLNavigationViewController *navigationController3 = [[MLNavigationViewController alloc] initWithRootViewController:userViewController];
     
     NSArray *tabs = @[navigationController, navigationController2, navigationController3];
     MLTabViewController *tabBarController = [[MLTabViewController alloc] init];

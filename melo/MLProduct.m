@@ -32,7 +32,7 @@
 #pragma mark - Update
 
 - (MLProduct *)update:(NSDictionary *)attributes {
-//    self.id = [attributes objectForKey:@"id"];
+    self.id = [attributes objectForKey:@"id"];
     self.name = [attributes objectForKey:@"name"];
     self.price = [attributes objectForKey:@"price"];
     self.brand = [attributes objectForKey:@"brand"];

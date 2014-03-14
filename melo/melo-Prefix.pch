@@ -44,9 +44,19 @@
     #define NNViewMinX(v)    CGRectGetMinX((v).frame)
     #define NNViewMinY(v)    CGRectGetMinY((v).frame)
 
+    typedef void (^block)(void);
     typedef void (^AFHTTPRequestSuccessBlocks)(AFHTTPRequestOperation *, id);
     typedef void (^AFHTTPRequestFailureBlocks)(AFHTTPRequestOperation *, NSError *);
 
     #define MLGetAppDelegate (MLAppDelegate *)[[UIApplication sharedApplication] delegate]
+
+    #define MLProductTypes @[@"follow", @"hot", @"trend"]
+    #define MLProductTypeTexts @[@"フォロー", @"新着", @"人気"]
+    typedef enum {
+        MLProductTypeFollow = 0,
+        MLProductTypeHot = 1,
+        MLProductTypeTrend = 2,
+    } MLProductTypesNum;
+
 
 #endif

@@ -15,12 +15,12 @@
 
 + (void)getNeighbor:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     NSString *urlString = @"/users/neighbor";
-    [[MLConnector sharedConnector] get:urlString success:success failure:failure];
+    [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];
 }
 
 + (void)follow:(MLUser *)user success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     if (user.isFollow) {
-        NSString *urlString = [NSString stringWithFormat:@"/api/account/followeds/%@", user.id];
+        NSString *urlString = [NSString stringWithFormat:@"/account/followeds/%@", user.id];
         [[MLConnector sharedConnector] delete:urlString success:success failure:failure parameters:@{}];
     } else {
         NSString *urlString = [NSString stringWithFormat:@"/users/%@/follow", user.id];

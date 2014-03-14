@@ -13,5 +13,5 @@
 + (BOOL)isIphone5;
 + (BOOL)isRetina;
 + (BOOL)isIos7;
-+ (CGFloat)topMargin;
++ (CGFloat)topMargin:(UIViewController *)viewController;
 @end
