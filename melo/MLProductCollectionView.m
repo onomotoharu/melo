@@ -20,7 +20,7 @@
 
 @implementation MLProductCollectionView
 
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout fixed:(BOOL)fixed {
     self = [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
         _products = [@[] mutableCopy];
@@ -28,7 +28,9 @@
         self.delegate = self;
         self.dataSource = self;
         [self registerClass:[MLProductCell class] forCellWithReuseIdentifier:@"MLProductCell"];
-        [self setRefreshControl];
+        if (!fixed) {
+            [self setRefreshControl];
+        }
     }
     return self;
 }
@@ -47,10 +49,11 @@
 
 #pragma mark - UICollectionViewDelegate
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     MLProduct *product = _products[indexPath.row];
-    NNLog(@"%@", product.id)
+    if (_controllerDelegate && [_controllerDelegate respondsToSelector:@selector(didSelectItem:product:)]) {
+        [_controllerDelegate didSelectItem:self product:product];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource

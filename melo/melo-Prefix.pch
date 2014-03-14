@@ -22,6 +22,7 @@
     /**** Utility ****/
     #import "MLDevice.h"
     #import "MLUserDefaults.h"
+    #import "MLAlert.h"
 
     #define AppName @"melo"
 

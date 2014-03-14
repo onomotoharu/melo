@@ -11,12 +11,13 @@
 #import "MLUser.h"
 #import "MLProduct.h"
 #import "MLUserController.h"
-#import "MLProductView.h"
+#import "MLProductCollectionView.h"
+#import "MLProductCollectionLayout.h"
 #import "UIColor+Addition.h"
 
 NSInteger MLFollowUserBlockViewTopMargin = 25;
 NSInteger MLFollowUserBlockViewMiddleMargin = 15;
-NSInteger MLFollowUserBlockViewBottomMargin = 25;
+NSInteger MLFollowUserBlockViewBottomMargin = 15;
 
 @interface MLFollowUserBlockView () {
     @private
@@ -74,19 +75,25 @@ NSInteger MLFollowUserBlockViewBottomMargin = 25;
     
     // products panal
     float panelMinimumY = NNViewMaxY(followBtn) + MLFollowUserBlockViewMiddleMargin;
-    CGRect rect = CGRectMake(0, panelMinimumY, 0, 0);
+    NSMutableArray *products = [@[] mutableCopy];
     for (int i = 0; i < _products.count; i++) {
         MLProduct *product = _products[i];
-        rect = CGRectMake([MLProductView margin] + (MLProductViewWidth + [MLProductView margin]) * (i % 3),
-                                 panelMinimumY + i / 3 * (MLProductViewHeight + [MLProductView margin]),
-                                 MLProductViewWidth, MLProductViewHeight);
-        MLProductView *productView = [[MLProductView alloc] initWithFrame:rect product:product];
-        [self addSubview:productView];
+        [products addObject:product];
     }
-    
+    // TODO : fix
+    float collectionHeight = 100 * (products.count / 3 + 1);
+    if (products.count == 0) {
+        collectionHeight = 0;
+    }
+    MLProductCollectionLayout *layout = [[MLProductCollectionLayout alloc] initDisplayLayout];
+    CGRect collectionRect = CGRectMake(0, panelMinimumY, NNViewWidth(self), collectionHeight);
+    MLProductCollectionView *collectionView = [[MLProductCollectionView alloc] initWithFrame:collectionRect collectionViewLayout:layout fixed:YES];
+    [self addSubview:collectionView];
+    [collectionView addProducts:products];
+
     // arange view frame
     CGRect frame = self.frame;
-    frame.size.height = CGRectGetMaxY(rect) + MLFollowUserBlockViewTopMargin;
+    frame.size.height = NNViewMaxY(collectionView) + MLFollowUserBlockViewBottomMargin;
     self.frame = frame;
 }
 

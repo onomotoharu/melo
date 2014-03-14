@@ -10,4 +10,7 @@
 
 @interface MLProductCollectionLayout : UICollectionViewFlowLayout
 
+- (id)initTimeLineLayout;
+- (id)initDisplayLayout;
+- (id)initRelationLayout;
 @end

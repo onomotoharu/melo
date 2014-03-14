@@ -13,6 +13,7 @@
 #import "MLHomeTabView.h"
 #import "MLProductCollectionView.h"
 #import "MLProductCollectionLayout.h"
+#import "MLProductViewController.h"
 
 NSInteger const MLHomeTabViewHeight = 44;
 
@@ -78,9 +79,11 @@ NSInteger const MLHomeTabViewHeight = 44;
 }
 
 - (void)setCollectionView:(NSInteger)type {
-    MLProductCollectionLayout *layout = [MLProductCollectionLayout new];
+    __weak MLHomeViewController *weakSelf = self;
+    MLProductCollectionLayout *layout = [[MLProductCollectionLayout alloc] initTimeLineLayout];
     CGRect collectionRect = CGRectMake(NNViewWidth(_scrollView) * type, 0, NNViewWidth(_scrollView), NNViewHeight(_scrollView));
-    MLProductCollectionView *collectionView = [[MLProductCollectionView alloc] initWithFrame:collectionRect collectionViewLayout:layout];
+    MLProductCollectionView *collectionView = [[MLProductCollectionView alloc] initWithFrame:collectionRect collectionViewLayout:layout fixed:NO];
+    collectionView.controllerDelegate = weakSelf;
     [_scrollView addSubview:collectionView];
     [_collectionViews setObject:collectionView forKey:MLProductTypes[type]];
 }
@@ -94,16 +97,22 @@ NSInteger const MLHomeTabViewHeight = 44;
 }
 
 - (void)setProducts:(id)responseObject type:(NSInteger)type {
-    NNLog(@"%@", responseObject)
     if (responseObject[@"products"]) {
-        [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:@"hot"];
-        [[_collectionViews objectForKey:MLProductTypes[type]] addProducts:[[MLProductManager sharedManager] getProducts:@"hot"]];
+        [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:MLProductTypes[type]];
+        [[_collectionViews objectForKey:MLProductTypes[type]] addProducts:[[MLProductManager sharedManager] getProducts:MLProductTypes[type]]];
     }
 }
 
 - (void)failedGetProducts {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"エラーにより情報を取得できませんでした。\n時間が経ってからもう一度おためしください。" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alertView show];
+}
+
+#pragma mark - MLProductCollectionViewDelegate
+
+- (void)didSelectItem:(MLProductCollectionView *)view product:(MLProduct *)product {
+    MLProductViewController *productViewController = [[MLProductViewController alloc] initWithProduct:product];
+    [self.navigationController pushViewController:productViewController animated:YES];
 }
 
 #pragma mark - MLHomeTabViewDelegate

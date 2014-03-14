@@ -20,6 +20,8 @@
 @dynamic image;
 @dynamic user;
 
+@synthesize isWant;
+
 #pragma mark - Validate
 
 - (BOOL)validateId:(id *)ioValue error:(NSError **)outError {

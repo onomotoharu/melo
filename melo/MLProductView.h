@@ -2,7 +2,7 @@
 //  MLProductView.h
 //  melo
 //
-//  Created by 新保 麻粋 on 2014/03/13.
+//  Created by 新保 麻粋 on 2014/03/14.
 //  Copyright (c) 2014年 新保 麻粋. All rights reserved.
 //
 
@@ -12,10 +12,13 @@
 
 @interface MLProductView : UIView
 
-extern const NSInteger MLProductViewWidth;
-extern const NSInteger MLProductViewHeight;
+@property (weak) id delegate;
 
-- (id)initWithFrame:(CGRect)frame product:(MLProduct *)product;
+- (void)setProduct:(MLProduct *)product;
+@end
 
-+ (CGFloat)margin;
+@interface NSObject (MLProductViewDelegate)
+
+- (void)pushUserName:(MLProductView *)view userId:(NSNumber *)userId;
+
 @end

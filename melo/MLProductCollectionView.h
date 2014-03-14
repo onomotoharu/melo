@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class MLProduct;
+
 @interface MLProductCollectionView : UICollectionView
 
+@property (weak) id controllerDelegate;
+
+- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout fixed:(BOOL)fixed;
+
 - (void)addProducts:(NSMutableArray *)products;
+@end
+
+@interface NSObject (MLProductCollectionViewDelegate)
+
+- (void)didSelectItem:(MLProductCollectionView *)view product:(MLProduct *)product;
+
 @end

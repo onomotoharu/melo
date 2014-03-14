@@ -14,10 +14,10 @@
 
 @implementation MLUserViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [super init];
     if (self) {
+        self.view.backgroundColor = [UIColor whiteColor];
         // Custom initialization
     }
     return self;

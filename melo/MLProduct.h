@@ -21,5 +21,7 @@
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) MLUser *user;
 
+@property (nonatomic) BOOL isWant;
+
 - (MLProduct *)update:(NSDictionary *)attributes;
 @end
