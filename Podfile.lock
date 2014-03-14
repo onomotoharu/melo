@@ -24,18 +24,21 @@ PODS:
   - FMDB/common (2.2)
   - FMDB/standard (2.2):
     - FMDB/common
+  - MagicalRecord/Shorthand (2.0)
   - Reachability (3.1.0)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking (= 2.0)
   - FMDB
+  - MagicalRecord/Shorthand (= 2.0)
   - Reachability (= 3.1.0)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 3fa983b1beaba69566a3374612511e2a6e3fe845
   FMDB: 97472cfacf0d9e445e915704fb43b4b142799c36
+  MagicalRecord: 6ce8ef6a6ed1f275d0e3e57af1a7cc16dd835ffd
   Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 

@@ -8,31 +8,44 @@
 
 #import "MLLoginViewController.h"
 
+#import "MLLoginView.h"
+#import "MLStartFollowViewController.h"
+
 @interface MLLoginViewController ()
 
 @end
 
 @implementation MLLoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [super init];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    __weak MLLoginViewController *weakSelf = self;
+    MLLoginView *loginView = [[MLLoginView alloc] initWithFrame:self.view.frame delegate:weakSelf];
+    [self.view addSubview:loginView];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - MLLoginViewDelegate
+
+- (void)start:(MLLoginView *)view {
+    MLStartFollowViewController *startFollowController = [MLStartFollowViewController new];
+    [self.navigationController pushViewController:startFollowController animated:YES];
 }
 
 @end

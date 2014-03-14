@@ -10,10 +10,18 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
+#define MR_SHORTHAND 1
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import "CoreData+MagicalRecord.h"
+    #import "AFHTTPRequestOperationManager.h"
+
+    #import "MLAppDelegate.h"
+    /**** Utility ****/
+    #import "MLDevice.h"
+    #import "MLUserDefaults.h"
 
     #define AppName @"melo"
 
@@ -28,5 +36,17 @@
         #define NNLogSize(p) ;
         #define NNLogRect(p) ;
     #endif
+
+    #define NNViewHeight(v) CGRectGetHeight((v).frame)
+    #define NNViewWidth(v)  CGRectGetWidth((v).frame)
+    #define NNViewMaxX(v)   CGRectGetMaxX((v).frame)
+    #define NNViewMaxY(v)   CGRectGetMaxY((v).frame)
+    #define NNViewMinX(v)    CGRectGetMinX((v).frame)
+    #define NNViewMinY(v)    CGRectGetMinY((v).frame)
+
+    typedef void (^AFHTTPRequestSuccessBlocks)(AFHTTPRequestOperation *, id);
+    typedef void (^AFHTTPRequestFailureBlocks)(AFHTTPRequestOperation *, NSError *);
+
+    #define MLGetAppDelegate (MLAppDelegate *)[[UIApplication sharedApplication] delegate]
 
 #endif

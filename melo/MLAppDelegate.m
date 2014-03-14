@@ -8,8 +8,8 @@
 
 #import "MLAppDelegate.h"
 
-#import "MLNavigationViewController.h"
-#import "MLLoginViewController.h"
+#import "MLConnector.h"
+#import "MLViewController.h"
 
 @implementation MLAppDelegate
 
@@ -19,13 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"melo-magical.sqlite"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    MLLoginViewController *loginViewController = [MLLoginViewController new];
-    MLNavigationViewController *navigationViewController = [[MLNavigationViewController alloc] initWithRootViewController:loginViewController];
-    self.window.rootViewController = navigationViewController;
     [self.window makeKeyAndVisible];
+    
+    [MLViewController setRootViewController];
     return YES;
 }
 
