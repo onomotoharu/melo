@@ -8,10 +8,9 @@
 
 #import "MLProductView.h"
 
-#import "MLProduct.h"
 #import "MLProductController.h"
 #import "MLImageManager.h"
-#import "MLNotification.h"
+#import "MLNotificationCenter.h"
 #import "MLIndicator.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "UIColor+Addition.h"
@@ -72,13 +71,13 @@ NSInteger const MLProductViewLineTopMargin = 10;
     SDWebImageManager *imageManager = [SDWebImageManager sharedManager];
     // TODO : observer検討
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [MLNotification registerGetImageNotification:self url:url];
+    [MLNotificationCenter registerGetImageNotification:self url:url];
     
     [imageManager.imageCache queryDiskCacheForKey:url done:^(UIImage *image, SDImageCacheType cacheType) {
         if (image) {
             _imageView.image = image;
         } else {
-            [[MLImageManager sharedManager] performSelectorInBackground:@selector(load) withObject:url];
+            [[MLImageManager sharedManager] performSelectorInBackground:@selector(load:) withObject:url];
         }
     }];
 }

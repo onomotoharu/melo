@@ -2,40 +2,28 @@
 //  MLNotification.m
 //  melo
 //
-//  Created by 新保 麻粋 on 2014/03/14.
+//  Created by 新保 麻粋 on 2014/03/15.
 //  Copyright (c) 2014年 新保 麻粋. All rights reserved.
 //
 
 #import "MLNotification.h"
 
-/* naming rule
- post notification method:     post + () + Notification
- register notification method: register + () + Notification
- */
-
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-
 @implementation MLNotification
 
-static NSNotificationCenter *NotificationCenter;
+#pragma mark - Update
 
-+ (NSNotificationCenter *)center {
-    if (!NotificationCenter) {
-        NotificationCenter = [NSNotificationCenter defaultCenter];
+- (MLNotification *)update:(NSDictionary *)attributes {
+    self.id               = attributes[@"id"];
+    self.detail           = attributes[@"detail"];
+    self.notificationType = attributes[@"notification_type"];
+    self.isRead           = [attributes[@"read"] boolValue];
+    self.sentDate         = attributes[@"sent_at"];
+    if (attributes[@"acted_user"]) {
+        MLUser *user = [MLUser createEntity];
+        [user update:attributes[@"acted_user"]];
+        self.actedUser = user;
     }
-    return NotificationCenter;
+    
+    return self;
 }
-
-#pragma mark - Post Notification
-
-+ (void)postGetImageNotification:(UIImage *)image url:(NSString *)url {
-    [self.center postNotificationName:url object:nil userInfo:@{@"image" : image}];
-}
-
-#pragma mark - Register Notification
-
-+ (void)registerGetImageNotification:(id)observer url:(NSString *)url {
-    [self.center addObserver:observer selector:@selector(loadedImage:) name:url object:nil];
-}
-
 @end

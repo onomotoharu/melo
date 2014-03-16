@@ -12,5 +12,5 @@
 
 - (id)initTimeLineLayout;
 - (id)initDisplayLayout;
-- (id)initRelationLayout;
+- (id)initLayoutWithTopMargin:(CGFloat)topMargin;
 @end

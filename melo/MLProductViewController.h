@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class MLProduct;
-
 @interface MLProductViewController : UIViewController
 
 - (id)initWithProduct:(MLProduct *)product;

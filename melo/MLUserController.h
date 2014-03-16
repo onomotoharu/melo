@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class MLUser;
-
 @interface MLUserController : NSObject
 
 + (void)getNeighbor:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure;

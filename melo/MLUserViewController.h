@@ -10,4 +10,5 @@
 
 @interface MLUserViewController : UIViewController
 
+- (id)initWithUser:(MLUser *)user;
 @end

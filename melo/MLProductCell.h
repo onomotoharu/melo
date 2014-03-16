@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class MLProduct;
-
 @interface MLProductCell : UICollectionViewCell
 
 - (void)setProduct:(MLProduct *)product;

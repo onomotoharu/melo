@@ -19,6 +19,9 @@
     #import "AFHTTPRequestOperationManager.h"
 
     #import "MLAppDelegate.h"
+    #import "MLProduct.h"
+    #import "MLUser.h"
+    #import "MLCurrentUser.h"
     /**** Utility ****/
     #import "MLDevice.h"
     #import "MLUserDefaults.h"

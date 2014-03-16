@@ -14,6 +14,7 @@
 #import "MLProductCollectionView.h"
 #import "MLProductCollectionLayout.h"
 #import "MLProductViewController.h"
+#import "MLNavigationViewController.h"
 
 NSInteger const MLHomeTabViewHeight = 44;
 
@@ -48,6 +49,7 @@ NSInteger const MLHomeTabViewHeight = 44;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController performSelector:@selector(createBarItemNotification)];
     [self.navigationController setNavigationBarHidden:NO];
 }
 

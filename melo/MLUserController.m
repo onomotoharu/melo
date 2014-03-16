@@ -8,7 +8,6 @@
 
 #import "MLUserController.h"
 
-#import "MLUser.h"
 #import "MLConnector.h"
 
 @implementation MLUserController

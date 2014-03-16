@@ -45,9 +45,9 @@ NSInteger const MLProductCollectionfooterHeight = 20;
     return self;
 }
 
-- (id)initRelationLayout {
+- (id)initLayoutWithTopMargin:(CGFloat)topMargin {
     self = [self initTimeLineLayout];
-    self.headerReferenceSize = CGSizeMake(self.headerReferenceSize.width, self.headerReferenceSize.height + 450);
+    self.headerReferenceSize = CGSizeMake(self.headerReferenceSize.width, self.headerReferenceSize.height + topMargin);
     return self;
 }
 

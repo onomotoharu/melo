@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class MLProduct;
-
 @interface MLProductCollectionView : UICollectionView
 
 @property (weak) id controllerDelegate;

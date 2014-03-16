@@ -13,5 +13,6 @@
 + (BOOL)isIphone5;
 + (BOOL)isRetina;
 + (BOOL)isIos7;
-+ (CGFloat)topMargin:(UIViewController *)viewController;
++ (NSInteger)topMargin:(UIViewController *)viewController;
++ (NSInteger)tabBarHeight;
 @end

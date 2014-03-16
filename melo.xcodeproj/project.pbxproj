@@ -11,6 +11,8 @@
 		323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F600A18D34DC8006FDDF1 /* MLProductView.m */; };
 		323F600F18D3669D006FDDF1 /* MLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F600E18D3669D006FDDF1 /* MLAlert.m */; };
 		323F601618D36A83006FDDF1 /* MLIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F601518D36A83006FDDF1 /* MLIndicator.m */; };
+		323F601918D37910006FDDF1 /* MLCurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F601818D37910006FDDF1 /* MLCurrentUser.m */; };
+		323F601D18D37B2B006FDDF1 /* MLUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F601C18D37B2B006FDDF1 /* MLUserView.m */; };
 		32529F5D18D23CA700ADA8EE /* MLImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32529F5C18D23CA700ADA8EE /* MLImageManager.m */; };
 		32749DD118D085AF00337C06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32749DD018D085AF00337C06 /* Foundation.framework */; };
 		32749DD318D085AF00337C06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32749DD218D085AF00337C06 /* CoreGraphics.framework */; };
@@ -43,6 +45,9 @@
 		32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1CC18D0956F004D7E38 /* MLLoginView.m */; };
 		32D3D1D018D17510004D7E38 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1CF18D17510004D7E38 /* UIImage+Addition.m */; };
 		32D3D1D318D17713004D7E38 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1D218D17713004D7E38 /* UIColor+Addition.m */; };
+		32DEF68F18D4BB2B002CFF9B /* MLNotificiationCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF68E18D4BB2B002CFF9B /* MLNotificiationCellLayout.m */; };
+		32DEF69318D4DC68002CFF9B /* MLNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69218D4DC68002CFF9B /* MLNotificationViewController.m */; };
+		32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69518D4DD77002CFF9B /* MLNotificationView.m */; };
 		32E15E5718D2B25100AFA3F0 /* MLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5618D2B25100AFA3F0 /* MLDevice.m */; };
 		32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5A18D2B7A400AFA3F0 /* MLUserDefaults.m */; };
 		32E15E5E18D2BB5C00AFA3F0 /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5D18D2BB5C00AFA3F0 /* MLViewController.m */; };
@@ -55,6 +60,13 @@
 		32E15E7B18D2E6B200AFA3F0 /* MLProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E7A18D2E6B200AFA3F0 /* MLProductManager.m */; };
 		32E15E7E18D2EC4000AFA3F0 /* MLProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E7D18D2EC4000AFA3F0 /* MLProductCell.m */; };
 		32E2B06218D1FE6300C0F888 /* MLUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2B06118D1FE6300C0F888 /* MLUserController.m */; };
+		32E342CD18D4393A00ECBB60 /* MLNotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342CC18D4393A00ECBB60 /* MLNotificationTableViewController.m */; };
+		32E342D218D43A9100ECBB60 /* MLNotificationTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342D118D43A9100ECBB60 /* MLNotificationTableView.m */; };
+		32E342D618D43D3900ECBB60 /* MLNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342D518D43D3900ECBB60 /* MLNotification.m */; };
+		32E342D918D43D4500ECBB60 /* MLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342D818D43D4500ECBB60 /* MLNotificationManager.m */; };
+		32E342DD18D43E4400ECBB60 /* MLNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342DC18D43E4400ECBB60 /* MLNotificationController.m */; };
+		32E342E018D4B1B000ECBB60 /* MLNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342DF18D4B1B000ECBB60 /* MLNotificationCell.m */; };
+		32E342E318D4B34300ECBB60 /* MLNotificationCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342E218D4B34300ECBB60 /* MLNotificationCellContentView.m */; };
 		32E3D4E718D24093004CEAE0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E3D4E618D24093004CEAE0 /* ImageIO.framework */; };
 		32E3D4E918D240E7004CEAE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E3D4E818D240E7004CEAE0 /* MapKit.framework */; };
 		32E3D50618D24230004CEAE0 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D4EC18D24230004CEAE0 /* MKAnnotationView+WebCache.m */; };
@@ -71,7 +83,7 @@
 		32E3D51118D24230004CEAE0 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D50318D24230004CEAE0 /* UIImage+WebP.m */; };
 		32E3D51218D24230004CEAE0 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D50518D24230004CEAE0 /* UIImageView+WebCache.m */; };
 		32E3D51518D242B2004CEAE0 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D51418D242B2004CEAE0 /* NSData+ImageContentType.m */; };
-		32E3D51918D243C6004CEAE0 /* MLNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D51818D243C6004CEAE0 /* MLNotification.m */; };
+		32E3D51918D243C6004CEAE0 /* MLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D51818D243C6004CEAE0 /* MLNotificationCenter.m */; };
 		4F96C50086FE4E83AA5B9FFB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0AE56C3104436289DC3E42 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +107,10 @@
 		323F600E18D3669D006FDDF1 /* MLAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAlert.m; sourceTree = "<group>"; };
 		323F601418D36A83006FDDF1 /* MLIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLIndicator.h; sourceTree = "<group>"; };
 		323F601518D36A83006FDDF1 /* MLIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLIndicator.m; sourceTree = "<group>"; };
+		323F601718D37910006FDDF1 /* MLCurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCurrentUser.h; sourceTree = "<group>"; };
+		323F601818D37910006FDDF1 /* MLCurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCurrentUser.m; sourceTree = "<group>"; };
+		323F601B18D37B2B006FDDF1 /* MLUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserView.h; sourceTree = "<group>"; };
+		323F601C18D37B2B006FDDF1 /* MLUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUserView.m; sourceTree = "<group>"; };
 		32529F5B18D23CA700ADA8EE /* MLImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLImageManager.h; sourceTree = "<group>"; };
 		32529F5C18D23CA700ADA8EE /* MLImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLImageManager.m; sourceTree = "<group>"; };
 		32749DCD18D085AF00337C06 /* melo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = melo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +160,12 @@
 		32D3D1CF18D17510004D7E38 /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
 		32D3D1D118D17713004D7E38 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		32D3D1D218D17713004D7E38 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		32DEF68D18D4BB2B002CFF9B /* MLNotificationCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationCellLayout.h; sourceTree = "<group>"; };
+		32DEF68E18D4BB2B002CFF9B /* MLNotificiationCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificiationCellLayout.m; sourceTree = "<group>"; };
+		32DEF69118D4DC68002CFF9B /* MLNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationViewController.h; sourceTree = "<group>"; };
+		32DEF69218D4DC68002CFF9B /* MLNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationViewController.m; sourceTree = "<group>"; };
+		32DEF69418D4DD77002CFF9B /* MLNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationView.h; sourceTree = "<group>"; };
+		32DEF69518D4DD77002CFF9B /* MLNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationView.m; sourceTree = "<group>"; };
 		32E15E5518D2B25100AFA3F0 /* MLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDevice.h; sourceTree = "<group>"; };
 		32E15E5618D2B25100AFA3F0 /* MLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDevice.m; sourceTree = "<group>"; };
 		32E15E5918D2B7A400AFA3F0 /* MLUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserDefaults.h; sourceTree = "<group>"; };
@@ -168,6 +190,20 @@
 		32E15E7D18D2EC4000AFA3F0 /* MLProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductCell.m; sourceTree = "<group>"; };
 		32E2B06018D1FE6300C0F888 /* MLUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserController.h; sourceTree = "<group>"; };
 		32E2B06118D1FE6300C0F888 /* MLUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUserController.m; sourceTree = "<group>"; };
+		32E342CB18D4393A00ECBB60 /* MLNotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationTableViewController.h; sourceTree = "<group>"; };
+		32E342CC18D4393A00ECBB60 /* MLNotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationTableViewController.m; sourceTree = "<group>"; };
+		32E342D018D43A9100ECBB60 /* MLNotificationTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationTableView.h; sourceTree = "<group>"; };
+		32E342D118D43A9100ECBB60 /* MLNotificationTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationTableView.m; sourceTree = "<group>"; };
+		32E342D418D43D3900ECBB60 /* MLNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotification.h; sourceTree = "<group>"; };
+		32E342D518D43D3900ECBB60 /* MLNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotification.m; sourceTree = "<group>"; };
+		32E342D718D43D4500ECBB60 /* MLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationManager.h; sourceTree = "<group>"; };
+		32E342D818D43D4500ECBB60 /* MLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationManager.m; sourceTree = "<group>"; };
+		32E342DB18D43E4400ECBB60 /* MLNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationController.h; sourceTree = "<group>"; };
+		32E342DC18D43E4400ECBB60 /* MLNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationController.m; sourceTree = "<group>"; };
+		32E342DE18D4B1B000ECBB60 /* MLNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationCell.h; sourceTree = "<group>"; };
+		32E342DF18D4B1B000ECBB60 /* MLNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationCell.m; sourceTree = "<group>"; };
+		32E342E118D4B34300ECBB60 /* MLNotificationCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationCellContentView.h; sourceTree = "<group>"; };
+		32E342E218D4B34300ECBB60 /* MLNotificationCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationCellContentView.m; sourceTree = "<group>"; };
 		32E3D4E618D24093004CEAE0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E3D4E818D240E7004CEAE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32E3D4EB18D24230004CEAE0 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -199,8 +235,8 @@
 		32E3D50518D24230004CEAE0 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		32E3D51318D242B2004CEAE0 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		32E3D51418D242B2004CEAE0 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
-		32E3D51718D243C6004CEAE0 /* MLNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotification.h; sourceTree = "<group>"; };
-		32E3D51818D243C6004CEAE0 /* MLNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotification.m; sourceTree = "<group>"; };
+		32E3D51718D243C6004CEAE0 /* MLNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationCenter.h; sourceTree = "<group>"; };
+		32E3D51818D243C6004CEAE0 /* MLNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationCenter.m; sourceTree = "<group>"; };
 		AE0AE56C3104436289DC3E42 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -270,6 +306,15 @@
 				323F601518D36A83006FDDF1 /* MLIndicator.m */,
 			);
 			name = Indicator;
+			sourceTree = "<group>";
+		};
+		323F601A18D37B17006FDDF1 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				323F601B18D37B2B006FDDF1 /* MLUserView.h */,
+				323F601C18D37B2B006FDDF1 /* MLUserView.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		32529F5A18D23C8C00ADA8EE /* Image */ = {
@@ -412,6 +457,8 @@
 			children = (
 				329FAA9818D1B0BF00FBC7F6 /* MLUser.h */,
 				329FAA9918D1B0BF00FBC7F6 /* MLUser.m */,
+				323F601718D37910006FDDF1 /* MLCurrentUser.h */,
+				323F601818D37910006FDDF1 /* MLCurrentUser.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -456,6 +503,7 @@
 				32D3D1BF18D08DF1004D7E38 /* Login */,
 				329FAA8418D19C9C00FBC7F6 /* StartFollow */,
 				329FAA8818D1A77500FBC7F6 /* Home */,
+				32E342CE18D4395300ECBB60 /* Notification */,
 				32E15E7118D2E16A00AFA3F0 /* User */,
 				323F600418D3048C006FDDF1 /* Product */,
 			);
@@ -468,6 +516,8 @@
 				32D3D1CA18D09538004D7E38 /* Login */,
 				329FAA8C18D1A95500FBC7F6 /* StartFollow */,
 				32E15E6418D2C5A100AFA3F0 /* Home */,
+				32E342CF18D43A4B00ECBB60 /* Notification */,
+				323F601A18D37B17006FDDF1 /* User */,
 				323F600818D34DB0006FDDF1 /* Product */,
 				329FAA9618D1AEF200FBC7F6 /* ProductCollection */,
 			);
@@ -479,6 +529,7 @@
 			children = (
 				329FAA9718D1AF3400FBC7F6 /* User */,
 				329FAA9E18D1B0EC00FBC7F6 /* Product */,
+				32E342D318D43C1400ECBB60 /* Notification */,
 				32529F5A18D23C8C00ADA8EE /* Image */,
 				329FAA9F18D1CFF600FBC7F6 /* Network */,
 				32749DE418D085AF00337C06 /* melo.xcdatamodeld */,
@@ -492,6 +543,7 @@
 				32E15E5F18D2BB6200AFA3F0 /* View */,
 				32E2B06318D1FE6900C0F888 /* User */,
 				32E15E7518D2E23D00AFA3F0 /* Product */,
+				32E342DA18D43E2600ECBB60 /* Notification */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -549,11 +601,34 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		32DEF68C18D4BA30002CFF9B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32E342DE18D4B1B000ECBB60 /* MLNotificationCell.h */,
+				32E342DF18D4B1B000ECBB60 /* MLNotificationCell.m */,
+				32E342E118D4B34300ECBB60 /* MLNotificationCellContentView.h */,
+				32E342E218D4B34300ECBB60 /* MLNotificationCellContentView.m */,
+				32DEF68D18D4BB2B002CFF9B /* MLNotificationCellLayout.h */,
+				32DEF68E18D4BB2B002CFF9B /* MLNotificiationCellLayout.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		32DEF69018D4D306002CFF9B /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				32E342D018D43A9100ECBB60 /* MLNotificationTableView.h */,
+				32E342D118D43A9100ECBB60 /* MLNotificationTableView.m */,
+				32DEF68C18D4BA30002CFF9B /* Cell */,
+			);
+			name = tableView;
+			sourceTree = "<group>";
+		};
 		32E15E5318D2B21D00AFA3F0 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				32E3D51718D243C6004CEAE0 /* MLNotification.h */,
-				32E3D51818D243C6004CEAE0 /* MLNotification.m */,
+				32E3D51718D243C6004CEAE0 /* MLNotificationCenter.h */,
+				32E3D51818D243C6004CEAE0 /* MLNotificationCenter.m */,
 			);
 			name = Notification;
 			sourceTree = "<group>";
@@ -628,6 +703,47 @@
 				32E2B06118D1FE6300C0F888 /* MLUserController.m */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		32E342CE18D4395300ECBB60 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				32E342CB18D4393A00ECBB60 /* MLNotificationTableViewController.h */,
+				32E342CC18D4393A00ECBB60 /* MLNotificationTableViewController.m */,
+				32DEF69118D4DC68002CFF9B /* MLNotificationViewController.h */,
+				32DEF69218D4DC68002CFF9B /* MLNotificationViewController.m */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		32E342CF18D43A4B00ECBB60 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF69018D4D306002CFF9B /* tableView */,
+				32DEF69418D4DD77002CFF9B /* MLNotificationView.h */,
+				32DEF69518D4DD77002CFF9B /* MLNotificationView.m */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		32E342D318D43C1400ECBB60 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				32E342D418D43D3900ECBB60 /* MLNotification.h */,
+				32E342D518D43D3900ECBB60 /* MLNotification.m */,
+				32E342D718D43D4500ECBB60 /* MLNotificationManager.h */,
+				32E342D818D43D4500ECBB60 /* MLNotificationManager.m */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		32E342DA18D43E2600ECBB60 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				32E342DB18D43E4400ECBB60 /* MLNotificationController.h */,
+				32E342DC18D43E4400ECBB60 /* MLNotificationController.m */,
+			);
+			name = Notification;
 			sourceTree = "<group>";
 		};
 		32E3D4EA18D24230004CEAE0 /* SDWebImage */ = {
@@ -813,6 +929,7 @@
 				329FAA8718D19D5400FBC7F6 /* MLStartFollowViewController.m in Sources */,
 				32749DE618D085AF00337C06 /* melo.xcdatamodeld in Sources */,
 				32D3D1D318D17713004D7E38 /* UIColor+Addition.m in Sources */,
+				32E342D618D43D3900ECBB60 /* MLNotification.m in Sources */,
 				32749DDF18D085AF00337C06 /* main.m in Sources */,
 				32E15E7E18D2EC4000AFA3F0 /* MLProductCell.m in Sources */,
 				32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */,
@@ -822,14 +939,20 @@
 				32E15E7018D2D08E00AFA3F0 /* MLProductCollectionLayout.m in Sources */,
 				32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */,
 				32E3D50D18D24230004CEAE0 /* SDWebImagePrefetcher.m in Sources */,
+				32DEF69318D4DC68002CFF9B /* MLNotificationViewController.m in Sources */,
 				32E3D51518D242B2004CEAE0 /* NSData+ImageContentType.m in Sources */,
+				32E342DD18D43E4400ECBB60 /* MLNotificationController.m in Sources */,
 				32E3D51218D24230004CEAE0 /* UIImageView+WebCache.m in Sources */,
 				329FAA8B18D1A79700FBC7F6 /* MLHomeViewController.m in Sources */,
+				32E342E318D4B34300ECBB60 /* MLNotificationCellContentView.m in Sources */,
+				32E342D218D43A9100ECBB60 /* MLNotificationTableView.m in Sources */,
 				32E15E6D18D2CF0400AFA3F0 /* MLProductCollectionView.m in Sources */,
+				323F601D18D37B2B006FDDF1 /* MLUserView.m in Sources */,
 				329FAA9218D1AE5700FBC7F6 /* MLFollowUserBlockView.m in Sources */,
 				329FAAA518D1DB1400FBC7F6 /* MLHttpRequest.m in Sources */,
-				32E3D51918D243C6004CEAE0 /* MLNotification.m in Sources */,
+				32E3D51918D243C6004CEAE0 /* MLNotificationCenter.m in Sources */,
 				323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */,
+				32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */,
 				323F600718D304C5006FDDF1 /* MLProductViewController.m in Sources */,
 				32E3D50F18D24230004CEAE0 /* UIImage+GIF.m in Sources */,
 				32E3D51118D24230004CEAE0 /* UIImage+WebP.m in Sources */,
@@ -837,8 +960,10 @@
 				32E15E7818D2E26000AFA3F0 /* MLProductController.m in Sources */,
 				32E15E5E18D2BB5C00AFA3F0 /* MLViewController.m in Sources */,
 				32E3D50818D24230004CEAE0 /* SDWebImageCompat.m in Sources */,
+				32E342E018D4B1B000ECBB60 /* MLNotificationCell.m in Sources */,
 				32529F5D18D23CA700ADA8EE /* MLImageManager.m in Sources */,
 				329FAA9D18D1B0DE00FBC7F6 /* MLProduct.m in Sources */,
+				323F601918D37910006FDDF1 /* MLCurrentUser.m in Sources */,
 				32E3D50718D24230004CEAE0 /* SDImageCache.m in Sources */,
 				323F601618D36A83006FDDF1 /* MLIndicator.m in Sources */,
 				32E3D50A18D24230004CEAE0 /* SDWebImageDownloader.m in Sources */,
@@ -847,7 +972,9 @@
 				32D3D1D018D17510004D7E38 /* UIImage+Addition.m in Sources */,
 				32E3D51018D24230004CEAE0 /* UIImage+MultiFormat.m in Sources */,
 				32E3D50E18D24230004CEAE0 /* UIButton+WebCache.m in Sources */,
+				32E342D918D43D4500ECBB60 /* MLNotificationManager.m in Sources */,
 				329FAAA218D1D25200FBC7F6 /* MLConnector.m in Sources */,
+				32DEF68F18D4BB2B002CFF9B /* MLNotificiationCellLayout.m in Sources */,
 				32E15E6718D2C5FD00AFA3F0 /* MLHomeTabView.m in Sources */,
 				32E15E6218D2BD0E00AFA3F0 /* MLTabViewController.m in Sources */,
 				32E3D50B18D24230004CEAE0 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -855,6 +982,7 @@
 				32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */,
 				32E15E5718D2B25100AFA3F0 /* MLDevice.m in Sources */,
 				329FAA9A18D1B0BF00FBC7F6 /* MLUser.m in Sources */,
+				32E342CD18D4393A00ECBB60 /* MLNotificationTableViewController.m in Sources */,
 				32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */,
 				32E15E7B18D2E6B200AFA3F0 /* MLProductManager.m in Sources */,
 				329FAA8F18D1A96C00FBC7F6 /* MLStartFollowView.m in Sources */,

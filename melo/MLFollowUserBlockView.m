@@ -8,8 +8,6 @@
 
 #import "MLFollowUserBlockView.h"
 
-#import "MLUser.h"
-#import "MLProduct.h"
 #import "MLUserController.h"
 #import "MLProductCollectionView.h"
 #import "MLProductCollectionLayout.h"

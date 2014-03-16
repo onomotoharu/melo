@@ -8,7 +8,6 @@
 
 #import "MLProductViewController.h"
 
-#import "MLProduct.h"
 #import "MLProductManager.h"
 #import "MLProductController.h"
 #import "MLProductView.h"
@@ -59,7 +58,7 @@
 
 - (void)setRelationView {
     __weak MLProductViewController *weakSelf = self;
-    MLProductCollectionLayout *layout = [[MLProductCollectionLayout alloc] initRelationLayout];
+    MLProductCollectionLayout *layout = [[MLProductCollectionLayout alloc] initLayoutWithTopMargin:450];
     CGRect collectionRect = CGRectMake(0, 0, NNViewWidth(self.view), NNViewHeight(self.view));
     _collectionView = [[MLProductCollectionView alloc] initWithFrame:collectionRect collectionViewLayout:layout fixed:NO];
     _collectionView.controllerDelegate = weakSelf;
@@ -94,12 +93,10 @@
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                   [self setRelations:responseObject];
                               } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
-                                  NNLog(@"failure")
                               }];
 }
 
 - (void)setRelations:(id)responseObject {
-    NNLog(@"====%@", responseObject)
     if (responseObject[@"products"]) {
         [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:@"relations"];
         [_collectionView addProducts:[[MLProductManager sharedManager] getProducts:@"relations"]];

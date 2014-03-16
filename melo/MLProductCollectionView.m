@@ -8,7 +8,6 @@
 
 #import "MLProductCollectionView.h"
 
-#import "MLProduct.h"
 #import "MLProductCell.h"
 
 @interface MLProductCollectionView () <UICollectionViewDelegate, UICollectionViewDataSource> {

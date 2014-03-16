@@ -8,6 +8,8 @@
 
 #import "MLNavigationViewController.h"
 
+#import "MLNotificationTableViewController.h"
+
 @interface MLNavigationViewController ()
 
 @end
@@ -22,14 +24,29 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)createBarItemNotification {
+    UIBarButtonItem* rightItem =
+    [[UIBarButtonItem alloc] initWithTitle:@"通知"
+                                     style:UIBarButtonItemStyleDone
+                                    target:self
+                                    action:@selector(showNotification:)];
+    self.topViewController.navigationItem.rightBarButtonItem = rightItem;
+}
+
+#pragma mark - ButtonAction
+
+- (void)showNotification:(id)sender {
+    MLNotificationTableViewController *notificationViewController = [MLNotificationTableViewController new];
+    [self pushViewController:notificationViewController animated:YES];
 }
 
 @end

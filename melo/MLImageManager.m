@@ -8,7 +8,7 @@
 
 #import "MLImageManager.h"
 
-#import "MLNotification.h"
+#import "MLNotificationCenter.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 
 static MLImageManager *_sharedInstance = nil;
@@ -52,8 +52,7 @@ static MLImageManager *_sharedInstance = nil;
                     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
                         // 通知
                         if (image) {
-                            NNLog(@"ttttt")
-                            [MLNotification postGetImageNotification:image url:url];
+                            [MLNotificationCenter postGetImageNotification:image url:url];
                         } else {
                             [_loadedImages removeObject:url];
                         }

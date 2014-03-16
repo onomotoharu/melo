@@ -7,8 +7,6 @@
 //
 
 #import "MLProduct.h"
-#import "MLUser.h"
-
 
 @implementation MLProduct
 

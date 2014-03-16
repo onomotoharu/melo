@@ -8,8 +8,6 @@
 
 #import "MLProductManager.h"
 
-#import "MLProduct.h"
-
 static MLProductManager *_sharedManager = nil;
 
 @interface MLProductManager () {
@@ -42,7 +40,11 @@ static MLProductManager *_sharedManager = nil;
     if (![_products objectForKey:type]) {
         [_products setObject:[@[] mutableCopy] forKey:type];
     }
-    for (NSDictionary *productInfo in products) {
+    for (int i = 0; i < products.count; i++) {
+        NSDictionary *productInfo = products[i];
+        if ([[productInfo allKeys] containsObject:@"product"]) {
+            productInfo = productInfo[@"product"];
+        }
         MLProduct *product = [MLProduct createEntity];
         [product update:productInfo];
         

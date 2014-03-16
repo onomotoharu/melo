@@ -8,9 +8,8 @@
 
 #import "MLProductCell.h"
 
-#import "MLProduct.h"
 #import "MLImageManager.h"
-#import "MLNotification.h"
+#import "MLNotificationCenter.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 
 @interface MLProductCell () {
@@ -60,14 +59,14 @@
     SDWebImageManager *imageManager = [SDWebImageManager sharedManager];
     // TODO : observer検討
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [MLNotification registerGetImageNotification:self url:url];
+    [MLNotificationCenter registerGetImageNotification:self url:url];
     
     [imageManager.imageCache queryDiskCacheForKey:url done:^(UIImage *image, SDImageCacheType cacheType) {
         if (image) {
             _imageView.image = image;
             [_indicatorView stopAnimating];
         } else {
-            [[MLImageManager sharedManager] performSelectorInBackground:@selector(load) withObject:url];
+            [[MLImageManager sharedManager] performSelectorInBackground:@selector(load:) withObject:url];
         }
     }];
 }
