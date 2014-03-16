@@ -9,7 +9,7 @@
 #import "MLSettingViewController.h"
 
 #import "MLSettingView.h"
-#import "MLFeedbackViewController.h"
+#import "MLInquiryViewController.h"
 
 @interface MLSettingViewController ()
 
@@ -53,8 +53,8 @@
             break;
         case MLSettingTypeMail:
             break;
-        case MLSettingTypeFeedback:
-            [self.navigationController pushViewController:[MLFeedbackViewController new] animated:YES];
+        case MLSettingTypeInquiry:
+            [self.navigationController pushViewController:[MLInquiryViewController new] animated:YES];
             break;
         default:
             break;

@@ -11,7 +11,7 @@
 typedef enum {
     MLSettingTypeProfile = 0,
     MLSettingTypeMail = 1,
-    MLSettingTypeFeedback = 2,
+    MLSettingTypeInquiry = 2,
 } MLSettingTypes;
 
 @interface MLSettingView : UITableView

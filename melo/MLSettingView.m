@@ -35,7 +35,7 @@
 - (void)makeDataSource {
     _contents = @[@{@"text": @"プロフィール設定", @"contentType": @(MLSettingTypeProfile)},
                   @{@"text": @"メール・パズワード設定", @"contentType": @(MLSettingTypeMail)},
-                  @{@"text": @"お問い合わせ", @"contentType": @(MLSettingTypeFeedback)}];
+                  @{@"text": @"お問い合わせ", @"contentType": @(MLSettingTypeInquiry)}];
 }
 
 #pragma mark - UITableViewDataSource

@@ -1,5 +1,5 @@
 //
-//  MLFeedbackViewController.h
+//  MLInquiryView.h
 //  melo
 //
 //  Created by 新保 麻粋 on 2014/03/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MLFeedbackViewController : UIViewController
+@interface MLInquiryView : UIView
 
 @end

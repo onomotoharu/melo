@@ -50,7 +50,10 @@
 		32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69518D4DD77002CFF9B /* MLNotificationView.m */; };
 		32DEF69A18D54CB2002CFF9B /* MLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */; };
 		32DEF69E18D54DE1002CFF9B /* MLSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69D18D54DE1002CFF9B /* MLSettingView.m */; };
-		32DEF6A218D55A28002CFF9B /* MLFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6A118D55A28002CFF9B /* MLFeedbackViewController.m */; };
+		32DEF6A218D55A28002CFF9B /* MLInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6A118D55A28002CFF9B /* MLInquiryViewController.m */; };
+		32DEF6AE18D5C029002CFF9B /* MLInquiryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6AD18D5C029002CFF9B /* MLInquiryController.m */; };
+		32DEF6B118D5C11F002CFF9B /* MLInquiryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6B018D5C11F002CFF9B /* MLInquiryView.m */; };
+		32DEF6B618D5C53C002CFF9B /* MLKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6B518D5C53C002CFF9B /* MLKeyboardToolBar.m */; };
 		32E15E5718D2B25100AFA3F0 /* MLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5618D2B25100AFA3F0 /* MLDevice.m */; };
 		32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5A18D2B7A400AFA3F0 /* MLUserDefaults.m */; };
 		32E15E5E18D2BB5C00AFA3F0 /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5D18D2BB5C00AFA3F0 /* MLViewController.m */; };
@@ -173,8 +176,14 @@
 		32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingViewController.m; sourceTree = "<group>"; };
 		32DEF69C18D54DE1002CFF9B /* MLSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingView.h; sourceTree = "<group>"; };
 		32DEF69D18D54DE1002CFF9B /* MLSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingView.m; sourceTree = "<group>"; };
-		32DEF6A018D55A28002CFF9B /* MLFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFeedbackViewController.h; sourceTree = "<group>"; };
-		32DEF6A118D55A28002CFF9B /* MLFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFeedbackViewController.m; sourceTree = "<group>"; };
+		32DEF6A018D55A28002CFF9B /* MLInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInquiryViewController.h; sourceTree = "<group>"; };
+		32DEF6A118D55A28002CFF9B /* MLInquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInquiryViewController.m; sourceTree = "<group>"; };
+		32DEF6AC18D5C029002CFF9B /* MLInquiryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInquiryController.h; sourceTree = "<group>"; };
+		32DEF6AD18D5C029002CFF9B /* MLInquiryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInquiryController.m; sourceTree = "<group>"; };
+		32DEF6AF18D5C11F002CFF9B /* MLInquiryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInquiryView.h; sourceTree = "<group>"; };
+		32DEF6B018D5C11F002CFF9B /* MLInquiryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInquiryView.m; sourceTree = "<group>"; };
+		32DEF6B418D5C53C002CFF9B /* MLKeyboardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLKeyboardToolBar.h; sourceTree = "<group>"; };
+		32DEF6B518D5C53C002CFF9B /* MLKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLKeyboardToolBar.m; sourceTree = "<group>"; };
 		32E15E5518D2B25100AFA3F0 /* MLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDevice.h; sourceTree = "<group>"; };
 		32E15E5618D2B25100AFA3F0 /* MLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDevice.m; sourceTree = "<group>"; };
 		32E15E5918D2B7A400AFA3F0 /* MLUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserDefaults.h; sourceTree = "<group>"; };
@@ -555,6 +564,7 @@
 				32E2B06318D1FE6900C0F888 /* User */,
 				32E15E7518D2E23D00AFA3F0 /* Product */,
 				32E342DA18D43E2600ECBB60 /* Notification */,
+				32DEF6AB18D5C016002CFF9B /* Inquiry */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -640,7 +650,7 @@
 			children = (
 				32DEF69818D54CB2002CFF9B /* MLSettingViewController.h */,
 				32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */,
-				32DEF69F18D55A11002CFF9B /* Feedback */,
+				32DEF69F18D55A11002CFF9B /* Inquiry */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -648,19 +658,47 @@
 		32DEF69B18D54DCE002CFF9B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				32DEF6B218D5C123002CFF9B /* Inquiry */,
 				32DEF69C18D54DE1002CFF9B /* MLSettingView.h */,
 				32DEF69D18D54DE1002CFF9B /* MLSettingView.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
 		};
-		32DEF69F18D55A11002CFF9B /* Feedback */ = {
+		32DEF69F18D55A11002CFF9B /* Inquiry */ = {
 			isa = PBXGroup;
 			children = (
-				32DEF6A018D55A28002CFF9B /* MLFeedbackViewController.h */,
-				32DEF6A118D55A28002CFF9B /* MLFeedbackViewController.m */,
+				32DEF6A018D55A28002CFF9B /* MLInquiryViewController.h */,
+				32DEF6A118D55A28002CFF9B /* MLInquiryViewController.m */,
 			);
-			name = Feedback;
+			name = Inquiry;
+			sourceTree = "<group>";
+		};
+		32DEF6AB18D5C016002CFF9B /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF6AC18D5C029002CFF9B /* MLInquiryController.h */,
+				32DEF6AD18D5C029002CFF9B /* MLInquiryController.m */,
+			);
+			name = Inquiry;
+			sourceTree = "<group>";
+		};
+		32DEF6B218D5C123002CFF9B /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF6AF18D5C11F002CFF9B /* MLInquiryView.h */,
+				32DEF6B018D5C11F002CFF9B /* MLInquiryView.m */,
+			);
+			name = Inquiry;
+			sourceTree = "<group>";
+		};
+		32DEF6B318D5C510002CFF9B /* KeyboardToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF6B418D5C53C002CFF9B /* MLKeyboardToolBar.h */,
+				32DEF6B518D5C53C002CFF9B /* MLKeyboardToolBar.m */,
+			);
+			name = KeyboardToolBar;
 			sourceTree = "<group>";
 		};
 		32E15E5318D2B21D00AFA3F0 /* Notification */ = {
@@ -825,6 +863,7 @@
 		32E3D51618D2438D004CEAE0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				32DEF6B318D5C510002CFF9B /* KeyboardToolBar */,
 				323F601018D36A50006FDDF1 /* Indicator */,
 				323F600C18D36683006FDDF1 /* Alert */,
 				32E15E5418D2B23D00AFA3F0 /* Devide */,
@@ -975,6 +1014,7 @@
 				32E3D50C18D24230004CEAE0 /* SDWebImageManager.m in Sources */,
 				32E3D50918D24230004CEAE0 /* SDWebImageDecoder.m in Sources */,
 				32E2B06218D1FE6300C0F888 /* MLUserController.m in Sources */,
+				32DEF6AE18D5C029002CFF9B /* MLInquiryController.m in Sources */,
 				32E15E7018D2D08E00AFA3F0 /* MLProductCollectionLayout.m in Sources */,
 				32DEF69A18D54CB2002CFF9B /* MLSettingViewController.m in Sources */,
 				32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */,
@@ -993,8 +1033,9 @@
 				32E3D51918D243C6004CEAE0 /* MLNotificationCenter.m in Sources */,
 				323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */,
 				32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */,
+				32DEF6B618D5C53C002CFF9B /* MLKeyboardToolBar.m in Sources */,
 				323F600718D304C5006FDDF1 /* MLProductViewController.m in Sources */,
-				32DEF6A218D55A28002CFF9B /* MLFeedbackViewController.m in Sources */,
+				32DEF6A218D55A28002CFF9B /* MLInquiryViewController.m in Sources */,
 				32E3D50F18D24230004CEAE0 /* UIImage+GIF.m in Sources */,
 				32E3D51118D24230004CEAE0 /* UIImage+WebP.m in Sources */,
 				32749DE318D085AF00337C06 /* MLAppDelegate.m in Sources */,
@@ -1007,6 +1048,7 @@
 				323F601918D37910006FDDF1 /* MLCurrentUser.m in Sources */,
 				32E3D50718D24230004CEAE0 /* SDImageCache.m in Sources */,
 				323F601618D36A83006FDDF1 /* MLIndicator.m in Sources */,
+				32DEF6B118D5C11F002CFF9B /* MLInquiryView.m in Sources */,
 				32E3D50A18D24230004CEAE0 /* SDWebImageDownloader.m in Sources */,
 				323F600F18D3669D006FDDF1 /* MLAlert.m in Sources */,
 				32E3D50618D24230004CEAE0 /* MKAnnotationView+WebCache.m in Sources */,

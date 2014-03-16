@@ -8,7 +8,7 @@
 
 #import "MLHttpRequest.h"
 
-NSString const *BaseUrl = @"http://192.168.1.5:3000/api/";
+NSString const *BaseUrl = @"http://shinbo-no-MacBook-Air.local:3000/api/";
 
 @implementation MLHttpRequest
 
