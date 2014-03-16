@@ -11,4 +11,5 @@
 @interface MLNavigationViewController : UINavigationController
 
 - (void)createBarItemNotification;
+- (void)createBarItemSetting;
 @end

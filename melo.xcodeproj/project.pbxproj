@@ -48,6 +48,9 @@
 		32DEF68F18D4BB2B002CFF9B /* MLNotificiationCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF68E18D4BB2B002CFF9B /* MLNotificiationCellLayout.m */; };
 		32DEF69318D4DC68002CFF9B /* MLNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69218D4DC68002CFF9B /* MLNotificationViewController.m */; };
 		32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69518D4DD77002CFF9B /* MLNotificationView.m */; };
+		32DEF69A18D54CB2002CFF9B /* MLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */; };
+		32DEF69E18D54DE1002CFF9B /* MLSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69D18D54DE1002CFF9B /* MLSettingView.m */; };
+		32DEF6A218D55A28002CFF9B /* MLFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6A118D55A28002CFF9B /* MLFeedbackViewController.m */; };
 		32E15E5718D2B25100AFA3F0 /* MLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5618D2B25100AFA3F0 /* MLDevice.m */; };
 		32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5A18D2B7A400AFA3F0 /* MLUserDefaults.m */; };
 		32E15E5E18D2BB5C00AFA3F0 /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E15E5D18D2BB5C00AFA3F0 /* MLViewController.m */; };
@@ -166,6 +169,12 @@
 		32DEF69218D4DC68002CFF9B /* MLNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationViewController.m; sourceTree = "<group>"; };
 		32DEF69418D4DD77002CFF9B /* MLNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationView.h; sourceTree = "<group>"; };
 		32DEF69518D4DD77002CFF9B /* MLNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationView.m; sourceTree = "<group>"; };
+		32DEF69818D54CB2002CFF9B /* MLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingViewController.h; sourceTree = "<group>"; };
+		32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingViewController.m; sourceTree = "<group>"; };
+		32DEF69C18D54DE1002CFF9B /* MLSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingView.h; sourceTree = "<group>"; };
+		32DEF69D18D54DE1002CFF9B /* MLSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingView.m; sourceTree = "<group>"; };
+		32DEF6A018D55A28002CFF9B /* MLFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFeedbackViewController.h; sourceTree = "<group>"; };
+		32DEF6A118D55A28002CFF9B /* MLFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFeedbackViewController.m; sourceTree = "<group>"; };
 		32E15E5518D2B25100AFA3F0 /* MLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDevice.h; sourceTree = "<group>"; };
 		32E15E5618D2B25100AFA3F0 /* MLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDevice.m; sourceTree = "<group>"; };
 		32E15E5918D2B7A400AFA3F0 /* MLUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserDefaults.h; sourceTree = "<group>"; };
@@ -504,6 +513,7 @@
 				329FAA8418D19C9C00FBC7F6 /* StartFollow */,
 				329FAA8818D1A77500FBC7F6 /* Home */,
 				32E342CE18D4395300ECBB60 /* Notification */,
+				32DEF69718D54C8B002CFF9B /* Setting */,
 				32E15E7118D2E16A00AFA3F0 /* User */,
 				323F600418D3048C006FDDF1 /* Product */,
 			);
@@ -517,6 +527,7 @@
 				329FAA8C18D1A95500FBC7F6 /* StartFollow */,
 				32E15E6418D2C5A100AFA3F0 /* Home */,
 				32E342CF18D43A4B00ECBB60 /* Notification */,
+				32DEF69B18D54DCE002CFF9B /* Setting */,
 				323F601A18D37B17006FDDF1 /* User */,
 				323F600818D34DB0006FDDF1 /* Product */,
 				329FAA9618D1AEF200FBC7F6 /* ProductCollection */,
@@ -622,6 +633,34 @@
 				32DEF68C18D4BA30002CFF9B /* Cell */,
 			);
 			name = tableView;
+			sourceTree = "<group>";
+		};
+		32DEF69718D54C8B002CFF9B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF69818D54CB2002CFF9B /* MLSettingViewController.h */,
+				32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */,
+				32DEF69F18D55A11002CFF9B /* Feedback */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		32DEF69B18D54DCE002CFF9B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF69C18D54DE1002CFF9B /* MLSettingView.h */,
+				32DEF69D18D54DE1002CFF9B /* MLSettingView.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		32DEF69F18D55A11002CFF9B /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				32DEF6A018D55A28002CFF9B /* MLFeedbackViewController.h */,
+				32DEF6A118D55A28002CFF9B /* MLFeedbackViewController.m */,
+			);
+			name = Feedback;
 			sourceTree = "<group>";
 		};
 		32E15E5318D2B21D00AFA3F0 /* Notification */ = {
@@ -937,6 +976,7 @@
 				32E3D50918D24230004CEAE0 /* SDWebImageDecoder.m in Sources */,
 				32E2B06218D1FE6300C0F888 /* MLUserController.m in Sources */,
 				32E15E7018D2D08E00AFA3F0 /* MLProductCollectionLayout.m in Sources */,
+				32DEF69A18D54CB2002CFF9B /* MLSettingViewController.m in Sources */,
 				32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */,
 				32E3D50D18D24230004CEAE0 /* SDWebImagePrefetcher.m in Sources */,
 				32DEF69318D4DC68002CFF9B /* MLNotificationViewController.m in Sources */,
@@ -954,6 +994,7 @@
 				323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */,
 				32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */,
 				323F600718D304C5006FDDF1 /* MLProductViewController.m in Sources */,
+				32DEF6A218D55A28002CFF9B /* MLFeedbackViewController.m in Sources */,
 				32E3D50F18D24230004CEAE0 /* UIImage+GIF.m in Sources */,
 				32E3D51118D24230004CEAE0 /* UIImage+WebP.m in Sources */,
 				32749DE318D085AF00337C06 /* MLAppDelegate.m in Sources */,
@@ -985,6 +1026,7 @@
 				32E342CD18D4393A00ECBB60 /* MLNotificationTableViewController.m in Sources */,
 				32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */,
 				32E15E7B18D2E6B200AFA3F0 /* MLProductManager.m in Sources */,
+				32DEF69E18D54DE1002CFF9B /* MLSettingView.m in Sources */,
 				329FAA8F18D1A96C00FBC7F6 /* MLStartFollowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

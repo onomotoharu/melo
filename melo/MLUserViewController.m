@@ -14,6 +14,7 @@
 #import "MLProductCollectionView.h"
 #import "MLProductCollectionLayout.h"
 #import "MLProductViewController.h"
+#import "MLNavigationViewController.h"
 
 @interface MLUserViewController () {
     @private
@@ -30,7 +31,6 @@
     if (self) {
         _user = user;
         self.view.backgroundColor = [UIColor whiteColor];
-        // Custom initialization
     }
     return self;
 }
@@ -42,6 +42,11 @@
     [self setUserView];
     //[self getWants];
     [self getPosts];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController performSelector:@selector(createBarItemSetting)];
 }
 
 - (void)didReceiveMemoryWarning
