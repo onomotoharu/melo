@@ -12,6 +12,8 @@
 
 #define MR_SHORTHAND 1
 #ifdef __OBJC__
+    //--------------------------------------------------------------------------------------------------------------------
+    // 共通ヘッダー
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
@@ -29,6 +31,8 @@
 
     #define AppName @"melo"
 
+    //--------------------------------------------------------------------------------------------------------------------
+    // Debug用出力
     #ifdef DEBUG
         #define NNLog(fmt, ...) NSLog((@"%s [Line %d] " fmt),__PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
         #define NNLogPoint(p)   NSLog(@"x:%f, y%f", p.x, p.y);
@@ -41,6 +45,8 @@
         #define NNLogRect(p) ;
     #endif
 
+    //--------------------------------------------------------------------------------------------------------------------
+    // View
     #define NNViewHeight(v) CGRectGetHeight((v).frame)
     #define NNViewWidth(v)  CGRectGetWidth((v).frame)
     #define NNViewMaxX(v)   CGRectGetMaxX((v).frame)
@@ -48,12 +54,18 @@
     #define NNViewMinX(v)    CGRectGetMinX((v).frame)
     #define NNViewMinY(v)    CGRectGetMinY((v).frame)
 
+    //--------------------------------------------------------------------------------------------------------------------
+    // 型
     typedef void (^block)(void);
     typedef void (^AFHTTPRequestSuccessBlocks)(AFHTTPRequestOperation *, id);
     typedef void (^AFHTTPRequestFailureBlocks)(AFHTTPRequestOperation *, NSError *);
 
+    //--------------------------------------------------------------------------------------------------------------------
+    // 関数
     #define MLGetAppDelegate (MLAppDelegate *)[[UIApplication sharedApplication] delegate]
 
+    //--------------------------------------------------------------------------------------------------------------------
+    // 定数
     #define MLProductTypes @[@"follow", @"hot", @"trend"]
     #define MLProductTypeTexts @[@"フォロー", @"新着", @"人気"]
     typedef enum {

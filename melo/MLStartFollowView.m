@@ -50,7 +50,7 @@ NSInteger const MLStartFollowViewTitleHeight = 44;
     [attrTitle addAttribute:NSForegroundColorAttributeName value:titleColor range:NSMakeRange(0, attrTitle.length)];
     [attrTitle addAttribute:NSForegroundColorAttributeName value:[UIColor basePinkColor] range:[title rangeOfString:followNumText]];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin:nil], NNViewWidth(self), MLStartFollowViewTitleHeight)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin:NO], NNViewWidth(self), MLStartFollowViewTitleHeight)];
     titleLabel.attributedText = attrTitle;
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:titleLabel];
@@ -58,7 +58,7 @@ NSInteger const MLStartFollowViewTitleHeight = 44;
 
 - (void)setScrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, MLStartFollowViewTitleHeight + [MLDevice topMargin:nil], NNViewWidth(self), NNViewHeight(self) - MLStartFollowViewTitleHeight)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, MLStartFollowViewTitleHeight + [MLDevice topMargin:NO], NNViewWidth(self), NNViewHeight(self) - MLStartFollowViewTitleHeight)];
         [self addSubview:_scrollView];
     }
 }

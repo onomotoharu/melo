@@ -50,7 +50,7 @@
     [scrollView addSubview:notificationView];
     
     // set contentSize
-    int contentHeight = NNViewHeight(scrollView) - [MLDevice topMargin:self] - [MLDevice tabBarHeight] + 1;
+    int contentHeight = NNViewHeight(scrollView) - [MLDevice topMargin:YES] - [MLDevice tabBarHeight] + 1;
     if (contentHeight > NNViewHeight(notificationView)) {
         scrollView.contentSize = CGSizeMake(NNViewWidth(scrollView), contentHeight);
     } else {

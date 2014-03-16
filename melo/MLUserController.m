@@ -12,6 +12,11 @@
 
 @implementation MLUserController
 
++ (void)update:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = @"/account";
+    [[MLConnector sharedConnector] put:urlString success:success failure:failure parameters:parameters];
+}
+
 + (void)getNeighbor:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     NSString *urlString = @"/users/neighbor";
     [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];

@@ -24,8 +24,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	
     self.title = @"お問い合わせ";

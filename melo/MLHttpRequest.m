@@ -23,6 +23,7 @@ NSString const *BaseUrl = @"http://shinbo-no-MacBook-Air.local:3000/api/";
 
 - (AFHTTPRequestOperationManager *)createManager {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:@"11111" forHTTPHeaderField:@"X-UUID"];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     return manager;
 }
@@ -47,6 +48,14 @@ NSString const *BaseUrl = @"http://shinbo-no-MacBook-Air.local:3000/api/";
 
 - (void)delete:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters {
     [[self createManager] DELETE:[NSString stringWithFormat:@"%@%@", BaseUrl, _urlString] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self successCallBack:success operation:operation responseObject:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self failureCallBack:failure operation:operation erorr:error];
+    }];
+}
+
+- (void)put:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters {
+    [[self createManager] PUT:[NSString stringWithFormat:@"%@%@", BaseUrl, _urlString] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self successCallBack:success operation:operation responseObject:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self failureCallBack:failure operation:operation erorr:error];

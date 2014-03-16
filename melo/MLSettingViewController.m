@@ -9,6 +9,7 @@
 #import "MLSettingViewController.h"
 
 #import "MLSettingView.h"
+#import "MLEditProfileViewController.h"
 #import "MLInquiryViewController.h"
 
 @interface MLSettingViewController ()
@@ -50,6 +51,7 @@
 - (void)didSelectRow:(MLSettingView *)view contentType:(NSNumber *)contentType {
     switch ([contentType shortValue]) {
         case MLSettingTypeProfile:
+            [self.navigationController pushViewController:[MLEditProfileViewController new] animated:YES];
             break;
         case MLSettingTypeMail:
             break;

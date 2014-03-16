@@ -144,9 +144,9 @@ NSInteger MLInquiryViewButtonHeight = 35;
         [UIView animateWithDuration:animationDuration animations:^{
             int margin = 20;
             CGRect textViewFrame = _textView.frame;
-            textViewFrame.size.height = NNViewHeight(self.superview) - keyboardRect.size.height - 64 - margin * 2;
+            textViewFrame.size.height = NNViewHeight(self.superview) - keyboardRect.size.height - [MLDevice topMargin:YES] - margin * 2;
             _textView.frame = textViewFrame;
-            [(UIScrollView *)self.superview setContentOffset:CGPointMake(0, NNViewMinY(_textView) - margin - 64) animated:YES];
+            [(UIScrollView *)self.superview setContentOffset:CGPointMake(0, NNViewMinY(_textView) - margin - [MLDevice topMargin:YES]) animated:YES];
         }];
     }
 }
@@ -156,7 +156,7 @@ NSInteger MLInquiryViewButtonHeight = 35;
         CGRect textViewFrame = _textView.frame;
         textViewFrame.size.height = _originHeight;
         _textView.frame = textViewFrame;
-        [(UIScrollView *)self.superview setContentOffset:CGPointMake(0, -64) animated:YES];
+        [(UIScrollView *)self.superview setContentOffset:CGPointMake(0, - [MLDevice topMargin:YES]) animated:YES];
     }
 }
 

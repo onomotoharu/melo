@@ -62,7 +62,7 @@ NSInteger const MLHomeTabViewHeight = 44;
 - (void)setTabView {
     __weak MLHomeViewController *weakSelf = self;
     
-    CGRect tabRect = CGRectMake(0, [MLDevice topMargin:self], NNViewWidth(self.view), MLHomeTabViewHeight);
+    CGRect tabRect = CGRectMake(0, [MLDevice topMargin:YES], NNViewWidth(self.view), MLHomeTabViewHeight);
     _tabView = [[MLHomeTabView alloc] initWithFrame:tabRect];
     _tabView.delegate = weakSelf;
     [self.view addSubview:_tabView];
@@ -70,7 +70,7 @@ NSInteger const MLHomeTabViewHeight = 44;
 
 - (void)setScrollView {
     if (!_scrollView) {
-        CGRect scrollViewRect = CGRectMake(0, [MLDevice topMargin:self] + MLHomeTabViewHeight, NNViewWidth(self.view), NNViewHeight(self.view) - ([MLDevice topMargin:self] + MLHomeTabViewHeight + 49));
+        CGRect scrollViewRect = CGRectMake(0, [MLDevice topMargin:YES] + MLHomeTabViewHeight, NNViewWidth(self.view), NNViewHeight(self.view) - ([MLDevice topMargin:YES] + MLHomeTabViewHeight + 49));
         _scrollView = [[UIScrollView alloc] initWithFrame:scrollViewRect];
         _scrollView.pagingEnabled = YES;
         _scrollView.contentSize = CGSizeMake(NNViewWidth(_scrollView) * 3, NNViewHeight(_scrollView));

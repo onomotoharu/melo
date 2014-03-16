@@ -13,6 +13,6 @@
 + (BOOL)isIphone5;
 + (BOOL)isRetina;
 + (BOOL)isIos7;
-+ (NSInteger)topMargin:(UIViewController *)viewController;
++ (NSInteger)topMargin:(BOOL)navigationBar;
 + (NSInteger)tabBarHeight;
 @end

@@ -35,8 +35,8 @@ NSInteger const IPHONE_4_WIDTH = 80;
     return NO;
 }
 
-+ (NSInteger)topMargin:(UIViewController *)viewController {
-    if (!viewController || viewController.navigationController.navigationBarHidden) {
++ (NSInteger)topMargin:(BOOL)navigationBar {
+    if (!navigationBar) {
         return 20;
     } else {
         return 64;

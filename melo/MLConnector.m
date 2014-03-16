@@ -82,7 +82,13 @@ static MLConnector *_sharedConnector = nil;
     }
 }
 
-
+- (void)put:(NSString *)urlString success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure parameters:(NSDictionary *)parameters {
+    __weak MLConnector *weakSelf = self;
+    MLHttpRequest *request = [[MLHttpRequest alloc] initWithUrlString:urlString delegate:weakSelf];
+    if ([self startRequest:request]) {
+        [request put:success failure:failure parameters:parameters];
+    }
+}
 
 #pragma mark - MLHttpRequestDelegate
 

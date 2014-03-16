@@ -50,7 +50,6 @@
 		32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69518D4DD77002CFF9B /* MLNotificationView.m */; };
 		32DEF69A18D54CB2002CFF9B /* MLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */; };
 		32DEF69E18D54DE1002CFF9B /* MLSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF69D18D54DE1002CFF9B /* MLSettingView.m */; };
-		32DEF6A218D55A28002CFF9B /* MLInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6A118D55A28002CFF9B /* MLInquiryViewController.m */; };
 		32DEF6AE18D5C029002CFF9B /* MLInquiryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6AD18D5C029002CFF9B /* MLInquiryController.m */; };
 		32DEF6B118D5C11F002CFF9B /* MLInquiryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6B018D5C11F002CFF9B /* MLInquiryView.m */; };
 		32DEF6B618D5C53C002CFF9B /* MLKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6B518D5C53C002CFF9B /* MLKeyboardToolBar.m */; };
@@ -73,6 +72,10 @@
 		32E342DD18D43E4400ECBB60 /* MLNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342DC18D43E4400ECBB60 /* MLNotificationController.m */; };
 		32E342E018D4B1B000ECBB60 /* MLNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342DF18D4B1B000ECBB60 /* MLNotificationCell.m */; };
 		32E342E318D4B34300ECBB60 /* MLNotificationCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E342E218D4B34300ECBB60 /* MLNotificationCellContentView.m */; };
+		32E3A07E18D5D7D7000F375A /* MLEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A07D18D5D7D7000F375A /* MLEditProfileViewController.m */; };
+		32E3A07F18D5D907000F375A /* MLInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DEF6A118D55A28002CFF9B /* MLInquiryViewController.m */; };
+		32E3A08318D5D965000F375A /* MLEditProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A08218D5D965000F375A /* MLEditProfileView.m */; };
+		32E3A08718D5F1B8000F375A /* MLImageUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A08618D5F1B8000F375A /* MLImageUploadController.m */; };
 		32E3D4E718D24093004CEAE0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E3D4E618D24093004CEAE0 /* ImageIO.framework */; };
 		32E3D4E918D240E7004CEAE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E3D4E818D240E7004CEAE0 /* MapKit.framework */; };
 		32E3D50618D24230004CEAE0 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D4EC18D24230004CEAE0 /* MKAnnotationView+WebCache.m */; };
@@ -222,6 +225,12 @@
 		32E342DF18D4B1B000ECBB60 /* MLNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationCell.m; sourceTree = "<group>"; };
 		32E342E118D4B34300ECBB60 /* MLNotificationCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNotificationCellContentView.h; sourceTree = "<group>"; };
 		32E342E218D4B34300ECBB60 /* MLNotificationCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNotificationCellContentView.m; sourceTree = "<group>"; };
+		32E3A07C18D5D7D7000F375A /* MLEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLEditProfileViewController.h; sourceTree = "<group>"; };
+		32E3A07D18D5D7D7000F375A /* MLEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEditProfileViewController.m; sourceTree = "<group>"; };
+		32E3A08118D5D965000F375A /* MLEditProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLEditProfileView.h; sourceTree = "<group>"; };
+		32E3A08218D5D965000F375A /* MLEditProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEditProfileView.m; sourceTree = "<group>"; };
+		32E3A08518D5F1B8000F375A /* MLImageUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLImageUploadController.h; sourceTree = "<group>"; };
+		32E3A08618D5F1B8000F375A /* MLImageUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLImageUploadController.m; sourceTree = "<group>"; };
 		32E3D4E618D24093004CEAE0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E3D4E818D240E7004CEAE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32E3D4EB18D24230004CEAE0 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -338,6 +347,8 @@
 		32529F5A18D23C8C00ADA8EE /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				32E3A08518D5F1B8000F375A /* MLImageUploadController.h */,
+				32E3A08618D5F1B8000F375A /* MLImageUploadController.m */,
 				32529F5B18D23CA700ADA8EE /* MLImageManager.h */,
 				32529F5C18D23CA700ADA8EE /* MLImageManager.m */,
 			);
@@ -650,6 +661,7 @@
 			children = (
 				32DEF69818D54CB2002CFF9B /* MLSettingViewController.h */,
 				32DEF69918D54CB2002CFF9B /* MLSettingViewController.m */,
+				32DEF6BA18D5D5E2002CFF9B /* Profile */,
 				32DEF69F18D55A11002CFF9B /* Inquiry */,
 			);
 			name = Setting;
@@ -658,9 +670,10 @@
 		32DEF69B18D54DCE002CFF9B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				32DEF6B218D5C123002CFF9B /* Inquiry */,
 				32DEF69C18D54DE1002CFF9B /* MLSettingView.h */,
 				32DEF69D18D54DE1002CFF9B /* MLSettingView.m */,
+				32E3A08018D5D922000F375A /* Profile */,
+				32DEF6B218D5C123002CFF9B /* Inquiry */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -699,6 +712,15 @@
 				32DEF6B518D5C53C002CFF9B /* MLKeyboardToolBar.m */,
 			);
 			name = KeyboardToolBar;
+			sourceTree = "<group>";
+		};
+		32DEF6BA18D5D5E2002CFF9B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				32E3A07C18D5D7D7000F375A /* MLEditProfileViewController.h */,
+				32E3A07D18D5D7D7000F375A /* MLEditProfileViewController.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		32E15E5318D2B21D00AFA3F0 /* Notification */ = {
@@ -821,6 +843,15 @@
 				32E342DC18D43E4400ECBB60 /* MLNotificationController.m */,
 			);
 			name = Notification;
+			sourceTree = "<group>";
+		};
+		32E3A08018D5D922000F375A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				32E3A08118D5D965000F375A /* MLEditProfileView.h */,
+				32E3A08218D5D965000F375A /* MLEditProfileView.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		32E3D4EA18D24230004CEAE0 /* SDWebImage */ = {
@@ -1004,11 +1035,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32E3A07F18D5D907000F375A /* MLInquiryViewController.m in Sources */,
 				329FAA8718D19D5400FBC7F6 /* MLStartFollowViewController.m in Sources */,
 				32749DE618D085AF00337C06 /* melo.xcdatamodeld in Sources */,
 				32D3D1D318D17713004D7E38 /* UIColor+Addition.m in Sources */,
 				32E342D618D43D3900ECBB60 /* MLNotification.m in Sources */,
 				32749DDF18D085AF00337C06 /* main.m in Sources */,
+				32E3A07E18D5D7D7000F375A /* MLEditProfileViewController.m in Sources */,
 				32E15E7E18D2EC4000AFA3F0 /* MLProductCell.m in Sources */,
 				32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */,
 				32E3D50C18D24230004CEAE0 /* SDWebImageManager.m in Sources */,
@@ -1035,7 +1068,6 @@
 				32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */,
 				32DEF6B618D5C53C002CFF9B /* MLKeyboardToolBar.m in Sources */,
 				323F600718D304C5006FDDF1 /* MLProductViewController.m in Sources */,
-				32DEF6A218D55A28002CFF9B /* MLInquiryViewController.m in Sources */,
 				32E3D50F18D24230004CEAE0 /* UIImage+GIF.m in Sources */,
 				32E3D51118D24230004CEAE0 /* UIImage+WebP.m in Sources */,
 				32749DE318D085AF00337C06 /* MLAppDelegate.m in Sources */,
@@ -1050,12 +1082,14 @@
 				323F601618D36A83006FDDF1 /* MLIndicator.m in Sources */,
 				32DEF6B118D5C11F002CFF9B /* MLInquiryView.m in Sources */,
 				32E3D50A18D24230004CEAE0 /* SDWebImageDownloader.m in Sources */,
+				32E3A08718D5F1B8000F375A /* MLImageUploadController.m in Sources */,
 				323F600F18D3669D006FDDF1 /* MLAlert.m in Sources */,
 				32E3D50618D24230004CEAE0 /* MKAnnotationView+WebCache.m in Sources */,
 				32D3D1D018D17510004D7E38 /* UIImage+Addition.m in Sources */,
 				32E3D51018D24230004CEAE0 /* UIImage+MultiFormat.m in Sources */,
 				32E3D50E18D24230004CEAE0 /* UIButton+WebCache.m in Sources */,
 				32E342D918D43D4500ECBB60 /* MLNotificationManager.m in Sources */,
+				32E3A08318D5D965000F375A /* MLEditProfileView.m in Sources */,
 				329FAAA218D1D25200FBC7F6 /* MLConnector.m in Sources */,
 				32DEF68F18D4BB2B002CFF9B /* MLNotificiationCellLayout.m in Sources */,
 				32E15E6718D2C5FD00AFA3F0 /* MLHomeTabView.m in Sources */,

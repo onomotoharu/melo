@@ -56,7 +56,7 @@
 }
 
 - (void)setMessageLabel:(NSString *)message {
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin:self], NNViewWidth(self.view), 60)];
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin:YES], NNViewWidth(self.view), 60)];
     messageLabel.text = message;
     messageLabel.font = [UIFont boldSystemFontOfSize:14];
     messageLabel.textAlignment = NSTextAlignmentCenter;
@@ -64,7 +64,7 @@
 }
 
 - (void)getNotifications {
-    [MLIndicator show:@""];
+    [MLIndicator show:nil];
     [MLNotificationController getNotifications:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self successGetNotifications:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
