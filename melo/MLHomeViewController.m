@@ -42,6 +42,7 @@ NSInteger const MLHomeTabViewHeight = 44;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"melo";
     [self setTabView];
     [self setScrollView];
     [self setActiveTab:MLProductTypeHot];
@@ -85,29 +86,41 @@ NSInteger const MLHomeTabViewHeight = 44;
     MLProductCollectionLayout *layout = [[MLProductCollectionLayout alloc] initTimeLineLayout];
     CGRect collectionRect = CGRectMake(NNViewWidth(_scrollView) * type, 0, NNViewWidth(_scrollView), NNViewHeight(_scrollView));
     MLProductCollectionView *collectionView = [[MLProductCollectionView alloc] initWithFrame:collectionRect collectionViewLayout:layout fixed:NO];
+    collectionView.type = type;
     collectionView.controllerDelegate = weakSelf;
     [_scrollView addSubview:collectionView];
     [_collectionViews setObject:collectionView forKey:MLProductTypes[type]];
 }
 
 - (void)getProducts:(NSInteger)type {
-    [MLProductController getProducts:MLProductTypes[type] parameters:@{@"page": @(0)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self load:type page:0];
+}
+
+- (void)load:(NSInteger)type page:(NSInteger)page {
+    // TODO : fix
+    NSString *typeString = MLProductTypes[type];
+    if (type == MLProductTypeFollow) {
+        typeString = @"";
+    }
+    [MLProductController getProducts:typeString parameters:@{@"page": @(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self setProducts:responseObject type:type];
     } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
-        [self failedGetProducts];
+        [self failedGetProducts:type];
     }];
 }
 
 - (void)setProducts:(id)responseObject type:(NSInteger)type {
     if (responseObject[@"products"]) {
         [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:MLProductTypes[type]];
-        [[_collectionViews objectForKey:MLProductTypes[type]] addProducts:[[MLProductManager sharedManager] getProducts:MLProductTypes[type]]];
+        [[_collectionViews objectForKey:MLProductTypes[type]] setProducts:[[MLProductManager sharedManager] getProducts:MLProductTypes[type]]];
+        [[_collectionViews objectForKey:MLProductTypes[type]] loaded:YES];
     }
 }
 
-- (void)failedGetProducts {
+- (void)failedGetProducts:(NSInteger)type {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"エラーにより情報を取得できませんでした。\n時間が経ってからもう一度おためしください。" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alertView show];
+    [[_collectionViews objectForKey:MLProductTypes[type]] loaded:YES];
 }
 
 #pragma mark - MLProductCollectionViewDelegate

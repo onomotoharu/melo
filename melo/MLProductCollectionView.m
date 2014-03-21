@@ -10,8 +10,18 @@
 
 #import "MLProductCell.h"
 
+NSInteger MLProductionCollectionViewLoadMargin = 30;
+
+typedef enum {
+    MLProductCollectionUnLoad = 0,
+    MLProductCollectionLoading = 1,
+    MLProductCollectionLoaded = 2,
+    MLProductCollectionCompleteLoaded
+} MLProductCollectionLoadState;
+
 @interface MLProductCollectionView () <UICollectionViewDelegate, UICollectionViewDataSource> {
     @private
+    NSInteger _loadState;
     NSMutableArray *_products;
 }
 
@@ -76,12 +86,39 @@
 
 #pragma mark - MLProductCollectionView Method
 
-- (void)addProducts:(NSMutableArray *)products {
-    [_products addObjectsFromArray:products];
+- (void)setProducts:(NSMutableArray *)products {
+    _products = products;
     [self reloadData];
 }
 
+- (void)loadProducts:(NSInteger)page {
+    if (_controllerDelegate && [_controllerDelegate respondsToSelector:@selector(load:page:)]) {
+        [_controllerDelegate load:_type page:page];
+    }
+}
+
+- (void)loaded:(BOOL)isComplete {
+    if (isComplete) {
+        _loadState = MLProductCollectionCompleteLoaded;
+    } else {
+        _loadState = MLProductCollectionLoaded;
+    }
+}
+
 - (void)refresh {
+    _loadState = MLProductCollectionLoading;
+    [_products removeAllObjects];
+    [self reloadData];
+    [self loadProducts:1];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y + NNViewHeight(self) > scrollView.contentSize.height - MLProductionCollectionViewLoadMargin && _loadState != MLProductCollectionLoading) {
+        _loadState = MLProductCollectionLoading;
+        [self loadProducts:_products.count / 30 + 1]; // TODO : fix
+    }
 }
 
 @end

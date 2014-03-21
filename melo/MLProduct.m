@@ -8,6 +8,15 @@
 
 #import "MLProduct.h"
 
+#define MLProductImageSize @[@"original", @"full", @"thumbnail"]
+#define MLProductImageForm @"jpg"
+typedef enum {
+    MLProductImageTypeOriginal = 0,
+    MLProductImageTypeFull = 1,
+    MLProductImageTypeThumbnail = 2,
+} MLProductImageTypes;
+
+
 @implementation MLProduct
 
 @dynamic id;
@@ -15,7 +24,10 @@
 @dynamic name;
 @dynamic price;
 @dynamic brand;
-@dynamic image;
+@dynamic originalImage;
+@dynamic fullImage;
+@dynamic thumbnailImage;
+@dynamic externalUrl;
 @dynamic user;
 
 @synthesize isWant;
@@ -32,13 +44,31 @@
 #pragma mark - Update
 
 - (MLProduct *)update:(NSDictionary *)attributes {
-    self.id = [attributes objectForKey:@"id"];
-    self.name = [attributes objectForKey:@"name"];
-    self.price = [attributes objectForKey:@"price"];
-    self.brand = [attributes objectForKey:@"brand"];
-    self.image = @"http://s3-ap-northeast-1.amazonaws.com/development-melo/product/photo/4/thumbnail.jpg";
-    self.userId = [attributes objectForKey:@"user_id"];
-    // TODO : set user
+    self.id    = attributes[@"id"];
+    self.name  = attributes[@"name"];
+    self.price = attributes[@"price"];
+    if (attributes[@"store"] && [attributes[@"store"][@"name"] class] != [NSNull class]) {
+        self.brand = attributes[@"store"][@"name"];
+    }
+    // TODO: fix
+    for (NSDictionary *photo in attributes[@"photos"]) {
+        NSString *imageUrl = photo[@"image_url"];
+        if ([imageUrl rangeOfString:MLProductImageSize[MLProductImageTypeOriginal]].location != NSNotFound) { // origin
+            self.originalImage = imageUrl;
+        } else if ([imageUrl rangeOfString:MLProductImageSize[MLProductImageTypeFull]].location != NSNotFound) { // full
+            self.fullImage = imageUrl;
+        } else if ([imageUrl rangeOfString:MLProductImageSize[MLProductImageTypeThumbnail]].location != NSNotFound) { // thumbnail
+            self.thumbnailImage = imageUrl;
+        }
+    }
+    self.externalUrl = attributes[@"external_url"];
+    self.isWant = [attributes[@"wanted"] boolValue];
+    self.userId = attributes[@"user_id"];
+    if (attributes[@"user"]) {
+        MLUser *user = [MLUser createEntity];
+        [user update:attributes[@"user"]];
+        self.user = user;
+    }
     
     return self;
 }

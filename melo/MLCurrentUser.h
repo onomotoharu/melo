@@ -11,4 +11,8 @@
 @interface MLCurrentUser : MLUser
 
 + (MLUser *)currentuser;
+
++ (NSString *)getUUID;
++ (void)setUUID:(NSString *)UUID;
++ (NSInteger)state;
 @end

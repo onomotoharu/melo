@@ -8,8 +8,10 @@
 
 #import "MLLoginViewController.h"
 
+#import "MLUserController.h"
 #import "MLLoginView.h"
 #import "MLStartFollowViewController.h"
+#import "MLIndicator.h"
 
 @interface MLLoginViewController ()
 
@@ -26,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
     __weak MLLoginViewController *weakSelf = self;
     MLLoginView *loginView = [[MLLoginView alloc] initWithFrame:self.view.frame delegate:weakSelf];
     [self.view addSubview:loginView];
@@ -44,8 +46,28 @@
 #pragma mark - MLLoginViewDelegate
 
 - (void)start:(MLLoginView *)view {
+    [MLIndicator show:@"サインアップ中"];
+    [MLUserController signup:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self successSignup:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self failureSigup];
+    }];
+    
+}
+
+- (void)successSignup:(id)responseObject {
+    if (!responseObject[@"user"] || !responseObject[@"user"][@"uuid"]) {
+        [self failureSigup];
+        return;
+    }
+    [MLIndicator dissmiss];
+    [MLCurrentUser setUUID:responseObject[@"user"][@"uuid"]];
     MLStartFollowViewController *startFollowController = [MLStartFollowViewController new];
     [self.navigationController pushViewController:startFollowController animated:YES];
+}
+
+- (void)failureSigup {
+    [MLIndicator showErrorWithStatus:@"問題が起きてサインアップに失敗しました。"];
 }
 
 @end

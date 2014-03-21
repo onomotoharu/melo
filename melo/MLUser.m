@@ -32,8 +32,12 @@
 #pragma mark - Update
 
 - (MLUser *)update:(NSDictionary *)attributes {
-    self.id = [attributes objectForKey:@"id"];
-    self.name = [attributes objectForKey:@"name"];
+    self.id = attributes[@"id"];
+    self.name = attributes[@"name"];
+    if ([attributes[@"avatar"] class] != [NSNull class]) {
+        self.image = attributes[@"avatar"];
+    }
+    //self.image = attributes[@"avatar"];
     return self;
 }
 

@@ -84,7 +84,7 @@
 - (void)setWants:(id)responseObject {
     if (responseObject[@"user_products"]) {
         [[MLProductManager sharedManager] setProducts:responseObject[@"user_products"] type:@"wants"];
-        [_collectionView addProducts:[[MLProductManager sharedManager] getProducts:@"wants"]];
+        [_collectionView setProducts:[[MLProductManager sharedManager] getProducts:@"wants"]];
     }
 }
 
@@ -102,7 +102,7 @@
 - (void)setPosts:(id)responseObject {
     if (responseObject[@"products"]) {
         [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:@"posts"];
-        [_collectionView addProducts:[[MLProductManager sharedManager] getProducts:@"posts"]];
+        [_collectionView setProducts:[[MLProductManager sharedManager] getProducts:@"posts"]];
     }
 }
 

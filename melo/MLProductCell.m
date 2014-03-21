@@ -50,7 +50,8 @@
 }
 
 - (void)loadImage {
-    NSString *url = _product.image;
+    [_imageView setImage:nil];
+    NSString *url = _product.thumbnailImage;
     if (!url) {
         [_indicatorView stopAnimating];
         return;
@@ -63,7 +64,7 @@
     
     [imageManager.imageCache queryDiskCacheForKey:url done:^(UIImage *image, SDImageCacheType cacheType) {
         if (image) {
-            _imageView.image = image;
+            [_imageView setImage:image];
             [_indicatorView stopAnimating];
         } else {
             [[MLImageManager sharedManager] performSelectorInBackground:@selector(load:) withObject:url];

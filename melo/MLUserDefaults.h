@@ -10,6 +10,9 @@
 
 @interface MLUserDefaults : NSObject
 
-+ (BOOL)getIsNewUser;
-+ (void)setIsNewUser:(BOOL)isNewUser;
++ (NSString *)getUUID;
++ (void)setUUID:(NSString *)UUID;
+
++ (bool)getFinishedStartGuide;
++ (void)setFinishedStartGuide:(BOOL)finished;
 @end

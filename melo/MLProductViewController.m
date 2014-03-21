@@ -14,10 +14,13 @@
 #import "MLProductCollectionView.h"
 #import "MLProductCollectionLayout.h"
 #import "MLUserViewController.h"
+#import "MLModalViewController.h"
+#import "MLWebViewController.h"
 
 @interface MLProductViewController () {
     @private
     MLProduct *_product;
+    MLProductView *_productView;
     MLProductCollectionView *_collectionView;
 }
 
@@ -38,6 +41,7 @@
     [super viewDidLoad];
     
     [self setRelationView];
+    [self setProductView];
     [self getProduct];
     [self getRelations];
 }
@@ -50,10 +54,10 @@
 
 - (void)setProductView {
     __weak MLProductViewController *weakSelf = self;
-    MLProductView *productView = [[MLProductView alloc] initWithFrame:CGRectMake(0, 0, NNViewWidth(self.view), 450)];
-    [productView setProduct:_product];
-    productView.delegate = weakSelf;
-    [_collectionView addSubview:productView];
+    _productView = [[MLProductView alloc] initWithFrame:CGRectMake(0, 0, NNViewWidth(self.view), 450)];
+    [_productView setProduct:_product];
+    _productView.delegate = weakSelf;
+    [_collectionView addSubview:_productView];
 }
 
 - (void)setRelationView {
@@ -79,7 +83,7 @@
 
 - (void)setProduct:(id)responseObject {
     [_product update:responseObject[@"product"]];
-    [self setProductView];
+    [_productView setProduct:_product];
 }
 
 - (void)failedGetProduct {
@@ -88,26 +92,31 @@
 }
 
 - (void)getRelations {
-    [MLProductController getRelations:_product.id
-                           parameters:@{@"page": @(0)}
+    [MLProductController getRelations:_product.id parameters:@{@"page": @(0)}
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                   [self setRelations:responseObject];
-                              } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
+                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                               }];
 }
 
 - (void)setRelations:(id)responseObject {
     if (responseObject[@"products"]) {
         [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:@"relations"];
-        [_collectionView addProducts:[[MLProductManager sharedManager] getProducts:@"relations"]];
+        [_collectionView setProducts:[[MLProductManager sharedManager] getProducts:@"relations"]];
     }
 }
 
 #pragma mark - MLProductViewDelegate
 
-- (void)pushUserName:(MLProductView *)view userId:(NSNumber *)userId {
-    MLUserViewController *userViewController = [MLUserViewController new];
+- (void)pushUserName:(MLProductView *)view user:(MLUser *)user {
+    MLUserViewController *userViewController = [[MLUserViewController alloc] initWithUser:user];
     [self.navigationController pushViewController:userViewController animated:YES];
+}
+
+- (void)pushBuy:(MLProductView *)view urlString:(NSString *)urlString {
+    MLWebViewController *webViewController = [[MLWebViewController alloc] initWithUrl:urlString];
+    MLModalViewController *modalViewController = [[MLModalViewController alloc] initWithRootViewController:webViewController];
+    [self.navigationController presentViewController:modalViewController animated:YES completion:nil];
 }
 
 #pragma mark - MLProductCollectionViewDelegate

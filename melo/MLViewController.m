@@ -11,26 +11,39 @@
 #import "MLTabViewController.h"
 #import "MLNavigationViewController.h"
 #import "MLLoginViewController.h"
+#import "MLStartFollowViewController.h"
 #import "MLHomeViewController.h"
 #import "MLUserViewController.h"
 
 @implementation MLViewController
 
 + (void)setRootViewController {
-    // TODO : あとで修正
-    if ([MLUserDefaults getIsNewUser]) {
-        [self setHomeViewController];
-    } else {
-        MLLoginViewController *loginViewController = [MLLoginViewController new];
-        MLNavigationViewController *navigationViewController = [[MLNavigationViewController alloc] initWithRootViewController:loginViewController];
-        ((MLAppDelegate *)MLGetAppDelegate).window.rootViewController = navigationViewController;
+    switch ([MLCurrentUser state]) {
+        case MLUserStateNew:
+            [self setLoginViewController];
+            break;
+        case MLUserStateSingup:
+            [self setStartFollowViewController];
+            break;
+        case MLUserStateLogin:
+            [self setHomeViewController];
+            break;
+        default:
+            [MLAlert showSingleAlert:@"エラー" message:@"問題が発生しました。\nお手数ですがアプリの再起動をお願いします。"];
+            break;
     }
+}
 
-//    NSArray *tabs = [NSArray navigationController1, navigationController2, nil];
-//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-//    [tabBarController setViewControllers:tabs animated:NO];
-//    [self.window addSubview:tabBarController.view];
-//    self.window.rootViewController = tabBarController;
++ (void)setLoginViewController {
+    MLLoginViewController *loginViewController = [MLLoginViewController new];
+    MLNavigationViewController *navigationViewController = [[MLNavigationViewController alloc] initWithRootViewController:loginViewController];
+    ((MLAppDelegate *)MLGetAppDelegate).window.rootViewController = navigationViewController;
+}
+
++ (void)setStartFollowViewController {
+    MLStartFollowViewController *startViewController = [MLStartFollowViewController new];
+    MLNavigationViewController *navigationViewController = [[MLNavigationViewController alloc] initWithRootViewController:startViewController];
+    ((MLAppDelegate *)MLGetAppDelegate).window.rootViewController = navigationViewController;
 }
 
 + (void)setHomeViewController {

@@ -18,7 +18,10 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * price;
 @property (nonatomic, retain) NSString * brand;
-@property (nonatomic, retain) NSString * image;
+@property (nonatomic, retain) NSString * originalImage;
+@property (nonatomic, retain) NSString * fullImage;
+@property (nonatomic, retain) NSString * thumbnailImage;
+@property (nonatomic, retain) NSString * externalUrl;
 @property (nonatomic, retain) MLUser *user;
 
 @property (nonatomic) BOOL isWant;

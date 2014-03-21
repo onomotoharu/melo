@@ -12,13 +12,18 @@
 
 @implementation MLUserController
 
++ (void)signup:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = @"/account";
+    [[MLConnector sharedConnector] post:urlString success:success failure:failure parameters:parameters];
+}
+
 + (void)update:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     NSString *urlString = @"/account";
     [[MLConnector sharedConnector] put:urlString success:success failure:failure parameters:parameters];
 }
 
 + (void)getNeighbor:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
-    NSString *urlString = @"/users/neighbor";
+    NSString *urlString = @"/users/neighbors";
     [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];
 }
 

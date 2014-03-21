@@ -68,6 +68,13 @@
     // 定数
     #define MLProductTypes @[@"follow", @"hot", @"trend"]
     #define MLProductTypeTexts @[@"フォロー", @"新着", @"人気"]
+
+    typedef enum {
+        MLUserStateNew = 0, // 未ログイン
+        MLUserStateSingup = 1, // サインアップ後(未ログイン)
+        MLUserStateLogin = 2, // ログイン後(ガイド終了)
+    } MLUserState;
+
     typedef enum {
         MLProductTypeFollow = 0,
         MLProductTypeHot = 1,

@@ -21,4 +21,23 @@ static MLUser *_currentuser = nil;
     }
     return _currentuser;
 }
+
++ (NSString *)getUUID {
+    return [MLUserDefaults getUUID];
+}
+
++ (void)setUUID:(NSString *)UUID {
+    [MLUserDefaults setUUID:UUID];
+}
+
++ (NSInteger)state {
+    if (![self getUUID]) {
+        return MLUserStateNew;
+    } else if (![MLUserDefaults getFinishedStartGuide]) {
+        return MLUserStateSingup;
+    } else {
+        return MLUserStateLogin;
+    }
+}
+
 @end

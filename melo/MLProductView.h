@@ -17,6 +17,7 @@
 
 @interface NSObject (MLProductViewDelegate)
 
-- (void)pushUserName:(MLProductView *)view userId:(NSNumber *)userId;
+- (void)pushUserName:(MLProductView *)view user:(MLUser *)user;
+- (void)pushBuy:(MLProductView *)view urlString:(NSString *)urlString;
 
 @end

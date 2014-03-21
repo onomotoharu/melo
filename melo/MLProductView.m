@@ -15,6 +15,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "UIColor+Addition.h"
 
+NSInteger const MLProductViewBottomMargin = 20;
 NSInteger const MLProductViewImageMargin = 20;
 NSInteger const MLProductViewTextLeftMargin = 20;
 NSInteger const MLProductViewTextTopMargin = 15;
@@ -28,6 +29,20 @@ NSInteger const MLProductViewLineTopMargin = 10;
     UIButton *_wantBtn;
     UIButton *_buyBtn;
     UIButton *_userBtn;
+    
+    NSAttributedString *_price;
+    NSAttributedString *_name;
+    NSAttributedString *_brand;
+    NSAttributedString *_postUser;
+    NSAttributedString *_productTitle;
+    
+    CGRect _priceRect;
+    CGRect _nameRect;
+    CGRect _brandRect;
+    CGRect _postUserRect;
+    CGRect _productTitleRect;
+    
+    float _lineContentY;
 }
 
 @end
@@ -49,7 +64,7 @@ NSInteger const MLProductViewLineTopMargin = 10;
     [self setReportBtn];
     [self setWantBtn];
     [self setBuyBtn];
-    [self setNeedsDisplay];
+    [self calculateHeight];
 }
 
 - (void)setImageView {
@@ -64,7 +79,7 @@ NSInteger const MLProductViewLineTopMargin = 10;
 }
 
 - (void)loadImage {
-    NSString *url = _product.image;
+    NSString *url = _product.fullImage;
     if (!url) {
         return;
     }
@@ -100,7 +115,7 @@ NSInteger const MLProductViewLineTopMargin = 10;
         int width = 45; // TODO : 画像サイズに修正
         int height = 30;
         _reportBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _reportBtn.frame = CGRectMake(MLProductViewTextLeftMargin, NNViewHeight(_imageView) + MLProductViewImageMargin, width, height);
+        _reportBtn.frame = CGRectMake(MLProductViewTextLeftMargin, NNViewHeight(_imageView) + MLProductViewImageMargin + MLProductViewTextTopMargin, width, height);
         [_reportBtn setBackgroundColor:[UIColor lightGrayColor]];
         [_reportBtn addTarget:self action:@selector(pushReportBtn) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_reportBtn];
@@ -112,7 +127,7 @@ NSInteger const MLProductViewLineTopMargin = 10;
         int width = 75; // TODO : 画像サイズに修正
         int height = 30;
         _wantBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _wantBtn.frame = CGRectMake(NNViewWidth(self) / 2, NNViewHeight(_imageView) + MLProductViewImageMargin, width, height);
+        _wantBtn.frame = CGRectMake(NNViewWidth(self) / 2, NNViewHeight(_imageView) + MLProductViewImageMargin + MLProductViewTextTopMargin, width, height);
         [_wantBtn setTitle:@"いいね！" forState:UIControlStateNormal];
         [_wantBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_wantBtn addTarget:self action:@selector(pushWantBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -130,15 +145,22 @@ NSInteger const MLProductViewLineTopMargin = 10;
         int width = 75; // TODO : 画像サイズに修正
         int height = 30;
         _buyBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _buyBtn.frame = CGRectMake(NNViewMaxX(_wantBtn) + 5, NNViewHeight(_imageView) + MLProductViewImageMargin, width, height);
+        _buyBtn.frame = CGRectMake(NNViewMaxX(_wantBtn) + 5, NNViewHeight(_imageView) + MLProductViewImageMargin + MLProductViewTextTopMargin, width, height);
         [_buyBtn setTitle:@"購入する" forState:UIControlStateNormal];
         [_buyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_buyBtn setBackgroundColor:[UIColor basePinkColor]];
+        [_buyBtn addTarget:self action:@selector(pushBuyBtn) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_buyBtn];
+    }
+    if (!_product || !_product.externalUrl) {
+        _buyBtn.enabled = NO;
+        [_buyBtn setBackgroundColor:[UIColor lightGrayColor]];
+    } else {
+        _buyBtn.enabled = YES;
+        [_buyBtn setBackgroundColor:[UIColor basePinkColor]];
     }
 }
 
-- (void)setUserBtn:(CGRect)postUserRect {
+- (void)setUserBtn {
     if (!_userBtn) {
         _userBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [_userBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -146,86 +168,146 @@ NSInteger const MLProductViewLineTopMargin = 10;
         [_userBtn addTarget:self action:@selector(pushUserName) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_userBtn];
     }
-    NSString *userName = @"シンボ マイキ";
+    NSString *userName = _product.user.name;
     [_userBtn setTitle:userName forState:UIControlStateNormal];
     [_userBtn sizeToFit];
-    _userBtn.frame = CGRectMake(CGRectGetMaxX(postUserRect),
-                                CGRectGetMinY(postUserRect) - (NNViewHeight(_userBtn) - CGRectGetHeight(postUserRect)) / 2,
+    _userBtn.frame = CGRectMake(CGRectGetMaxX(_postUserRect),
+                                CGRectGetMinY(_postUserRect) - (NNViewHeight(_userBtn) - CGRectGetHeight(_postUserRect)) / 2,
                                 NNViewWidth(_userBtn), NNViewHeight(_userBtn));
 }
 
+#pragma mark - CalculateHeight
+
+- (void)calculateHeight {
+    // price
+    [self calculatePriceHeight];
+    
+    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:14]};
+    CGSize limitSize = CGSizeMake(NNViewWidth(self) - MLProductViewTextLeftMargin * 2, 1000);
+    
+    // brand and name
+    [self calculateNameHeight:textAttributes size:limitSize];
+    [self calculateBrandHeight:textAttributes size:limitSize];
+    
+    
+    // post user
+    [self calculatePostUserHeight:textAttributes size:limitSize];
+    
+    _lineContentY = CGRectGetMaxY(_postUserRect) + MLProductViewLineTopMargin;
+    
+    // collection title
+    [self caluculateCollectionTitleHeight:textAttributes size:limitSize];
+    
+    CGRect frame = self.frame;
+    frame.size.height = CGRectGetMaxY(_productTitleRect) + MLProductViewBottomMargin;
+    self.frame = frame;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)calculatePriceHeight {
+    if (_product.price) {
+        int priceSideMargin = 20;
+        
+        // TODO : category化
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setGroupingSeparator:@","];
+        [formatter setGroupingSize:3];
+        
+        NSDictionary *priceAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17]};
+        NSString *price = [NSString stringWithFormat:@"¥%@", [formatter stringFromNumber:_product.price]];
+        _price = [[NSAttributedString alloc] initWithString:price attributes:priceAttributes];
+        
+        CGSize priceSize = [_price boundingRectWithSize:self.frame.size options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+        _priceRect = CGRectMake(NNViewWidth(self) / 2 - priceSize.width - priceSideMargin,
+                                NNViewMinY(_wantBtn) + (NNViewHeight(_wantBtn) - priceSize.height) / 2,
+                                priceSize.width, priceSize.height);
+    }
+}
+
+- (void)calculateNameHeight:(NSDictionary *)attributes size:(CGSize)size {
+    if (_product.name) {
+        _name = [[NSAttributedString alloc] initWithString:_product.name attributes:attributes];
+        CGSize nameSize = [_name boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+        _nameRect = CGRectMake(MLProductViewTextLeftMargin,
+                               NNViewMaxY(_wantBtn) + MLProductViewTextTopMargin,
+                               nameSize.width, nameSize.height);
+    } else {
+        _nameRect = CGRectMake(MLProductViewTextLeftMargin,
+                               NNViewMaxY(_wantBtn) + MLProductViewTextTopMargin,
+                               0, 0);
+    }
+}
+
+- (void)calculateBrandHeight:(NSDictionary *)attributes size:(CGSize)size {
+    if (_product.brand) {
+        _brand = [[NSAttributedString alloc] initWithString:_product.brand attributes:attributes];
+        CGSize brandSize = [_brand boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+        _brandRect = CGRectMake(MLProductViewTextLeftMargin,
+                                CGRectGetMaxY(_nameRect) + 5,
+                                brandSize.width, brandSize.height);
+    } else {
+        _brandRect = CGRectMake(MLProductViewTextLeftMargin,
+                                CGRectGetMaxY(_nameRect) + 5,
+                                0, 0);
+    }
+}
+
+- (void)calculatePostUserHeight:(NSDictionary *)attributes size:(CGSize)size {
+    _postUser = [[NSAttributedString alloc] initWithString:@"投稿者：" attributes:attributes];
+    CGSize postUserSize = [_postUser boundingRectWithSize:size options:0 context:nil].size;
+    _postUserRect = CGRectMake(MLProductViewTextLeftMargin,
+                               CGRectGetMaxY(_brandRect) + MLProductViewTextTopMargin,
+                               postUserSize.width, postUserSize.height);
+}
+
+- (void)caluculateCollectionTitleHeight:(NSDictionary *)attributes size:(CGSize)size {
+    _productTitle = [[NSAttributedString alloc] initWithString:@"これをいいね！した人が見ている商品" attributes:attributes];
+    CGSize productTitleSize = [_productTitle boundingRectWithSize:size options:0 context:nil].size;
+    _productTitleRect = CGRectMake((NNViewWidth(self) - productTitleSize.width) / 2,
+                                   _lineContentY + 10,
+                                   productTitleSize.width, productTitleSize.height);
+
+}
+
 - (void)drawRect:(CGRect)rect {
-    if (!_product) {
+    if (!_product || !_product.fullImage) {
         return;
     }
     
     // price
-    int priceSideMargin = 20;
-    
-    // TODO : category化
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setGroupingSeparator:@","];
-    [formatter setGroupingSize:3];
-
-    NSString *price = [NSString stringWithFormat:@"¥%@", [formatter stringFromNumber:_product.price]];
-    NSDictionary *priceAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17]};
-    CGSize priceSize = [price boundingRectWithSize:self.frame.size options:0 attributes:priceAttributes context:nil].size;
-    CGRect priceRect = CGRectMake(NNViewWidth(self) / 2 - priceSize.width - priceSideMargin,
-                                  NNViewMinY(_wantBtn) + (NNViewHeight(_wantBtn) - priceSize.height) / 2,
-                                  priceSize.width, priceSize.height);
-    [price drawInRect:priceRect withAttributes:priceAttributes];
+    if (_product.price) {
+        [_price drawInRect:_priceRect];
+    }
     
     // brand and name
-    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:14]};
-    NSString *name = _product.name;
-    CGSize nameSize = [name boundingRectWithSize:self.frame.size options:0 attributes:textAttributes context:nil].size;
-    CGRect nameRect = CGRectMake(MLProductViewTextLeftMargin,
-                                  NNViewMaxY(_wantBtn) + MLProductViewTextTopMargin,
-                                  nameSize.width, nameSize.height);
-    [name drawInRect:nameRect withAttributes:textAttributes];
-    
-    NSString *brand = _product.brand;
-    CGSize brandSize = [brand boundingRectWithSize:self.frame.size options:0 attributes:textAttributes context:nil].size;
-    CGRect brandRect = CGRectMake(MLProductViewTextLeftMargin,
-                                 CGRectGetMaxY(nameRect) + 5,
-                                 brandSize.width, brandSize.height);
-    [brand drawInRect:brandRect withAttributes:textAttributes];
+    [_name drawInRect:_nameRect];
+    [_brand drawInRect:_brandRect];
     
     // post user
-    NSString *postUser = @"投稿者：";
-    CGSize postUserSize = [postUser boundingRectWithSize:self.frame.size options:0 attributes:textAttributes context:nil].size;
-    CGRect postUserRect = CGRectMake(MLProductViewTextLeftMargin,
-                                     CGRectGetMaxY(brandRect) + MLProductViewTextTopMargin,
-                                     postUserSize.width, postUserSize.height);
-    [postUser drawInRect:postUserRect withAttributes:textAttributes];
+    [_postUser drawInRect:_postUserRect];
     
-    [self setUserBtn:postUserRect];
+    [self setUserBtn];
     
     // line
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBStrokeColor(context, 219 / 255.f, 220 / 255.f, 220 / 255.f, 1.0);
     CGContextBeginPath(context);
-    float lineContentY = CGRectGetMaxY(postUserRect) + MLProductViewLineTopMargin;
-    CGContextMoveToPoint(context, 0, lineContentY);
-    CGContextAddLineToPoint(context, NNViewWidth(self), lineContentY);
+    CGContextMoveToPoint(context, 0, _lineContentY);
+    CGContextAddLineToPoint(context, NNViewWidth(self), _lineContentY);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathStroke);
     
     // collection title
-    NSString *productTitle = @"これをいいね！した人が見ている商品";
-    CGSize productTitleSize = [productTitle boundingRectWithSize:self.frame.size options:0 attributes:textAttributes context:nil].size;
-    CGRect productTitleRect = CGRectMake((NNViewWidth(self) - productTitleSize.width) / 2,
-                                     lineContentY + 10,
-                                     productTitleSize.width, productTitleSize.height);
-    [productTitle drawInRect:productTitleRect withAttributes:textAttributes];
+    [_productTitle drawInRect:_productTitleRect];
 }
 
 #pragma mark - ButtonAction
 
 - (void)pushUserName {
-    if (_delegate && [_delegate respondsToSelector:@selector(pushUserName:userId:)] && _product) {
-        [_delegate pushUserName:self userId:_product.userId];
+    if (_delegate && [_delegate respondsToSelector:@selector(pushUserName:user:)] && _product) {
+        [_delegate pushUserName:self user:_product.user];
     }
 }
 
@@ -248,6 +330,9 @@ NSInteger const MLProductViewLineTopMargin = 10;
 }
 
 - (void)pushBuyBtn {
+    if (_delegate && [_delegate respondsToSelector:@selector(pushBuy:urlString:)]) {
+        [_delegate pushBuy:self urlString:_product.externalUrl];
+    }
 }
 
 #pragma mark - UIActionSheetDelegate

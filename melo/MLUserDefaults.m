@@ -10,18 +10,28 @@
 
 @implementation MLUserDefaults
 
-// TODO : あとで消す
-// isNewUser
-+ (BOOL)getIsNewUser {
+// UUID
++ (NSString *)getUUID {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults boolForKey:@"isNewUser"];
+    return [userDefaults stringForKey:@"UUID"];
 }
 
-+ (void)setIsNewUser:(BOOL)isNewUser {
++ (void)setUUID:(NSString *)UUID {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool:isNewUser forKey:@"isNewUser"];
+    [userDefaults setObject:UUID forKey:@"UUID"];
     [userDefaults synchronize];
 }
 
+// finished startguide
++ (bool)getFinishedStartGuide {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults boolForKey:@"finishedStartGuide"];
+}
+
++ (void)setFinishedStartGuide:(BOOL)finished {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:finished forKey:@"finishedStartGuide"];
+    [userDefaults synchronize];
+}
 
 @end

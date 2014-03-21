@@ -8,7 +8,7 @@
 
 #import "MLHttpRequest.h"
 
-NSString const *BaseUrl = @"http://shinbo-no-MacBook-Air.local:3000/api/";
+NSString const *BaseUrl = @"http://api.me-lo.jp/api/";
 
 @implementation MLHttpRequest
 
@@ -23,7 +23,9 @@ NSString const *BaseUrl = @"http://shinbo-no-MacBook-Air.local:3000/api/";
 
 - (AFHTTPRequestOperationManager *)createManager {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:@"11111" forHTTPHeaderField:@"X-UUID"];
+    if ([MLCurrentUser getUUID]) {
+        [manager.requestSerializer setValue:[MLCurrentUser getUUID] forHTTPHeaderField:@"X-UUID"];
+    }
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     return manager;
 }

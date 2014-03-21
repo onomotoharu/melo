@@ -10,15 +10,19 @@
 
 @interface MLProductCollectionView : UICollectionView
 
+@property (nonatomic) NSInteger type;
 @property (weak) id controllerDelegate;
 
 - (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout fixed:(BOOL)fixed;
 
-- (void)addProducts:(NSMutableArray *)products;
+- (void)setProducts:(NSMutableArray *)products;
+
+- (void)loaded:(BOOL)isComplete;
 @end
 
 @interface NSObject (MLProductCollectionViewDelegate)
 
+- (void)load:(NSInteger)type page:(NSInteger)page;
 - (void)didSelectItem:(MLProductCollectionView *)view product:(MLProduct *)product;
 
 @end

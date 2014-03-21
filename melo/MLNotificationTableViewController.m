@@ -74,7 +74,7 @@
 
 - (void)successGetNotifications:(id)responseObject {
     [MLIndicator dissmiss];
-    if (responseObject[@"notifications"]) {
+    if (responseObject[@"notifications"] && [responseObject[@"notifications"] count] != 0) {
         [[MLNotificationManager sharedManager] setNotifications:responseObject[@"notifications"]];
         [_notificationTableView setNotifications:[[MLNotificationManager sharedManager] getNotifications]];
     } else {

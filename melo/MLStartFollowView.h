@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MLStartFollowView : UIView
+extern NSInteger MLStartFollowViewFollowCount;
+
+@interface MLStartFollowView : UITableView
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate;
 @end

@@ -11,4 +11,6 @@
 @interface MLViewController : NSObject
 
 + (void)setRootViewController;
+
++ (void)setHomeViewController;
 @end

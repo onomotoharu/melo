@@ -9,18 +9,19 @@
 #import "MLStartFollowView.h"
 
 #import "MLUserController.h"
-#import "MLFollowUserBlockView.h"
+#import "MLFollowUserCell.h"
+#import "MLIndicator.h"
 #import "UIColor+Addition.h"
 
-NSInteger MLStartFollowViewFollowCount = 3;
-NSInteger const MLStartFollowViewTitleHeight = 44;
+NSInteger MLStartFollowViewFollowCount = 1;
+NSInteger MLStartFollowViewBtnHeight = 44;
 
-@interface MLStartFollowView () <UIAlertViewDelegate> {
+@interface MLStartFollowView () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
     @private
-    __weak id _delegate;
+    __weak id _controllerDelegate;
     short _followNum;
-    UIScrollView *_scrollView;
     UIButton *_completeBtn;
+    NSMutableArray *_neighbors;
 }
 
 @end
@@ -30,42 +31,19 @@ NSInteger const MLStartFollowViewTitleHeight = 44;
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate {
     self = [super initWithFrame:frame];
     if (self) {
-        _delegate = delegate;
-        [self setTitle];
-        [self setScrollView];
+        _controllerDelegate = delegate;
+        self.backgroundColor = [UIColor whiteColor];
+        self.delegate = self;
+        self.dataSource = self;
+        self.tableFooterView = [UIView new]; // remove extra separator
         [self getNeighbor];
-        [self setFollowNum:1];
     }
     return self;
 }
 
-- (void)setTitle {
-    NSString *followNumText = [NSString stringWithFormat:@"%ld人", MLStartFollowViewFollowCount];
-    NSString *title = [NSString stringWithFormat:@"センスの合う人を%@フォローしよう！", followNumText];
-    UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue-Italic" size:16];
-    UIColor *titleColor = [UIColor colorWithDecRed:154 green:153 blue:154 alpha:1];
-    // make attributes string
-    NSMutableAttributedString *attrTitle = [[[NSAttributedString alloc] initWithString:title] mutableCopy];
-    [attrTitle addAttribute:NSFontAttributeName value:titleFont range:NSMakeRange(0, attrTitle.length)];
-    [attrTitle addAttribute:NSForegroundColorAttributeName value:titleColor range:NSMakeRange(0, attrTitle.length)];
-    [attrTitle addAttribute:NSForegroundColorAttributeName value:[UIColor basePinkColor] range:[title rangeOfString:followNumText]];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [MLDevice topMargin:NO], NNViewWidth(self), MLStartFollowViewTitleHeight)];
-    titleLabel.attributedText = attrTitle;
-    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [self addSubview:titleLabel];
-}
-
-- (void)setScrollView {
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, MLStartFollowViewTitleHeight + [MLDevice topMargin:NO], NNViewWidth(self), NNViewHeight(self) - MLStartFollowViewTitleHeight)];
-        [self addSubview:_scrollView];
-    }
-}
-
 - (void)setFollowNum:(short)followNum {
     _followNum = followNum;
-    if (_followNum > 0) {
+    if (_followNum >= MLStartFollowViewFollowCount) {
         [self setCompleteBtn];
     } else {
         [self removeCompleteBtn];
@@ -75,49 +53,75 @@ NSInteger const MLStartFollowViewTitleHeight = 44;
 - (void)setCompleteBtn {
     if (!_completeBtn) {
         _completeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _completeBtn.frame = CGRectMake(0, NNViewHeight(self) - 44, NNViewWidth(self), 44);
+        _completeBtn.frame = CGRectMake(0, NNViewMaxY(self.superview) - MLStartFollowViewBtnHeight, NNViewWidth(self), MLStartFollowViewBtnHeight);
         _completeBtn.backgroundColor = [UIColor basePinkColor];
         [_completeBtn setTitle:@"完了！" forState:UIControlStateNormal];
-        [_completeBtn addTarget:_delegate action:@selector(complete) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_completeBtn];
-        _scrollView.contentInset = UIEdgeInsetsMake(0, 0, NNViewHeight(_completeBtn), 0);
+        [_completeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_completeBtn addTarget:_controllerDelegate action:@selector(complete) forControlEvents:UIControlEventTouchUpInside];
+        [self.superview addSubview:_completeBtn];
+        CGRect frame = self.frame;
+        frame.size.height -= MLStartFollowViewBtnHeight;
+        self.frame = frame;
     }
 }
 
 - (void)removeCompleteBtn {
+    if (_completeBtn) {
+        CGRect frame = self.frame;
+        frame.size.height += MLStartFollowViewBtnHeight;
+        self.frame = frame;
+    }
     [_completeBtn removeFromSuperview];
     _completeBtn = nil;
-    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (void)drawRect:(CGRect)rect {
+    // line
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(context, 219 / 255.f, 220 / 255.f, 220 / 255.f, 1.0);
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, 0, 0);
+    CGContextAddLineToPoint(context, NNViewWidth(self), 0);
+    CGContextClosePath(context);
+    CGContextDrawPath(context, kCGPathStroke);
 }
 
 #pragma mark - Neighbor
 
 - (void)getNeighbor {
+    _neighbors = [@[] mutableCopy];
+    //[MLIndicator show:nil]; // TODO : 表示されない原因の調査
     [MLUserController getNeighbor:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self setNeighbor:responseObject];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self failedGetNeighbor];
     }];
 }
 
 - (void)setNeighbor:(id)responseObject {
     if (!responseObject[@"users"]) {
+        [self failedGetNeighbor];
         return;
     }
-    CGRect rect = CGRectMake(0, 0, NNViewWidth(self), 0);
-    for (int i = 0; i < 3; i++) {
-        for (NSDictionary *json in responseObject[@"users"]) {
-            MLFollowUserBlockView *followUserBlock = [[MLFollowUserBlockView alloc] initWithFrame:rect json:json];
-            rect.origin.y += NNViewHeight(followUserBlock);
-            [_scrollView addSubview:followUserBlock];
-        }
+    [MLIndicator dissmiss];
+    for (NSDictionary *json in responseObject[@"users"]) {
+        [self initDate:json];
     }
-    [_scrollView setContentSize:CGSizeMake(NNViewWidth(self), rect.origin.y)];
+    [self reloadData];
 }
 
 - (void)failedGetNeighbor {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"エラーにより情報を取得できませんでした。\n時間が経ってからもう一度おためしください。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"リトライ", nil];
-    [alertView show];
+    [MLIndicator showErrorWithStatus:@"エラーにより情報を取得できませんでした。"];
+}
+
+#pragma mark - MLFollowUserCellDelegate
+
+- (void)successFollowUser:(MLFollowUserCell *)view {
+    [self setFollowNum:_followNum + 1];
+}
+
+- (void)successUnFollowUser:(MLFollowUserCell *)view {
+    [self setFollowNum:_followNum - 1];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -130,6 +134,60 @@ NSInteger const MLStartFollowViewTitleHeight = 44;
         default:
             break;
     }
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _neighbors.count;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellIdentifier = @"MLFollowUserCell";
+    MLFollowUserCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (!cell) {
+        __weak MLStartFollowView *weakSelf = self;
+        cell = [[MLFollowUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.delegate = weakSelf;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    cell.neighbor = _neighbors[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [MLFollowUserCell height:_neighbors[indexPath.row][@"products"]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+}
+
+- (void)initDate:(id)json {
+    MLUser *user = [MLUser createEntity];
+    if (json) {
+        [user update:json];
+    }
+    
+    NSMutableArray *products = [@[] mutableCopy];
+    NSArray *productArray = [json objectForKey:@"products"];
+    if (productArray) {
+        for (NSDictionary *productDic in productArray) {
+            MLProduct *product = [MLProduct createEntity];
+            [product update:productDic];
+            [products addObject:product];
+        }
+    }
+    [_neighbors addObject:@{@"user": user, @"products": products}];
 }
 
 @end

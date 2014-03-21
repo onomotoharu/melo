@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323E563C18DC44F50048FA40 /* MLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E563B18DC44F50048FA40 /* MLWebViewController.m */; };
+		323E564018DC4A990048FA40 /* MLModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E563F18DC4A990048FA40 /* MLModalViewController.m */; };
 		323F600718D304C5006FDDF1 /* MLProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F600618D304C5006FDDF1 /* MLProductViewController.m */; };
 		323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F600A18D34DC8006FDDF1 /* MLProductView.m */; };
 		323F600F18D3669D006FDDF1 /* MLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F600E18D3669D006FDDF1 /* MLAlert.m */; };
@@ -32,7 +34,7 @@
 		329FAA8718D19D5400FBC7F6 /* MLStartFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA8618D19D5400FBC7F6 /* MLStartFollowViewController.m */; };
 		329FAA8B18D1A79700FBC7F6 /* MLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA8A18D1A79700FBC7F6 /* MLHomeViewController.m */; };
 		329FAA8F18D1A96C00FBC7F6 /* MLStartFollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA8E18D1A96C00FBC7F6 /* MLStartFollowView.m */; };
-		329FAA9218D1AE5700FBC7F6 /* MLFollowUserBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA9118D1AE5700FBC7F6 /* MLFollowUserBlockView.m */; };
+		329FAA9218D1AE5700FBC7F6 /* MLFollowUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA9118D1AE5700FBC7F6 /* MLFollowUserCell.m */; };
 		329FAA9A18D1B0BF00FBC7F6 /* MLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA9918D1B0BF00FBC7F6 /* MLUser.m */; };
 		329FAA9D18D1B0DE00FBC7F6 /* MLProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAA9C18D1B0DE00FBC7F6 /* MLProduct.m */; };
 		329FAAA218D1D25200FBC7F6 /* MLConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FAAA118D1D25200FBC7F6 /* MLConnector.m */; };
@@ -40,6 +42,7 @@
 		329FAAA718D1F01200FBC7F6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329FAAA618D1F01200FBC7F6 /* Security.framework */; };
 		329FAAA918D1F01C00FBC7F6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329FAAA818D1F01C00FBC7F6 /* CFNetwork.framework */; };
 		329FAAAB18D1F02900FBC7F6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329FAAAA18D1F02900FBC7F6 /* SystemConfiguration.framework */; };
+		32B8DC2C18D6124C0077DF2E /* MLStoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B8DC2B18D6124C0077DF2E /* MLStoreTableViewController.m */; };
 		32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1C118D08E7F004D7E38 /* MLLoginViewController.m */; };
 		32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1C518D08F43004D7E38 /* MLNavigationViewController.m */; };
 		32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1CC18D0956F004D7E38 /* MLLoginView.m */; };
@@ -108,6 +111,10 @@
 
 /* Begin PBXFileReference section */
 		2499973558944353BA48409B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		323E563A18DC44F50048FA40 /* MLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLWebViewController.h; sourceTree = "<group>"; };
+		323E563B18DC44F50048FA40 /* MLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLWebViewController.m; sourceTree = "<group>"; };
+		323E563E18DC4A990048FA40 /* MLModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLModalViewController.h; sourceTree = "<group>"; };
+		323E563F18DC4A990048FA40 /* MLModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLModalViewController.m; sourceTree = "<group>"; };
 		323F600518D304C5006FDDF1 /* MLProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductViewController.h; sourceTree = "<group>"; };
 		323F600618D304C5006FDDF1 /* MLProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductViewController.m; sourceTree = "<group>"; };
 		323F600918D34DC8006FDDF1 /* MLProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductView.h; sourceTree = "<group>"; };
@@ -146,8 +153,8 @@
 		329FAA8A18D1A79700FBC7F6 /* MLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHomeViewController.m; sourceTree = "<group>"; };
 		329FAA8D18D1A96C00FBC7F6 /* MLStartFollowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStartFollowView.h; sourceTree = "<group>"; };
 		329FAA8E18D1A96C00FBC7F6 /* MLStartFollowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStartFollowView.m; sourceTree = "<group>"; };
-		329FAA9018D1AE5700FBC7F6 /* MLFollowUserBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFollowUserBlockView.h; sourceTree = "<group>"; };
-		329FAA9118D1AE5700FBC7F6 /* MLFollowUserBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFollowUserBlockView.m; sourceTree = "<group>"; };
+		329FAA9018D1AE5700FBC7F6 /* MLFollowUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFollowUserCell.h; sourceTree = "<group>"; };
+		329FAA9118D1AE5700FBC7F6 /* MLFollowUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFollowUserCell.m; sourceTree = "<group>"; };
 		329FAA9818D1B0BF00FBC7F6 /* MLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUser.h; sourceTree = "<group>"; };
 		329FAA9918D1B0BF00FBC7F6 /* MLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUser.m; sourceTree = "<group>"; };
 		329FAA9B18D1B0DE00FBC7F6 /* MLProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProduct.h; sourceTree = "<group>"; };
@@ -159,6 +166,8 @@
 		329FAAA618D1F01200FBC7F6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		329FAAA818D1F01C00FBC7F6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		329FAAAA18D1F02900FBC7F6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		32B8DC2A18D6124C0077DF2E /* MLStoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStoreTableViewController.h; sourceTree = "<group>"; };
+		32B8DC2B18D6124C0077DF2E /* MLStoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStoreTableViewController.m; sourceTree = "<group>"; };
 		32D3D1C018D08E7F004D7E38 /* MLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLoginViewController.h; sourceTree = "<group>"; };
 		32D3D1C118D08E7F004D7E38 /* MLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginViewController.m; sourceTree = "<group>"; };
 		32D3D1C418D08F43004D7E38 /* MLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationViewController.h; sourceTree = "<group>"; };
@@ -299,6 +308,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		323E563918DC44D40048FA40 /* WebController */ = {
+			isa = PBXGroup;
+			children = (
+				323E563A18DC44F50048FA40 /* MLWebViewController.h */,
+				323E563B18DC44F50048FA40 /* MLWebViewController.m */,
+			);
+			name = WebController;
+			sourceTree = "<group>";
+		};
+		323E563D18DC4A890048FA40 /* ModalController */ = {
+			isa = PBXGroup;
+			children = (
+				323E563E18DC4A990048FA40 /* MLModalViewController.h */,
+				323E563F18DC4A990048FA40 /* MLModalViewController.m */,
+			);
+			name = ModalController;
+			sourceTree = "<group>";
+		};
 		323F600418D3048C006FDDF1 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,8 +489,8 @@
 			children = (
 				329FAA8D18D1A96C00FBC7F6 /* MLStartFollowView.h */,
 				329FAA8E18D1A96C00FBC7F6 /* MLStartFollowView.m */,
-				329FAA9018D1AE5700FBC7F6 /* MLFollowUserBlockView.h */,
-				329FAA9118D1AE5700FBC7F6 /* MLFollowUserBlockView.m */,
+				329FAA9018D1AE5700FBC7F6 /* MLFollowUserCell.h */,
+				329FAA9118D1AE5700FBC7F6 /* MLFollowUserCell.m */,
 			);
 			name = StartFollow;
 			sourceTree = "<group>";
@@ -514,6 +541,15 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		32B8DC2918D612310077DF2E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				32B8DC2A18D6124C0077DF2E /* MLStoreTableViewController.h */,
+				32B8DC2B18D6124C0077DF2E /* MLStoreTableViewController.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
 		32D3D1BA18D08C2E004D7E38 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +565,8 @@
 			children = (
 				32E15E6318D2BD1200AFA3F0 /* TabBarController */,
 				32D3D1C318D08F13004D7E38 /* NavigationController */,
+				323E563D18DC4A890048FA40 /* ModalController */,
+				323E563918DC44D40048FA40 /* WebController */,
 				32D3D1BF18D08DF1004D7E38 /* Login */,
 				329FAA8418D19C9C00FBC7F6 /* StartFollow */,
 				329FAA8818D1A77500FBC7F6 /* Home */,
@@ -536,6 +574,7 @@
 				32DEF69718D54C8B002CFF9B /* Setting */,
 				32E15E7118D2E16A00AFA3F0 /* User */,
 				323F600418D3048C006FDDF1 /* Product */,
+				32B8DC2918D612310077DF2E /* Post */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1061,7 +1100,7 @@
 				32E342D218D43A9100ECBB60 /* MLNotificationTableView.m in Sources */,
 				32E15E6D18D2CF0400AFA3F0 /* MLProductCollectionView.m in Sources */,
 				323F601D18D37B2B006FDDF1 /* MLUserView.m in Sources */,
-				329FAA9218D1AE5700FBC7F6 /* MLFollowUserBlockView.m in Sources */,
+				329FAA9218D1AE5700FBC7F6 /* MLFollowUserCell.m in Sources */,
 				329FAAA518D1DB1400FBC7F6 /* MLHttpRequest.m in Sources */,
 				32E3D51918D243C6004CEAE0 /* MLNotificationCenter.m in Sources */,
 				323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */,
@@ -1079,6 +1118,7 @@
 				329FAA9D18D1B0DE00FBC7F6 /* MLProduct.m in Sources */,
 				323F601918D37910006FDDF1 /* MLCurrentUser.m in Sources */,
 				32E3D50718D24230004CEAE0 /* SDImageCache.m in Sources */,
+				32B8DC2C18D6124C0077DF2E /* MLStoreTableViewController.m in Sources */,
 				323F601618D36A83006FDDF1 /* MLIndicator.m in Sources */,
 				32DEF6B118D5C11F002CFF9B /* MLInquiryView.m in Sources */,
 				32E3D50A18D24230004CEAE0 /* SDWebImageDownloader.m in Sources */,
@@ -1087,6 +1127,7 @@
 				32E3D50618D24230004CEAE0 /* MKAnnotationView+WebCache.m in Sources */,
 				32D3D1D018D17510004D7E38 /* UIImage+Addition.m in Sources */,
 				32E3D51018D24230004CEAE0 /* UIImage+MultiFormat.m in Sources */,
+				323E563C18DC44F50048FA40 /* MLWebViewController.m in Sources */,
 				32E3D50E18D24230004CEAE0 /* UIButton+WebCache.m in Sources */,
 				32E342D918D43D4500ECBB60 /* MLNotificationManager.m in Sources */,
 				32E3A08318D5D965000F375A /* MLEditProfileView.m in Sources */,
@@ -1104,6 +1145,7 @@
 				32E15E7B18D2E6B200AFA3F0 /* MLProductManager.m in Sources */,
 				32DEF69E18D54DE1002CFF9B /* MLSettingView.m in Sources */,
 				329FAA8F18D1A96C00FBC7F6 /* MLStartFollowView.m in Sources */,
+				323E564018DC4A990048FA40 /* MLModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
