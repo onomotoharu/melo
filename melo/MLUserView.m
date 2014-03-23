@@ -50,6 +50,12 @@ NSInteger const MLUserViewCollectionTitleHeight = 25;
     [self setNeedsDisplay];
 }
 
+- (void)updateUser {
+    [self setImageView];
+    [self setFollowBtn];
+    [self setNeedsDisplay];
+}
+
 - (void)setImageView {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(MLUserViewImageMargin,

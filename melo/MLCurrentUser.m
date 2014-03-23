@@ -14,12 +14,32 @@ static MLUser *_currentuser = nil;
 
 + (MLUser *)currentuser {
     if (!_currentuser) {
-        _currentuser = [MLUser createEntity];
-        _currentuser.id = @(1);
-        _currentuser.name = @"Thubasa Honda";
-        _currentuser.image = @"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRULOovkCAsYhHEtotiUh48CwXPGpaNUTJN04O800pKPKfh6L6h";
+        // TODO : category化
+        if ([MLUserDefaults getCurrentUserid]) {
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"MLUser"];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", [MLUserDefaults getCurrentUserid]];
+            [fetchRequest setPredicate:predicate];
+            
+            NSArray *results = [[NSManagedObjectContext contextForCurrentThread] executeFetchRequest:fetchRequest error:nil];
+            
+            if (results.count > 0) {
+                _currentuser = [results objectAtIndex:0];
+            }
+        }
+        if (!_currentuser) {
+            _currentuser = [MLUser createEntity];
+        }
     }
-    return _currentuser;
+    return [_currentuser inContext:[NSManagedObjectContext contextForCurrentThread]];
+}
+
++ (void)update:(NSDictionary *)attributes {
+    [[self currentuser] update:attributes];
+    _currentuser.enableSave = @(YES);
+    [_currentuser.managedObjectContext save];
+    if (_currentuser.id) {
+        [MLUserDefaults setCurrentUserId:_currentuser.id];
+    }
 }
 
 + (NSString *)getUUID {

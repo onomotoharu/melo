@@ -16,14 +16,15 @@
 @dynamic items;
 @dynamic follows;
 @dynamic followers;
+@dynamic enableSave;
 
 @synthesize isFollowed;
 @synthesize isFollow;
 
 #pragma mark - Validate
 
-- (BOOL)validateId:(id *)ioValue error:(NSError **)outError {
-    if (*ioValue == nil || [*ioValue isEqualToNumber:@(0)]) {
+- (BOOL)validateEnableSave:(id *)ioValue error:(NSError **)outError {
+    if (*ioValue == nil || ![*ioValue boolValue]) {
         return NO;
     }
     return YES;

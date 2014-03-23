@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320027B718DC6BD20013C061 /* MLStoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 320027B618DC6BD20013C061 /* MLStoreTableView.m */; };
+		320027BB18DC6C0C0013C061 /* MLStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 320027BA18DC6C0C0013C061 /* MLStore.m */; };
+		320027BE18DC6C1A0013C061 /* MLStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 320027BD18DC6C1A0013C061 /* MLStoreManager.m */; };
+		320027C118DC84770013C061 /* MLPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 320027C018DC84770013C061 /* MLPostViewController.m */; };
 		323E563C18DC44F50048FA40 /* MLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E563B18DC44F50048FA40 /* MLWebViewController.m */; };
 		323E564018DC4A990048FA40 /* MLModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E563F18DC4A990048FA40 /* MLModalViewController.m */; };
 		323F600718D304C5006FDDF1 /* MLProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F600618D304C5006FDDF1 /* MLProductViewController.m */; };
@@ -42,7 +46,20 @@
 		329FAAA718D1F01200FBC7F6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329FAAA618D1F01200FBC7F6 /* Security.framework */; };
 		329FAAA918D1F01C00FBC7F6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329FAAA818D1F01C00FBC7F6 /* CFNetwork.framework */; };
 		329FAAAB18D1F02900FBC7F6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329FAAAA18D1F02900FBC7F6 /* SystemConfiguration.framework */; };
-		32B8DC2C18D6124C0077DF2E /* MLStoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B8DC2B18D6124C0077DF2E /* MLStoreTableViewController.m */; };
+		32AE148A18DE790600B1AC74 /* MLProductPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AE148918DE790600B1AC74 /* MLProductPhotosView.m */; };
+		32AE148D18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AE148C18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.m */; };
+		32AE149018DE821600B1AC74 /* MLProductPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AE148F18DE821600B1AC74 /* MLProductPhotosViewController.m */; };
+		32AE149318DE889D00B1AC74 /* MLPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AE149218DE889D00B1AC74 /* MLPhotoCell.m */; };
+		32AE14AC18DEB8BB00B1AC74 /* NavBar-backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A318DEB8BB00B1AC74 /* NavBar-backButton.png */; };
+		32AE14AD18DEB8BB00B1AC74 /* NavBar-backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A418DEB8BB00B1AC74 /* NavBar-backButton@2x.png */; };
+		32AE14AE18DEB8BB00B1AC74 /* NavBar-closeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A518DEB8BB00B1AC74 /* NavBar-closeButton@2x.png */; };
+		32AE14AF18DEB8BB00B1AC74 /* NavBar-closeButtonHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A618DEB8BB00B1AC74 /* NavBar-closeButtonHover.png */; };
+		32AE14B818DEB93900B1AC74 /* TabBar-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B418DEB93900B1AC74 /* TabBar-home.png */; };
+		32AE14B918DEB93900B1AC74 /* TabBar-home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B518DEB93900B1AC74 /* TabBar-home@2x.png */; };
+		32AE14BA18DEB93900B1AC74 /* TabBar-timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B618DEB93900B1AC74 /* TabBar-timeline.png */; };
+		32AE14BB18DEB93900B1AC74 /* TabBar-timeline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B718DEB93900B1AC74 /* TabBar-timeline@2x.png */; };
+		32AE14BE18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14BC18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png */; };
+		32AE14BF18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14BD18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png */; };
 		32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1C118D08E7F004D7E38 /* MLLoginViewController.m */; };
 		32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1C518D08F43004D7E38 /* MLNavigationViewController.m */; };
 		32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1CC18D0956F004D7E38 /* MLLoginView.m */; };
@@ -111,6 +128,15 @@
 
 /* Begin PBXFileReference section */
 		2499973558944353BA48409B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		320027B318DC62A80013C061 /* melo Version1.00.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "melo Version1.00.xcdatamodel"; sourceTree = "<group>"; };
+		320027B518DC6BD20013C061 /* MLStoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStoreTableView.h; sourceTree = "<group>"; };
+		320027B618DC6BD20013C061 /* MLStoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStoreTableView.m; sourceTree = "<group>"; };
+		320027B918DC6C0C0013C061 /* MLStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStore.h; sourceTree = "<group>"; };
+		320027BA18DC6C0C0013C061 /* MLStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStore.m; sourceTree = "<group>"; };
+		320027BC18DC6C1A0013C061 /* MLStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStoreManager.h; sourceTree = "<group>"; };
+		320027BD18DC6C1A0013C061 /* MLStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStoreManager.m; sourceTree = "<group>"; };
+		320027BF18DC84770013C061 /* MLPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPostViewController.h; sourceTree = "<group>"; };
+		320027C018DC84770013C061 /* MLPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPostViewController.m; sourceTree = "<group>"; };
 		323E563A18DC44F50048FA40 /* MLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLWebViewController.h; sourceTree = "<group>"; };
 		323E563B18DC44F50048FA40 /* MLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLWebViewController.m; sourceTree = "<group>"; };
 		323E563E18DC4A990048FA40 /* MLModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLModalViewController.h; sourceTree = "<group>"; };
@@ -166,8 +192,24 @@
 		329FAAA618D1F01200FBC7F6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		329FAAA818D1F01C00FBC7F6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		329FAAAA18D1F02900FBC7F6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		32B8DC2A18D6124C0077DF2E /* MLStoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStoreTableViewController.h; sourceTree = "<group>"; };
-		32B8DC2B18D6124C0077DF2E /* MLStoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStoreTableViewController.m; sourceTree = "<group>"; };
+		32AE148818DE790600B1AC74 /* MLProductPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductPhotosView.h; sourceTree = "<group>"; };
+		32AE148918DE790600B1AC74 /* MLProductPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductPhotosView.m; sourceTree = "<group>"; };
+		32AE148B18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductPhotosCollectionLayout.h; sourceTree = "<group>"; };
+		32AE148C18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductPhotosCollectionLayout.m; sourceTree = "<group>"; };
+		32AE148E18DE821600B1AC74 /* MLProductPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLProductPhotosViewController.h; sourceTree = "<group>"; };
+		32AE148F18DE821600B1AC74 /* MLProductPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLProductPhotosViewController.m; sourceTree = "<group>"; };
+		32AE149118DE889D00B1AC74 /* MLPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoCell.h; sourceTree = "<group>"; };
+		32AE149218DE889D00B1AC74 /* MLPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoCell.m; sourceTree = "<group>"; };
+		32AE14A318DEB8BB00B1AC74 /* NavBar-backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButton.png"; sourceTree = "<group>"; };
+		32AE14A418DEB8BB00B1AC74 /* NavBar-backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButton@2x.png"; sourceTree = "<group>"; };
+		32AE14A518DEB8BB00B1AC74 /* NavBar-closeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-closeButton@2x.png"; sourceTree = "<group>"; };
+		32AE14A618DEB8BB00B1AC74 /* NavBar-closeButtonHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-closeButtonHover.png"; sourceTree = "<group>"; };
+		32AE14B418DEB93900B1AC74 /* TabBar-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-home.png"; sourceTree = "<group>"; };
+		32AE14B518DEB93900B1AC74 /* TabBar-home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-home@2x.png"; sourceTree = "<group>"; };
+		32AE14B618DEB93900B1AC74 /* TabBar-timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-timeline.png"; sourceTree = "<group>"; };
+		32AE14B718DEB93900B1AC74 /* TabBar-timeline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-timeline@2x.png"; sourceTree = "<group>"; };
+		32AE14BC18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-postButtonWithCircle.png"; sourceTree = "<group>"; };
+		32AE14BD18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-postButtonWithCircle@2x.png"; sourceTree = "<group>"; };
 		32D3D1C018D08E7F004D7E38 /* MLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLoginViewController.h; sourceTree = "<group>"; };
 		32D3D1C118D08E7F004D7E38 /* MLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginViewController.m; sourceTree = "<group>"; };
 		32D3D1C418D08F43004D7E38 /* MLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationViewController.h; sourceTree = "<group>"; };
@@ -308,6 +350,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320027B418DC6BAF0013C061 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				320027B518DC6BD20013C061 /* MLStoreTableView.h */,
+				320027B618DC6BD20013C061 /* MLStoreTableView.m */,
+				32AE148818DE790600B1AC74 /* MLProductPhotosView.h */,
+				32AE148918DE790600B1AC74 /* MLProductPhotosView.m */,
+				32AE148B18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.h */,
+				32AE148C18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.m */,
+				32AE149118DE889D00B1AC74 /* MLPhotoCell.h */,
+				32AE149218DE889D00B1AC74 /* MLPhotoCell.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		320027B818DC6BF80013C061 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				320027B918DC6C0C0013C061 /* MLStore.h */,
+				320027BA18DC6C0C0013C061 /* MLStore.m */,
+				320027BC18DC6C1A0013C061 /* MLStoreManager.h */,
+				320027BD18DC6C1A0013C061 /* MLStoreManager.m */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
 		323E563918DC44D40048FA40 /* WebController */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,11 +609,39 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		32AE14A218DEB8BB00B1AC74 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				32AE14A318DEB8BB00B1AC74 /* NavBar-backButton.png */,
+				32AE14A418DEB8BB00B1AC74 /* NavBar-backButton@2x.png */,
+				32AE14A518DEB8BB00B1AC74 /* NavBar-closeButton@2x.png */,
+				32AE14A618DEB8BB00B1AC74 /* NavBar-closeButtonHover.png */,
+			);
+			name = NavigationController;
+			path = images/NavigationController;
+			sourceTree = "<group>";
+		};
+		32AE14A718DEB8BB00B1AC74 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				32AE14BC18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png */,
+				32AE14BD18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png */,
+				32AE14B418DEB93900B1AC74 /* TabBar-home.png */,
+				32AE14B518DEB93900B1AC74 /* TabBar-home@2x.png */,
+				32AE14B618DEB93900B1AC74 /* TabBar-timeline.png */,
+				32AE14B718DEB93900B1AC74 /* TabBar-timeline@2x.png */,
+			);
+			name = TabBarController;
+			path = images/TabBarController;
+			sourceTree = "<group>";
+		};
 		32B8DC2918D612310077DF2E /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				32B8DC2A18D6124C0077DF2E /* MLStoreTableViewController.h */,
-				32B8DC2B18D6124C0077DF2E /* MLStoreTableViewController.m */,
+				320027BF18DC84770013C061 /* MLPostViewController.h */,
+				320027C018DC84770013C061 /* MLPostViewController.m */,
+				32AE148E18DE821600B1AC74 /* MLProductPhotosViewController.h */,
+				32AE148F18DE821600B1AC74 /* MLProductPhotosViewController.m */,
 			);
 			name = Post;
 			sourceTree = "<group>";
@@ -590,6 +686,7 @@
 				323F601A18D37B17006FDDF1 /* User */,
 				323F600818D34DB0006FDDF1 /* Product */,
 				329FAA9618D1AEF200FBC7F6 /* ProductCollection */,
+				320027B418DC6BAF0013C061 /* Post */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -600,6 +697,7 @@
 				329FAA9718D1AF3400FBC7F6 /* User */,
 				329FAA9E18D1B0EC00FBC7F6 /* Product */,
 				32E342D318D43C1400ECBB60 /* Notification */,
+				320027B818DC6BF80013C061 /* Store */,
 				32529F5A18D23C8C00ADA8EE /* Image */,
 				329FAA9F18D1CFF600FBC7F6 /* Network */,
 				32749DE418D085AF00337C06 /* melo.xcdatamodeld */,
@@ -648,6 +746,8 @@
 		32D3D1C818D093BD004D7E38 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				32AE14A218DEB8BB00B1AC74 /* NavigationController */,
+				32AE14A718DEB8BB00B1AC74 /* TabBarController */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1022,7 +1122,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				32749DDD18D085AF00337C06 /* InfoPlist.strings in Resources */,
+				32AE14BB18DEB93900B1AC74 /* TabBar-timeline@2x.png in Resources */,
+				32AE14BF18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png in Resources */,
+				32AE14AD18DEB8BB00B1AC74 /* NavBar-backButton@2x.png in Resources */,
 				32749DE818D085AF00337C06 /* Images.xcassets in Resources */,
+				32AE14AF18DEB8BB00B1AC74 /* NavBar-closeButtonHover.png in Resources */,
+				32AE14B818DEB93900B1AC74 /* TabBar-home.png in Resources */,
+				32AE14BA18DEB93900B1AC74 /* TabBar-timeline.png in Resources */,
+				32AE14BE18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png in Resources */,
+				32AE14B918DEB93900B1AC74 /* TabBar-home@2x.png in Resources */,
+				32AE14AE18DEB8BB00B1AC74 /* NavBar-closeButton@2x.png in Resources */,
+				32AE14AC18DEB8BB00B1AC74 /* NavBar-backButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,6 +1190,8 @@
 				32D3D1D318D17713004D7E38 /* UIColor+Addition.m in Sources */,
 				32E342D618D43D3900ECBB60 /* MLNotification.m in Sources */,
 				32749DDF18D085AF00337C06 /* main.m in Sources */,
+				320027BE18DC6C1A0013C061 /* MLStoreManager.m in Sources */,
+				320027C118DC84770013C061 /* MLPostViewController.m in Sources */,
 				32E3A07E18D5D7D7000F375A /* MLEditProfileViewController.m in Sources */,
 				32E15E7E18D2EC4000AFA3F0 /* MLProductCell.m in Sources */,
 				32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */,
@@ -1092,6 +1204,7 @@
 				32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */,
 				32E3D50D18D24230004CEAE0 /* SDWebImagePrefetcher.m in Sources */,
 				32DEF69318D4DC68002CFF9B /* MLNotificationViewController.m in Sources */,
+				32AE148D18DE7F9800B1AC74 /* MLProductPhotosCollectionLayout.m in Sources */,
 				32E3D51518D242B2004CEAE0 /* NSData+ImageContentType.m in Sources */,
 				32E342DD18D43E4400ECBB60 /* MLNotificationController.m in Sources */,
 				32E3D51218D24230004CEAE0 /* UIImageView+WebCache.m in Sources */,
@@ -1102,6 +1215,7 @@
 				323F601D18D37B2B006FDDF1 /* MLUserView.m in Sources */,
 				329FAA9218D1AE5700FBC7F6 /* MLFollowUserCell.m in Sources */,
 				329FAAA518D1DB1400FBC7F6 /* MLHttpRequest.m in Sources */,
+				320027B718DC6BD20013C061 /* MLStoreTableView.m in Sources */,
 				32E3D51918D243C6004CEAE0 /* MLNotificationCenter.m in Sources */,
 				323F600B18D34DC8006FDDF1 /* MLProductView.m in Sources */,
 				32DEF69618D4DD77002CFF9B /* MLNotificationView.m in Sources */,
@@ -1117,8 +1231,8 @@
 				32529F5D18D23CA700ADA8EE /* MLImageManager.m in Sources */,
 				329FAA9D18D1B0DE00FBC7F6 /* MLProduct.m in Sources */,
 				323F601918D37910006FDDF1 /* MLCurrentUser.m in Sources */,
+				32AE148A18DE790600B1AC74 /* MLProductPhotosView.m in Sources */,
 				32E3D50718D24230004CEAE0 /* SDImageCache.m in Sources */,
-				32B8DC2C18D6124C0077DF2E /* MLStoreTableViewController.m in Sources */,
 				323F601618D36A83006FDDF1 /* MLIndicator.m in Sources */,
 				32DEF6B118D5C11F002CFF9B /* MLInquiryView.m in Sources */,
 				32E3D50A18D24230004CEAE0 /* SDWebImageDownloader.m in Sources */,
@@ -1129,9 +1243,11 @@
 				32E3D51018D24230004CEAE0 /* UIImage+MultiFormat.m in Sources */,
 				323E563C18DC44F50048FA40 /* MLWebViewController.m in Sources */,
 				32E3D50E18D24230004CEAE0 /* UIButton+WebCache.m in Sources */,
+				320027BB18DC6C0C0013C061 /* MLStore.m in Sources */,
 				32E342D918D43D4500ECBB60 /* MLNotificationManager.m in Sources */,
 				32E3A08318D5D965000F375A /* MLEditProfileView.m in Sources */,
 				329FAAA218D1D25200FBC7F6 /* MLConnector.m in Sources */,
+				32AE149318DE889D00B1AC74 /* MLPhotoCell.m in Sources */,
 				32DEF68F18D4BB2B002CFF9B /* MLNotificiationCellLayout.m in Sources */,
 				32E15E6718D2C5FD00AFA3F0 /* MLHomeTabView.m in Sources */,
 				32E15E6218D2BD0E00AFA3F0 /* MLTabViewController.m in Sources */,
@@ -1139,6 +1255,7 @@
 				32E15E7418D2E1C300AFA3F0 /* MLUserViewController.m in Sources */,
 				32E15E5B18D2B7A400AFA3F0 /* MLUserDefaults.m in Sources */,
 				32E15E5718D2B25100AFA3F0 /* MLDevice.m in Sources */,
+				32AE149018DE821600B1AC74 /* MLProductPhotosViewController.m in Sources */,
 				329FAA9A18D1B0BF00FBC7F6 /* MLUser.m in Sources */,
 				32E342CD18D4393A00ECBB60 /* MLNotificationTableViewController.m in Sources */,
 				32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */,
@@ -1379,9 +1496,10 @@
 		32749DE418D085AF00337C06 /* melo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				320027B318DC62A80013C061 /* melo Version1.00.xcdatamodel */,
 				32749DE518D085AF00337C06 /* melo.xcdatamodel */,
 			);
-			currentVersion = 32749DE518D085AF00337C06 /* melo.xcdatamodel */;
+			currentVersion = 320027B318DC62A80013C061 /* melo Version1.00.xcdatamodel */;
 			path = melo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -22,6 +22,18 @@
     [userDefaults synchronize];
 }
 
+// currentUserId
++ (NSNumber *)getCurrentUserid {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:@"currentUserId"];
+}
+
++ (void)setCurrentUserId:(NSNumber *)currentUserId {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:currentUserId forKey:@"currentUserId"];
+    [userDefaults synchronize];
+}
+
 // finished startguide
 + (bool)getFinishedStartGuide {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

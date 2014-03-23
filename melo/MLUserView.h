@@ -13,4 +13,5 @@
 + (CGFloat)height;
 
 - (void)setUser:(MLUser *)user;
+- (void)updateUser;
 @end

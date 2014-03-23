@@ -10,6 +10,7 @@
 
 #import "MLProductManager.h"
 #import "MLProductController.h"
+#import "MLUserController.h"
 #import "MLUserView.h"
 #import "MLProductCollectionView.h"
 #import "MLProductCollectionLayout.h"
@@ -19,6 +20,7 @@
 @interface MLUserViewController () {
     @private
     MLUser *_user;
+    MLUserView *_userView;
     MLProductCollectionView *_collectionView;
 }
 
@@ -40,8 +42,9 @@
 	
     [self setCollectionView];
     [self setUserView];
+    [self getAccount];
     //[self getWants];
-    [self getPosts];
+    //[self getPosts];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,9 +60,9 @@
 
 - (void)setUserView {
     CGRect userViewRect = CGRectMake(0, 0, NNViewWidth(self.view), [MLUserView height]);
-    MLUserView *userView = [[MLUserView alloc] initWithFrame:userViewRect];
-    [userView setUser:_user];
-    [_collectionView addSubview:userView];
+    _userView = [[MLUserView alloc] initWithFrame:userViewRect];
+    [_userView setUser:_user];
+    [_collectionView addSubview:_userView];
 }
 
 - (void)setCollectionView {
@@ -71,13 +74,24 @@
     [self.view addSubview:_collectionView];
 }
 
+#pragma mark - User
+
+- (void)getAccount {
+    [MLUserController getAccount:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [MLCurrentUser update:responseObject[@"user"]];
+        [_userView updateUser];
+        [self setPosts:responseObject[@"user"]];
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
+}
+
 #pragma mark - Want
 
 - (void)getWants {
     [MLProductController getWants:@{@"page": @(0)}
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                   [self setWants:responseObject];
-                              } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
+                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                               }];
 }
 

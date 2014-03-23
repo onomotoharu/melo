@@ -24,6 +24,8 @@
 @property (nonatomic, retain) NSString * externalUrl;
 @property (nonatomic, retain) MLUser *user;
 
+@property (nonatomic, retain) NSNumber *enableSave; // validation用
+
 @property (nonatomic) BOOL isWant;
 
 - (MLProduct *)update:(NSDictionary *)attributes;

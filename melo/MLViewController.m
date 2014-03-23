@@ -62,6 +62,7 @@
     [tabBarController setViewControllers:tabs];
     ((MLAppDelegate *)MLGetAppDelegate).window.rootViewController = tabBarController;
     [tabBarController setTabBarItems];
+    [tabBarController createPostBtn];
 }
 
 @end

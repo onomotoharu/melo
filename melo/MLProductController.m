@@ -12,6 +12,33 @@
 
 @implementation MLProductController
 
+#pragma - mark Parameter
+
++ (NSDictionary *)createParameter:(NSDictionary *)parameter {
+    return @{@"product": parameter};
+}
+
+
+#pragma - mark HTTP
+
+// GET
++ (void)getProduct:(NSNumber *)productId success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = [NSString stringWithFormat:@"/products/%@", productId];
+    [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];
+}
+
+// NEW
++ (void)newProduct:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = @"/products/new";
+    [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:parameters];
+}
+
+// CREATE
++ (void)createProduct:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = @"/products/";
+    [[MLConnector sharedConnector] post:urlString success:success failure:failure parameters:parameters];
+}
+
 // products
 + (void)getProducts:(NSString *)type parameters:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     NSString *urlString = [NSString stringWithFormat:@"/products/%@", type];
@@ -35,12 +62,6 @@
 + (void)getWants:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     NSString *urlString = @"/account/products";
     [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:parameters];
-}
-
-// product
-+ (void)getProduct:(NSNumber *)productId success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
-    NSString *urlString = [NSString stringWithFormat:@"/products/%@", productId];
-    [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];
 }
 
 // report

@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSSet *follows;
 @property (nonatomic, retain) NSSet *followers;
 
+@property (nonatomic, retain) NSNumber *enableSave; // validation用
+
 @property (nonatomic) BOOL isFollowed;
 @property (nonatomic) BOOL isFollow;
 

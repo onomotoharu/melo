@@ -10,5 +10,6 @@
 
 @interface MLTabViewController : UITabBarController
 
+- (void)createPostBtn;
 - (void)setTabBarItems;
 @end

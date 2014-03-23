@@ -13,6 +13,9 @@
 + (NSString *)getUUID;
 + (void)setUUID:(NSString *)UUID;
 
++ (NSNumber *)getCurrentUserid;
++ (void)setCurrentUserId:(NSNumber *)currentUserId;
+
 + (bool)getFinishedStartGuide;
 + (void)setFinishedStartGuide:(BOOL)finished;
 @end

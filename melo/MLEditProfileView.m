@@ -28,6 +28,7 @@ CGSize MLEditProfileViewButtonSize = {200, 35};
     UITextField *_nameField;
     UIButton *_changeBtn;
     MLKeyboardToolBar *_keyboardToolBar;
+    NSString *_imageUrlString;
 }
 
 @end
@@ -92,20 +93,21 @@ CGSize MLEditProfileViewButtonSize = {200, 35};
 }
 
 - (void)loadImage {
-    NSString *url = [[MLCurrentUser currentuser] image];
-    if (!url) {
+    _imageUrlString = [[MLCurrentUser currentuser] image];
+    if (!_imageUrlString) {
+        _imageUrlString = @"";
         return;
     }
     SDWebImageManager *imageManager = [SDWebImageManager sharedManager];
     // TODO : observer検討
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [MLNotificationCenter registerGetImageNotification:self url:url];
+    [MLNotificationCenter registerGetImageNotification:self url:_imageUrlString];
     
-    [imageManager.imageCache queryDiskCacheForKey:url done:^(UIImage *image, SDImageCacheType cacheType) {
+    [imageManager.imageCache queryDiskCacheForKey:_imageUrlString done:^(UIImage *image, SDImageCacheType cacheType) {
         if (image) {
             [_imageBtn setImage:image forState:UIControlStateNormal];
         } else {
-            [[MLImageManager sharedManager] performSelectorInBackground:@selector(load:) withObject:url];
+            [[MLImageManager sharedManager] performSelectorInBackground:@selector(load:) withObject:_imageUrlString];
         }
     }];
 }
@@ -178,11 +180,12 @@ CGSize MLEditProfileViewButtonSize = {200, 35};
 #pragma mark - ButtonAction
 
 - (void)changeProfile:(UIButton *)sender {
-    [MLIndicator show:nil];
-    NSDictionary *parameters = @{@"user": @{@"name": _nameField.text, @"avatar": [[MLCurrentUser currentuser] image]}};
+    [MLIndicator show:@"保存中..."];
+    NSDictionary *parameters = @{@"user": @{@"name": _nameField.text, @"avatar": _imageUrlString}};
     [MLUserController update:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [MLIndicator showSuccessWithStatus:@"変更を保存しました。"];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NNLog(@"%@", error)
         [MLIndicator showErrorWithStatus:@"問題が起きて変更に失敗しました。"];
     }];
 }

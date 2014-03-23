@@ -29,13 +29,14 @@ typedef enum {
 @dynamic thumbnailImage;
 @dynamic externalUrl;
 @dynamic user;
+@dynamic enableSave;
 
 @synthesize isWant;
 
 #pragma mark - Validate
 
-- (BOOL)validateId:(id *)ioValue error:(NSError **)outError {
-    if (*ioValue == nil || [*ioValue isEqualToNumber:@(0)]) {
+- (BOOL)validateEnableSave:(id *)ioValue error:(NSError **)outError {
+    if (*ioValue == nil || ![*ioValue boolValue]) {
         return NO;
     }
     return YES;

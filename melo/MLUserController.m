@@ -12,6 +12,7 @@
 
 @implementation MLUserController
 
+// account
 + (void)signup:(NSDictionary *)parameters success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     NSString *urlString = @"/account";
     [[MLConnector sharedConnector] post:urlString success:success failure:failure parameters:parameters];
@@ -22,11 +23,12 @@
     [[MLConnector sharedConnector] put:urlString success:success failure:failure parameters:parameters];
 }
 
-+ (void)getNeighbor:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
-    NSString *urlString = @"/users/neighbors";
++ (void)getAccount:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = @"/account";
     [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];
 }
 
+// follow
 + (void)follow:(MLUser *)user success:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
     if (user.isFollow) {
         NSString *urlString = [NSString stringWithFormat:@"/account/followeds/%@", user.id];
@@ -35,6 +37,12 @@
         NSString *urlString = [NSString stringWithFormat:@"/users/%@/follow", user.id];
         [[MLConnector sharedConnector] post:urlString success:success failure:failure parameters:@{}];
     }
+}
+
+// neighbors
++ (void)getNeighbor:(AFHTTPRequestSuccessBlocks)success failure:(AFHTTPRequestFailureBlocks)failure {
+    NSString *urlString = @"/users/neighbors";
+    [[MLConnector sharedConnector] get:urlString success:success failure:failure parameters:@{}];
 }
 
 
