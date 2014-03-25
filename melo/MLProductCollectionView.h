@@ -18,11 +18,14 @@
 - (void)setProducts:(NSMutableArray *)products;
 
 - (void)loaded:(BOOL)isComplete;
+- (void)startIndicatorView;
 @end
 
 @interface NSObject (MLProductCollectionViewDelegate)
 
 - (void)load:(NSInteger)type page:(NSInteger)page;
 - (void)didSelectItem:(MLProductCollectionView *)view product:(MLProduct *)product;
+- (void)scrollToUp:(MLProductCollectionView *)view;
+- (void)scrollToDown:(MLProductCollectionView *)view;
 
 @end

@@ -16,12 +16,14 @@
 #import "MLUserViewController.h"
 #import "MLModalViewController.h"
 #import "MLWebViewController.h"
+#import "MLTabViewController.h"
 
 @interface MLProductViewController () {
     @private
     MLProduct *_product;
     MLProductView *_productView;
     MLProductCollectionView *_collectionView;
+    BOOL _isFullScrean;
 }
 
 @end
@@ -40,10 +42,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"melo"; // TODO : 一旦
     [self setRelationView];
     [self setProductView];
     [self getProduct];
-    [self getRelations];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +78,7 @@
     }
     [MLProductController getProduct:_product.id success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self setProduct:responseObject];
+        [self setRelations:responseObject[@"product"]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *erroe) {
         [self failedGetProduct];
     }];
@@ -91,17 +94,17 @@
     [alertView show];
 }
 
-- (void)getRelations {
-    [MLProductController getRelations:_product.id parameters:@{@"page": @(0)}
-                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                  [self setRelations:responseObject];
-                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                              }];
-}
+//- (void)getRelations {
+//    [MLProductController getRelations:_product.id parameters:@{@"page": @(0)}
+//                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                                  [self setRelations:responseObject];
+//                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                              }];
+//}
 
 - (void)setRelations:(id)responseObject {
-    if (responseObject[@"products"]) {
-        [[MLProductManager sharedManager] setProducts:responseObject[@"products"] type:@"relations"];
+    if (responseObject[@"relationships"]) {
+        [[MLProductManager sharedManager] setProducts:responseObject[@"relationships"] type:@"relations"];
         [_collectionView setProducts:[[MLProductManager sharedManager] getProducts:@"relations"]];
     }
 }
@@ -111,6 +114,7 @@
 - (void)pushUserName:(MLProductView *)view user:(MLUser *)user {
     MLUserViewController *userViewController = [[MLUserViewController alloc] initWithUser:user];
     [self.navigationController pushViewController:userViewController animated:YES];
+    [self showHeaderFooter:NO];
 }
 
 - (void)pushBuy:(MLProductView *)view urlString:(NSString *)urlString {
@@ -124,6 +128,43 @@
 - (void)didSelectItem:(MLProductCollectionView *)view product:(MLProduct *)product {
     MLProductViewController *productViewController = [[MLProductViewController alloc] initWithProduct:product];
     [self.navigationController pushViewController:productViewController animated:YES];
+    [self showHeaderFooter:NO];
+}
+
+- (void)load:(NSInteger)type page:(NSInteger)page {
+    [self getProduct];
+}
+
+- (void)scrollToUp:(MLProductCollectionView *)view {
+    if (!_isFullScrean) {
+        return;
+    }
+    _isFullScrean = NO;
+    [self showHeaderFooter:YES];
+}
+
+- (void)scrollToDown:(MLProductCollectionView *)view {
+    if (_isFullScrean) {
+        return;
+    }
+    _isFullScrean = YES;
+    [self hideHeaderFooter:YES];
+}
+
+- (void)showHeaderFooter:(BOOL)animation {
+    MLTabViewController *tabViewController = (MLTabViewController *)[[MLGetAppDelegate window] rootViewController];
+    if ([tabViewController respondsToSelector:@selector(setHiddenTabBar:animation:)]) {
+        [tabViewController setHiddenTabBar:NO animation:animation];
+    }
+    //[self.navigationController setNavigationBarHidden:NO animated:animation];
+}
+
+- (void)hideHeaderFooter:(BOOL)animation {
+    MLTabViewController *tabViewController = (MLTabViewController *)[[MLGetAppDelegate window] rootViewController];
+    if ([tabViewController respondsToSelector:@selector(setHiddenTabBar:animation:)]) {
+        [tabViewController setHiddenTabBar:YES animation:animation];
+    }
+    //[self.navigationController setNavigationBarHidden:YES animated:animation];
 }
 
 @end

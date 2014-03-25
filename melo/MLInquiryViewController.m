@@ -39,7 +39,7 @@
 
 - (void)setInquiryView {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    CGRect inquiryViewRect = CGRectMake(0, 0, NNViewWidth(self.view), NNViewHeight(self.view) - [MLDevice topMargin:self] - [MLDevice tabBarHeight]);
+    CGRect inquiryViewRect = CGRectMake(0, 0, NNViewWidth(self.view), NNViewHeight(self.view) - [MLDevice topMargin:YES] - [MLDevice tabBarHeight]);
     MLInquiryView *inquiryView = [[MLInquiryView alloc] initWithFrame:inquiryViewRect];
     
     [self.view addSubview:scrollView];

@@ -42,4 +42,8 @@
     return self;
 }
 
+- (UIImage *)defaultImage {
+    return [UIImage imageNamed:@"UserCreateView-userImage.png"]; // TODO : 一時的
+}
+
 @end

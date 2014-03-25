@@ -54,12 +54,24 @@
 		32AE14AD18DEB8BB00B1AC74 /* NavBar-backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A418DEB8BB00B1AC74 /* NavBar-backButton@2x.png */; };
 		32AE14AE18DEB8BB00B1AC74 /* NavBar-closeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A518DEB8BB00B1AC74 /* NavBar-closeButton@2x.png */; };
 		32AE14AF18DEB8BB00B1AC74 /* NavBar-closeButtonHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14A618DEB8BB00B1AC74 /* NavBar-closeButtonHover.png */; };
-		32AE14B818DEB93900B1AC74 /* TabBar-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B418DEB93900B1AC74 /* TabBar-home.png */; };
-		32AE14B918DEB93900B1AC74 /* TabBar-home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B518DEB93900B1AC74 /* TabBar-home@2x.png */; };
-		32AE14BA18DEB93900B1AC74 /* TabBar-timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B618DEB93900B1AC74 /* TabBar-timeline.png */; };
-		32AE14BB18DEB93900B1AC74 /* TabBar-timeline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14B718DEB93900B1AC74 /* TabBar-timeline@2x.png */; };
 		32AE14BE18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14BC18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png */; };
 		32AE14BF18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14BD18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png */; };
+		32AE14C218DF17AD00B1AC74 /* TabBar-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14C018DF17AD00B1AC74 /* TabBar-notification.png */; };
+		32AE14C318DF17AD00B1AC74 /* TabBar-notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14C118DF17AD00B1AC74 /* TabBar-notification@2x.png */; };
+		32AE14C818DF1BBE00B1AC74 /* NavBar-backButtonHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14C418DF1BBE00B1AC74 /* NavBar-backButtonHover.png */; };
+		32AE14C918DF1BBE00B1AC74 /* NavBar-backButtonHover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14C518DF1BBE00B1AC74 /* NavBar-backButtonHover@2x.png */; };
+		32AE14CA18DF1BBE00B1AC74 /* NavBar-backButtonWithCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14C618DF1BBE00B1AC74 /* NavBar-backButtonWithCircle.png */; };
+		32AE14CB18DF1BBE00B1AC74 /* NavBar-backButtonWithCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AE14C718DF1BBE00B1AC74 /* NavBar-backButtonWithCircle@2x.png */; };
+		32B51DDF18E137F200415776 /* TabBar-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DD718E137F200415776 /* TabBar-home.png */; };
+		32B51DE018E137F200415776 /* TabBar-home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DD818E137F200415776 /* TabBar-home@2x.png */; };
+		32B51DE118E137F200415776 /* TabBar-homeHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DD918E137F200415776 /* TabBar-homeHover.png */; };
+		32B51DE218E137F200415776 /* TabBar-homeHover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DDA18E137F200415776 /* TabBar-homeHover@2x.png */; };
+		32B51DE318E137F200415776 /* TabBar-timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DDB18E137F200415776 /* TabBar-timeline.png */; };
+		32B51DE418E137F200415776 /* TabBar-timeline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DDC18E137F200415776 /* TabBar-timeline@2x.png */; };
+		32B51DE518E137F200415776 /* TabBar-timelineHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DDD18E137F200415776 /* TabBar-timelineHover.png */; };
+		32B51DE618E137F200415776 /* TabBar-timelineHover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B51DDE18E137F200415776 /* TabBar-timelineHover@2x.png */; };
+		32B747FD18E1DAC100FFBE5D /* UserCreateView-userImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B747FB18E1DAC100FFBE5D /* UserCreateView-userImage.png */; };
+		32B747FE18E1DAC100FFBE5D /* UserCreateView-userImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B747FC18E1DAC100FFBE5D /* UserCreateView-userImage@2x.png */; };
 		32D3D1C218D08E7F004D7E38 /* MLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1C118D08E7F004D7E38 /* MLLoginViewController.m */; };
 		32D3D1C618D08F43004D7E38 /* MLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1C518D08F43004D7E38 /* MLNavigationViewController.m */; };
 		32D3D1CD18D0956F004D7E38 /* MLLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3D1CC18D0956F004D7E38 /* MLLoginView.m */; };
@@ -204,12 +216,24 @@
 		32AE14A418DEB8BB00B1AC74 /* NavBar-backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButton@2x.png"; sourceTree = "<group>"; };
 		32AE14A518DEB8BB00B1AC74 /* NavBar-closeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-closeButton@2x.png"; sourceTree = "<group>"; };
 		32AE14A618DEB8BB00B1AC74 /* NavBar-closeButtonHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-closeButtonHover.png"; sourceTree = "<group>"; };
-		32AE14B418DEB93900B1AC74 /* TabBar-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-home.png"; sourceTree = "<group>"; };
-		32AE14B518DEB93900B1AC74 /* TabBar-home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-home@2x.png"; sourceTree = "<group>"; };
-		32AE14B618DEB93900B1AC74 /* TabBar-timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-timeline.png"; sourceTree = "<group>"; };
-		32AE14B718DEB93900B1AC74 /* TabBar-timeline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar-timeline@2x.png"; sourceTree = "<group>"; };
 		32AE14BC18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-postButtonWithCircle.png"; sourceTree = "<group>"; };
 		32AE14BD18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-postButtonWithCircle@2x.png"; sourceTree = "<group>"; };
+		32AE14C018DF17AD00B1AC74 /* TabBar-notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-notification.png"; path = "../NavigationController/TabBar-notification.png"; sourceTree = "<group>"; };
+		32AE14C118DF17AD00B1AC74 /* TabBar-notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-notification@2x.png"; path = "../NavigationController/TabBar-notification@2x.png"; sourceTree = "<group>"; };
+		32AE14C418DF1BBE00B1AC74 /* NavBar-backButtonHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButtonHover.png"; sourceTree = "<group>"; };
+		32AE14C518DF1BBE00B1AC74 /* NavBar-backButtonHover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButtonHover@2x.png"; sourceTree = "<group>"; };
+		32AE14C618DF1BBE00B1AC74 /* NavBar-backButtonWithCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButtonWithCircle.png"; sourceTree = "<group>"; };
+		32AE14C718DF1BBE00B1AC74 /* NavBar-backButtonWithCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar-backButtonWithCircle@2x.png"; sourceTree = "<group>"; };
+		32B51DD718E137F200415776 /* TabBar-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-home.png"; path = "../NavigationController/TabBar-home.png"; sourceTree = "<group>"; };
+		32B51DD818E137F200415776 /* TabBar-home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-home@2x.png"; path = "../NavigationController/TabBar-home@2x.png"; sourceTree = "<group>"; };
+		32B51DD918E137F200415776 /* TabBar-homeHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-homeHover.png"; path = "../NavigationController/TabBar-homeHover.png"; sourceTree = "<group>"; };
+		32B51DDA18E137F200415776 /* TabBar-homeHover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-homeHover@2x.png"; path = "../NavigationController/TabBar-homeHover@2x.png"; sourceTree = "<group>"; };
+		32B51DDB18E137F200415776 /* TabBar-timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-timeline.png"; path = "../NavigationController/TabBar-timeline.png"; sourceTree = "<group>"; };
+		32B51DDC18E137F200415776 /* TabBar-timeline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-timeline@2x.png"; path = "../NavigationController/TabBar-timeline@2x.png"; sourceTree = "<group>"; };
+		32B51DDD18E137F200415776 /* TabBar-timelineHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-timelineHover.png"; path = "../NavigationController/TabBar-timelineHover.png"; sourceTree = "<group>"; };
+		32B51DDE18E137F200415776 /* TabBar-timelineHover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TabBar-timelineHover@2x.png"; path = "../NavigationController/TabBar-timelineHover@2x.png"; sourceTree = "<group>"; };
+		32B747FB18E1DAC100FFBE5D /* UserCreateView-userImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserCreateView-userImage.png"; sourceTree = "<group>"; };
+		32B747FC18E1DAC100FFBE5D /* UserCreateView-userImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserCreateView-userImage@2x.png"; sourceTree = "<group>"; };
 		32D3D1C018D08E7F004D7E38 /* MLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLoginViewController.h; sourceTree = "<group>"; };
 		32D3D1C118D08E7F004D7E38 /* MLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginViewController.m; sourceTree = "<group>"; };
 		32D3D1C418D08F43004D7E38 /* MLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationViewController.h; sourceTree = "<group>"; };
@@ -614,6 +638,10 @@
 			children = (
 				32AE14A318DEB8BB00B1AC74 /* NavBar-backButton.png */,
 				32AE14A418DEB8BB00B1AC74 /* NavBar-backButton@2x.png */,
+				32AE14C418DF1BBE00B1AC74 /* NavBar-backButtonHover.png */,
+				32AE14C518DF1BBE00B1AC74 /* NavBar-backButtonHover@2x.png */,
+				32AE14C618DF1BBE00B1AC74 /* NavBar-backButtonWithCircle.png */,
+				32AE14C718DF1BBE00B1AC74 /* NavBar-backButtonWithCircle@2x.png */,
 				32AE14A518DEB8BB00B1AC74 /* NavBar-closeButton@2x.png */,
 				32AE14A618DEB8BB00B1AC74 /* NavBar-closeButtonHover.png */,
 			);
@@ -624,15 +652,31 @@
 		32AE14A718DEB8BB00B1AC74 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				32B51DD718E137F200415776 /* TabBar-home.png */,
+				32B51DD818E137F200415776 /* TabBar-home@2x.png */,
+				32B51DD918E137F200415776 /* TabBar-homeHover.png */,
+				32B51DDA18E137F200415776 /* TabBar-homeHover@2x.png */,
+				32B51DDB18E137F200415776 /* TabBar-timeline.png */,
+				32B51DDC18E137F200415776 /* TabBar-timeline@2x.png */,
+				32B51DDD18E137F200415776 /* TabBar-timelineHover.png */,
+				32B51DDE18E137F200415776 /* TabBar-timelineHover@2x.png */,
+				32AE14C018DF17AD00B1AC74 /* TabBar-notification.png */,
+				32AE14C118DF17AD00B1AC74 /* TabBar-notification@2x.png */,
 				32AE14BC18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png */,
 				32AE14BD18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png */,
-				32AE14B418DEB93900B1AC74 /* TabBar-home.png */,
-				32AE14B518DEB93900B1AC74 /* TabBar-home@2x.png */,
-				32AE14B618DEB93900B1AC74 /* TabBar-timeline.png */,
-				32AE14B718DEB93900B1AC74 /* TabBar-timeline@2x.png */,
 			);
 			name = TabBarController;
 			path = images/TabBarController;
+			sourceTree = "<group>";
+		};
+		32B747FA18E1DAC100FFBE5D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				32B747FB18E1DAC100FFBE5D /* UserCreateView-userImage.png */,
+				32B747FC18E1DAC100FFBE5D /* UserCreateView-userImage@2x.png */,
+			);
+			name = User;
+			path = images/TabBarController/User;
 			sourceTree = "<group>";
 		};
 		32B8DC2918D612310077DF2E /* Post */ = {
@@ -748,6 +792,7 @@
 			children = (
 				32AE14A218DEB8BB00B1AC74 /* NavigationController */,
 				32AE14A718DEB8BB00B1AC74 /* TabBarController */,
+				32B747FA18E1DAC100FFBE5D /* User */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1121,18 +1166,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B51DE118E137F200415776 /* TabBar-homeHover.png in Resources */,
+				32AE14C818DF1BBE00B1AC74 /* NavBar-backButtonHover.png in Resources */,
 				32749DDD18D085AF00337C06 /* InfoPlist.strings in Resources */,
-				32AE14BB18DEB93900B1AC74 /* TabBar-timeline@2x.png in Resources */,
+				32AE14C918DF1BBE00B1AC74 /* NavBar-backButtonHover@2x.png in Resources */,
 				32AE14BF18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle@2x.png in Resources */,
+				32B51DDF18E137F200415776 /* TabBar-home.png in Resources */,
+				32B51DE418E137F200415776 /* TabBar-timeline@2x.png in Resources */,
 				32AE14AD18DEB8BB00B1AC74 /* NavBar-backButton@2x.png in Resources */,
 				32749DE818D085AF00337C06 /* Images.xcassets in Resources */,
+				32B747FE18E1DAC100FFBE5D /* UserCreateView-userImage@2x.png in Resources */,
+				32AE14CB18DF1BBE00B1AC74 /* NavBar-backButtonWithCircle@2x.png in Resources */,
+				32B51DE218E137F200415776 /* TabBar-homeHover@2x.png in Resources */,
+				32AE14C318DF17AD00B1AC74 /* TabBar-notification@2x.png in Resources */,
 				32AE14AF18DEB8BB00B1AC74 /* NavBar-closeButtonHover.png in Resources */,
-				32AE14B818DEB93900B1AC74 /* TabBar-home.png in Resources */,
-				32AE14BA18DEB93900B1AC74 /* TabBar-timeline.png in Resources */,
+				32B51DE518E137F200415776 /* TabBar-timelineHover.png in Resources */,
+				32B51DE618E137F200415776 /* TabBar-timelineHover@2x.png in Resources */,
+				32B51DE018E137F200415776 /* TabBar-home@2x.png in Resources */,
+				32AE14CA18DF1BBE00B1AC74 /* NavBar-backButtonWithCircle.png in Resources */,
 				32AE14BE18DEBBCA00B1AC74 /* NavBar-postButtonWithCircle.png in Resources */,
-				32AE14B918DEB93900B1AC74 /* TabBar-home@2x.png in Resources */,
 				32AE14AE18DEB8BB00B1AC74 /* NavBar-closeButton@2x.png in Resources */,
+				32AE14C218DF17AD00B1AC74 /* TabBar-notification.png in Resources */,
+				32B747FD18E1DAC100FFBE5D /* UserCreateView-userImage.png in Resources */,
 				32AE14AC18DEB8BB00B1AC74 /* NavBar-backButton.png in Resources */,
+				32B51DE318E137F200415776 /* TabBar-timeline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1394,6 +1451,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = "melo/melo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1414,6 +1472,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = "melo/melo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2D22DC03-AA89-4470-A854-9826BEC03286";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -15,8 +15,9 @@
 #import "MLProductCollectionLayout.h"
 #import "MLProductViewController.h"
 #import "MLNavigationViewController.h"
+#import "MLTabViewController.h"
 
-NSInteger const MLHomeTabViewHeight = 44;
+NSInteger const MLHomeTabViewHeight = 30;
 
 @interface MLHomeViewController () <UIScrollViewDelegate>{
     @private
@@ -24,6 +25,7 @@ NSInteger const MLHomeTabViewHeight = 44;
     MLHomeTabView *_tabView;
     UIScrollView *_scrollView;
     NSMutableDictionary *_collectionViews;
+    BOOL _isFullScrean;
 }
 
 @end
@@ -43,9 +45,9 @@ NSInteger const MLHomeTabViewHeight = 44;
     [super viewDidLoad];
     
     self.title = @"melo";
-    [self setTabView];
     [self setScrollView];
     [self setActiveTab:MLProductTypeHot];
+    [self setTabView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,10 +73,11 @@ NSInteger const MLHomeTabViewHeight = 44;
 
 - (void)setScrollView {
     if (!_scrollView) {
-        CGRect scrollViewRect = CGRectMake(0, [MLDevice topMargin:YES] + MLHomeTabViewHeight, NNViewWidth(self.view), NNViewHeight(self.view) - ([MLDevice topMargin:YES] + MLHomeTabViewHeight + 49));
+        CGRect scrollViewRect = CGRectMake(0, 0, NNViewWidth(self.view), NNViewHeight(self.view));
         _scrollView = [[UIScrollView alloc] initWithFrame:scrollViewRect];
+        _scrollView.backgroundColor = [UIColor whiteColor];
         _scrollView.pagingEnabled = YES;
-        _scrollView.contentSize = CGSizeMake(NNViewWidth(_scrollView) * 3, NNViewHeight(_scrollView));
+        _scrollView.contentSize = CGSizeMake(NNViewWidth(_scrollView) * 3, _scrollView.contentSize.height);
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.delegate = self;
         [self.view addSubview:_scrollView];
@@ -86,10 +89,12 @@ NSInteger const MLHomeTabViewHeight = 44;
     MLProductCollectionLayout *layout = [[MLProductCollectionLayout alloc] initTimeLineLayout];
     CGRect collectionRect = CGRectMake(NNViewWidth(_scrollView) * type, 0, NNViewWidth(_scrollView), NNViewHeight(_scrollView));
     MLProductCollectionView *collectionView = [[MLProductCollectionView alloc] initWithFrame:collectionRect collectionViewLayout:layout fixed:NO];
+    collectionView.contentInset = UIEdgeInsetsMake(MLHomeTabViewHeight, 0, [MLDevice tabBarHeight], 0);
     collectionView.type = type;
     collectionView.controllerDelegate = weakSelf;
     [_scrollView addSubview:collectionView];
     [_collectionViews setObject:collectionView forKey:MLProductTypes[type]];
+    [collectionView startIndicatorView];
 }
 
 - (void)getProducts:(NSInteger)type {
@@ -128,6 +133,7 @@ NSInteger const MLHomeTabViewHeight = 44;
 - (void)didSelectItem:(MLProductCollectionView *)view product:(MLProduct *)product {
     MLProductViewController *productViewController = [[MLProductViewController alloc] initWithProduct:product];
     [self.navigationController pushViewController:productViewController animated:YES];
+    [self showHeaderFooter:NO];
 }
 
 #pragma mark - MLHomeTabViewDelegate
@@ -145,7 +151,7 @@ NSInteger const MLHomeTabViewHeight = 44;
         [self setCollectionView:_activeTab];
         [self getProducts:activeTab];
     }
-    [_scrollView setContentOffset:CGPointMake(NNViewWidth(_scrollView) * _activeTab, 0) animated:NO];
+    [_scrollView setContentOffset:CGPointMake(NNViewWidth(_scrollView) * _activeTab, _scrollView.contentOffset.y) animated:NO];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -171,6 +177,40 @@ NSInteger const MLHomeTabViewHeight = 44;
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
 	[self endScroll];
+}
+
+- (void)scrollToUp:(MLProductCollectionView *)view {
+    if (!_isFullScrean) {
+        return;
+    }
+    _isFullScrean = NO;
+    [self showHeaderFooter:YES];
+}
+
+- (void)scrollToDown:(MLProductCollectionView *)view {
+    if (_isFullScrean) {
+        return;
+    }
+    _isFullScrean = YES;
+    [self hideHeaderFooter:YES];
+}
+
+- (void)showHeaderFooter:(BOOL)animation {
+    MLTabViewController *tabViewController = (MLTabViewController *)[[MLGetAppDelegate window] rootViewController];
+    if ([tabViewController respondsToSelector:@selector(setHiddenTabBar:animation:)]) {
+        [tabViewController setHiddenTabBar:NO animation:animation];
+    }
+    [self.navigationController setNavigationBarHidden:NO animated:animation];
+    [_tabView setHidden:NO animated:animation];
+}
+
+- (void)hideHeaderFooter:(BOOL)animation {
+    MLTabViewController *tabViewController = (MLTabViewController *)[[MLGetAppDelegate window] rootViewController];
+    if ([tabViewController respondsToSelector:@selector(setHiddenTabBar:animation:)]) {
+        [tabViewController setHiddenTabBar:YES animation:animation];
+    }
+    [self.navigationController setNavigationBarHidden:YES animated:animation];
+    [_tabView setHidden:YES animated:animation];
 }
 
 @end

@@ -48,21 +48,15 @@
 
 + (void)setHomeViewController {
     MLHomeViewController *homeViewController = [MLHomeViewController new];
-    MLNavigationViewController *navigationController = [[MLNavigationViewController alloc] initWithRootViewController:homeViewController];
-    
-    // TODO : fix
-    UIViewController *viewController = [UIViewController new];
-    MLNavigationViewController *navigationController2 = [[MLNavigationViewController alloc] initWithRootViewController:viewController];
+    MLNavigationViewController *homeNavigationController = [[MLNavigationViewController alloc] initWithRootViewController:homeViewController];
     
     MLUserViewController *userViewController = [[MLUserViewController alloc] initWithUser:[MLCurrentUser currentuser]];
-    MLNavigationViewController *navigationController3 = [[MLNavigationViewController alloc] initWithRootViewController:userViewController];
+    MLNavigationViewController *userNavigationController = [[MLNavigationViewController alloc] initWithRootViewController:userViewController];
     
-    NSArray *tabs = @[navigationController, navigationController2, navigationController3];
     MLTabViewController *tabBarController = [[MLTabViewController alloc] init];
+    NSArray *tabs = @[homeNavigationController, [NSNull null], userNavigationController];
     [tabBarController setViewControllers:tabs];
     ((MLAppDelegate *)MLGetAppDelegate).window.rootViewController = tabBarController;
-    [tabBarController setTabBarItems];
-    [tabBarController createPostBtn];
 }
 
 @end

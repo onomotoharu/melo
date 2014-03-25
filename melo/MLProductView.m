@@ -73,6 +73,7 @@ NSInteger const MLProductViewLineTopMargin = 10;
                                                                    MLProductViewImageMargin,
                                                                    NNViewWidth(self) - MLProductViewImageMargin * 2,
                                                                    NNViewWidth(self) - MLProductViewImageMargin * 2)];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_imageView];
     }
     [self loadImage];
@@ -384,6 +385,7 @@ NSInteger const MLProductViewLineTopMargin = 10;
                               [self setWantBtn];
                           }
                           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                              NNLog(@"%@", error);
                               [MLIndicator showErrorWithStatus:@"問題が起きていいねを解除できませんでした。"];
                           }];
 }

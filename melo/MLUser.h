@@ -24,6 +24,7 @@
 @property (nonatomic) BOOL isFollow;
 
 - (MLUser *)update:(NSDictionary *)attributes;
+- (UIImage *)defaultImage;
 @end
 
 @interface MLUser (CoreDataGeneratedAccessors)

@@ -74,6 +74,7 @@ NSInteger const MLUserViewCollectionTitleHeight = 25;
 - (void)loadImage {
     NSString *url = _user.image;
     if (!url) {
+        [_imageView setImage:[_user defaultImage]]; // TODO : 一時的
         return;
     }
     SDWebImageManager *imageManager = [SDWebImageManager sharedManager];

@@ -8,13 +8,17 @@
 
 #import "MLHomeTabView.h"
 
+#import "UIColor+Addition.h"
+
 NSInteger const MLHomeTabViewTabCount = 3;
-NSInteger const MLHomeTabViewTabMargin = 5;
+NSInteger const MLHomeTabViewFooterHeight = 0;
 
 @interface MLHomeTabView () {
     @private
     NSMutableArray *_activeTabs;
     NSMutableArray *_tabBtns;
+    NSArray *_btnTitles;
+    UILabel *_footer;
 }
 
 @end
@@ -25,9 +29,12 @@ NSInteger const MLHomeTabViewTabMargin = 5;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.9];
+        self.layer.borderColor = [[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0] CGColor];
+        self.layer.borderWidth = 0.5;
         [self setActiveTabs];
         [self setTabBtns];
+        [self setFooter]; // TODO : 不要かも
     }
     return self;
 }
@@ -36,9 +43,9 @@ NSInteger const MLHomeTabViewTabMargin = 5;
     _activeTabs = [@[] mutableCopy];
     for (int i = 0; i < MLHomeTabViewTabCount; i++) {
         UIView *activeTab = [[UIView alloc] initWithFrame:CGRectMake(0 + NNViewWidth(self) / 3 * i,
-                                                                     MLHomeTabViewTabMargin,
+                                                                     0,
                                                                      NNViewWidth(self) / 3,
-                                                                     NNViewHeight(self) - MLHomeTabViewTabMargin)];
+                                                                     NNViewHeight(self) - MLHomeTabViewFooterHeight)];
         activeTab.backgroundColor = [UIColor whiteColor];
         [self addSubview:activeTab];
         [_activeTabs addObject:activeTab];
@@ -47,11 +54,11 @@ NSInteger const MLHomeTabViewTabMargin = 5;
 
 - (void)setTabBtns {
     _tabBtns = [@[] mutableCopy];
-    NSArray *btnTitles = @[@"フォロー", @"新着", @"人気"];
+    _btnTitles = @[@"フォロー", @"新着", @"人気"];
     for (int i = 0; i < MLHomeTabViewTabCount; i++) {
         UIButton *tabBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        tabBtn.frame = CGRectMake(0 + NNViewWidth(self) / 3 * i, 0, NNViewWidth(self) / 3, NNViewHeight(self));
-        [tabBtn setTitle:btnTitles[i] forState:UIControlStateNormal];
+        tabBtn.frame = CGRectMake(0 + NNViewWidth(self) / 3 * i, 0, NNViewWidth(self) / 3, NNViewHeight(self) - MLHomeTabViewFooterHeight);
+        [tabBtn setTitle:_btnTitles[i] forState:UIControlStateNormal];
         [tabBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [[tabBtn titleLabel] setFont:[UIFont boldSystemFontOfSize:14]];
         [tabBtn addTarget:self action:@selector(selectTab:) forControlEvents:UIControlEventTouchUpInside];
@@ -60,6 +67,17 @@ NSInteger const MLHomeTabViewTabMargin = 5;
         [_tabBtns addObject:tabBtn];
     }
     [self activeTab:1]; // default tab
+}
+
+- (void)setFooter {
+    _footer = [[UILabel alloc] initWithFrame:CGRectMake(0, NNViewHeight(self) - MLHomeTabViewFooterHeight, NNViewWidth(self), MLHomeTabViewFooterHeight)];
+    [_footer setBackgroundColor:[UIColor whiteColor]];
+    _footer.text = _btnTitles[1];
+    _footer.font = [UIFont boldSystemFontOfSize:10];
+    _footer.textAlignment = NSTextAlignmentCenter;
+    _footer.layer.borderColor = [[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0] CGColor];
+    _footer.layer.borderWidth = 0.5;
+    [self addSubview:_footer];
 }
 
 - (void)selectTab:(UIButton *)sender {
@@ -75,12 +93,28 @@ NSInteger const MLHomeTabViewTabMargin = 5;
         UIButton *tabBtn  = _tabBtns[i];
         if (i == tabNum) {
             activeTab.hidden = NO;
-            [tabBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+            [tabBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            _footer.text = _btnTitles[i];
         } else {
             activeTab.hidden = YES;
-            [tabBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [tabBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         }
     }
+}
+
+- (void)setHidden:(BOOL)hidden animated:(BOOL)animation {
+    if (animation) {
+        [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+            CGRect tabViewRect = self.frame;
+            if (hidden) {
+                tabViewRect.origin.y = [MLDevice topMargin:YES] - 44;
+            } else {
+                tabViewRect.origin.y = [MLDevice topMargin:YES];
+            }
+            self.frame = tabViewRect;
+        }];
+    }
+    
 }
 
 @end

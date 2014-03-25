@@ -14,4 +14,5 @@
 
 + (UIColor *)basePinkColor;
 + (UIColor *)baseBlueColor;
++ (UIColor *)activeTabColor;
 @end

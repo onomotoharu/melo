@@ -9,6 +9,7 @@
 #import "MLHttpRequest.h"
 
 NSString const *BaseUrl = @"http://api.me-lo.jp/api/";
+//NSString const *BaseUrl = @"http://staging.me-lo.jp/api/";
 
 @implementation MLHttpRequest
 

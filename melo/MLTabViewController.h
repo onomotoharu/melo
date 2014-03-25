@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MLTabViewController : UITabBarController
+@interface MLTabViewController : UIViewController
 
-- (void)createPostBtn;
-- (void)setTabBarItems;
+@property (nonatomic) NSArray *viewControllers;
+@property (nonatomic) NSInteger selectedIndex;
+@property (nonatomic) UIViewController *selectedViewController;
+@property (nonatomic) NSMutableArray *items;
+
+- (void)setHiddenTabBar:(BOOL)hide animation:(BOOL)animation;
 @end

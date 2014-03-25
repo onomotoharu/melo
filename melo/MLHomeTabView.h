@@ -13,6 +13,7 @@
 @property (weak) id delegate;
 
 - (void)activeTab:(short)tabNum;
+- (void)setHidden:(BOOL)hidden animated:(BOOL)animation;
 @end
 
 @interface NSObject (MLHomeTabViewDelegate)

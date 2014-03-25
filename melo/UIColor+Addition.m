@@ -21,4 +21,8 @@
 + (UIColor *)baseBlueColor {
     return [self colorWithDecRed:68 green:126 blue:179 alpha:1];
 }
+
++ (UIColor *)activeTabColor {
+    return [self colorWithDecRed:30 green:144 blue:255 alpha:1];
+}
 @end
